@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/logo_lifelime_l.svg";
 
 const HeroSection = () => {
   return (
@@ -145,21 +146,8 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="relative min-h-screen flex items-center justify-start p-8 md:p-16 lg:p-24">
-        <div className="max-w-xl w-full space-y-8">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight">
-            Transform Your Digital Experience
-          </h1>
-          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-            Discover innovative solutions that empower your business to reach new heights with cutting-edge technology and seamless design.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Button size="lg" className="text-base">
-              Get Started
-            </Button>
-            <Button size="lg" variant="outline" className="text-base">
-              Learn More
-            </Button>
-          </div>
+        <div className="max-w-md w-full">
+          <img src={logo} alt="LifeLime Logo" className="w-full h-auto" />
         </div>
       </div>
     </div>
