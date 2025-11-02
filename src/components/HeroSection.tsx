@@ -170,9 +170,30 @@ const HeroSection = () => {
         </div>
       </nav>
 
-      {/* Gradient Background - Full Width */}
+      {/* Gradient Background */}
+      {/* Mobile: Split background */}
+      <div className="absolute inset-0 lg:hidden">
+        {/* White section - top left 1/4 */}
+        <div 
+          className="absolute inset-0"
+          style={{
+            background: 'white',
+            clipPath: 'polygon(0 0, 100% 0, 0 100%)'
+          }}
+        />
+        {/* Gradient section - bottom right 3/4 */}
+        <div 
+          className="absolute inset-0"
+          style={{
+            background: 'linear-gradient(-45deg, #6C2AFD 0%, #835BD9 100%)',
+            clipPath: 'polygon(100% 0, 100% 100%, 0 100%)'
+          }}
+        />
+      </div>
+      
+      {/* Desktop: Original gradient */}
       <div 
-        className="absolute inset-0"
+        className="hidden lg:block absolute inset-0"
         style={{
           background: 'linear-gradient(135deg, #6C2AFD 0%, #835BD9 100%)'
         }}
