@@ -146,14 +146,18 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="relative min-h-screen flex items-center justify-start p-8 md:p-16 lg:p-24">
-        <div className="max-w-md w-full ml-[10%]">
+        <div className="max-w-md w-full ml-[10%] relative">
+          {/* Ground spot shadow */}
+          <div 
+            className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-3/4 h-8 rounded-full blur-2xl"
+            style={{
+              background: 'radial-gradient(ellipse at center, rgba(108, 42, 253, 0.6) 0%, rgba(108, 42, 253, 0.3) 40%, transparent 70%)'
+            }}
+          />
           <img 
             src={logo} 
             alt="LifeLime Logo" 
-            className="w-full h-auto" 
-            style={{
-              filter: 'drop-shadow(0 20px 60px rgba(108, 42, 253, 0.4)) drop-shadow(0 10px 30px rgba(108, 42, 253, 0.3))'
-            }}
+            className="w-full h-auto relative z-10" 
           />
         </div>
       </div>
