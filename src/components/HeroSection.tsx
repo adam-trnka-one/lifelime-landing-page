@@ -250,9 +250,9 @@ const HeroSection = () => {
       </svg>
 
       {/* Content */}
-      <div className="relative h-full flex items-center justify-between p-8 md:p-16 lg:p-24">
+      <div className="relative h-full flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-8 lg:gap-0 p-4 sm:p-6 md:p-12 lg:p-16 xl:p-24 overflow-y-auto lg:overflow-y-hidden">
         {/* Logo Section - Left */}
-        <div className="max-w-md w-full relative -mt-[10vh] ml-[10%]">
+        <div className="max-w-xs sm:max-w-sm md:max-w-md w-full relative lg:-mt-[10vh] lg:ml-[10%]">
           {/* Ground spot shadow */}
           <div 
             className="absolute -bottom-16 left-1/2 -translate-x-1/2 w-full h-16 rounded-full blur-3xl"
@@ -268,19 +268,19 @@ const HeroSection = () => {
         </div>
 
         {/* Waitlist Section - Right */}
-        <div className="max-w-xl w-full bg-white/10 backdrop-blur-2xl rounded-2xl p-12 shadow-2xl -mt-[10vh] mr-[10%]" style={{ boxShadow: 'inset 0 1px 0 0 rgba(255, 255, 255, 0.1), 0 20px 60px -15px rgba(0, 0, 0, 0.3)' }}>
-          <h2 className="text-4xl font-bold mb-6 text-white">{t.title}</h2>
-          <p className="text-white/80 mb-8 leading-relaxed text-lg">
+        <div className="max-w-md lg:max-w-xl w-full bg-white/10 backdrop-blur-2xl rounded-2xl p-6 sm:p-8 md:p-10 lg:p-12 shadow-2xl lg:-mt-[10vh] lg:mr-[10%]" style={{ boxShadow: 'inset 0 1px 0 0 rgba(255, 255, 255, 0.1), 0 20px 60px -15px rgba(0, 0, 0, 0.3)' }}>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 text-white">{t.title}</h2>
+          <p className="text-white/80 mb-6 sm:mb-8 leading-relaxed text-base sm:text-lg">
             {t.description}
           </p>
-          <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
+          <form className="space-y-4 sm:space-y-5" onSubmit={(e) => e.preventDefault()}>
             <input
               type="email"
               placeholder={t.emailPlaceholder}
-              className="w-full px-5 py-4 text-lg rounded-lg bg-white/20 text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-white/50 border-none"
+              className="w-full px-4 sm:px-5 py-3 sm:py-4 text-base sm:text-lg rounded-lg bg-white/20 text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-white/50 border-none"
               required
             />
-            <Button className="w-full bg-white text-primary hover:bg-white/90 text-lg" size="lg">
+            <Button className="w-full bg-white text-primary hover:bg-white/90 text-base sm:text-lg" size="lg">
               {t.joinButton}
             </Button>
           </form>
