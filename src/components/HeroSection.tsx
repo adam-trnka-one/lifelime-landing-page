@@ -19,7 +19,7 @@ const HeroSection = () => {
       >
         {/* Wave Layer 1 - Background */}
         <path
-          d="M0,0 L100,0 L100,100 Q75,85 50,75 T0,70 Z"
+          d="M0,0 L40,0 Q45,25 50,50 T60,100 L0,100 Z"
           fill="hsl(var(--background))"
           opacity="0.4"
         >
@@ -28,16 +28,16 @@ const HeroSection = () => {
             dur="8s"
             repeatCount="indefinite"
             values="
-              M0,0 L100,0 L100,100 Q75,85 50,75 T0,70 Z;
-              M0,0 L100,0 L100,100 Q75,80 50,70 T0,65 Z;
-              M0,0 L100,0 L100,100 Q75,85 50,75 T0,70 Z
+              M0,0 L40,0 Q45,25 50,50 T60,100 L0,100 Z;
+              M0,0 L42,0 Q47,23 52,48 T62,100 L0,100 Z;
+              M0,0 L40,0 Q45,25 50,50 T60,100 L0,100 Z
             "
           />
         </path>
         
         {/* Wave Layer 2 - Middle */}
         <path
-          d="M0,0 L100,0 L100,100 Q70,80 45,68 T0,60 Z"
+          d="M0,0 L42,0 Q47,27 52,52 T62,100 L0,100 Z"
           fill="hsl(var(--background))"
           opacity="0.7"
         >
@@ -46,16 +46,16 @@ const HeroSection = () => {
             dur="6s"
             repeatCount="indefinite"
             values="
-              M0,0 L100,0 L100,100 Q70,80 45,68 T0,60 Z;
-              M0,0 L100,0 L100,100 Q70,75 45,63 T0,55 Z;
-              M0,0 L100,0 L100,100 Q70,80 45,68 T0,60 Z
+              M0,0 L42,0 Q47,27 52,52 T62,100 L0,100 Z;
+              M0,0 L40,0 Q45,30 50,55 T60,100 L0,100 Z;
+              M0,0 L42,0 Q47,27 52,52 T62,100 L0,100 Z
             "
           />
         </path>
         
         {/* Wave Layer 3 - Front */}
         <path
-          d="M0,0 L100,0 L100,100 Q65,75 40,60 T0,50 Z"
+          d="M0,0 L44,0 Q49,30 54,55 T64,100 L0,100 Z"
           fill="hsl(var(--background))"
         >
           <animate
@@ -63,16 +63,16 @@ const HeroSection = () => {
             dur="10s"
             repeatCount="indefinite"
             values="
-              M0,0 L100,0 L100,100 Q65,75 40,60 T0,50 Z;
-              M0,0 L100,0 L100,100 Q65,70 40,55 T0,45 Z;
-              M0,0 L100,0 L100,100 Q65,75 40,60 T0,50 Z
+              M0,0 L44,0 Q49,30 54,55 T64,100 L0,100 Z;
+              M0,0 L46,0 Q51,28 56,53 T66,100 L0,100 Z;
+              M0,0 L44,0 Q49,30 54,55 T64,100 L0,100 Z
             "
           />
         </path>
         
         {/* Second Layer - Wave 1 with Lower Opacity */}
         <path
-          d="M0,0 L100,0 L100,100 Q60,70 35,53 T0,43 Z"
+          d="M0,0 L46,0 Q51,32 56,57 T66,100 L0,100 Z"
           fill="hsl(var(--background))"
           opacity="0.2"
         >
@@ -81,16 +81,16 @@ const HeroSection = () => {
             dur="12s"
             repeatCount="indefinite"
             values="
-              M0,0 L100,0 L100,100 Q60,70 35,53 T0,43 Z;
-              M0,0 L100,0 L100,100 Q60,65 35,48 T0,38 Z;
-              M0,0 L100,0 L100,100 Q60,70 35,53 T0,43 Z
+              M0,0 L46,0 Q51,32 56,57 T66,100 L0,100 Z;
+              M0,0 L48,0 Q53,35 58,60 T68,100 L0,100 Z;
+              M0,0 L46,0 Q51,32 56,57 T66,100 L0,100 Z
             "
           />
         </path>
         
         {/* Second Layer - Wave 2 with Lower Opacity */}
         <path
-          d="M0,0 L100,0 L100,100 Q55,65 30,48 T0,38 Z"
+          d="M0,0 L48,0 Q53,35 58,60 T68,100 L0,100 Z"
           fill="hsl(var(--background))"
           opacity="0.15"
         >
@@ -99,9 +99,9 @@ const HeroSection = () => {
             dur="9s"
             repeatCount="indefinite"
             values="
-              M0,0 L100,0 L100,100 Q55,65 30,48 T0,38 Z;
-              M0,0 L100,0 L100,100 Q55,60 30,43 T0,33 Z;
-              M0,0 L100,0 L100,100 Q55,65 30,48 T0,38 Z
+              M0,0 L48,0 Q53,35 58,60 T68,100 L0,100 Z;
+              M0,0 L50,0 Q55,33 60,58 T70,100 L0,100 Z;
+              M0,0 L48,0 Q53,35 58,60 T68,100 L0,100 Z
             "
           />
         </path>
