@@ -16,6 +16,7 @@ import { z } from "zod";
 import logo from "@/assets/logo_lifelime_l.svg";
 import { useWaitlistSubmit } from "@/hooks/useWaitlistSubmit";
 import { useToast } from "@/hooks/use-toast";
+import WaitlistSuccessModal from "@/components/WaitlistSuccessModal";
 
 // Email validation schema
 const emailSchema = z.object({
@@ -40,6 +41,7 @@ const HeroSection = () => {
   const [showModal, setShowModal] = useState(false);
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState("");
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
 
   const { mutate: submitWaitlist, isPending } = useWaitlistSubmit();
 
@@ -521,6 +523,7 @@ const HeroSection = () => {
               onSuccess: () => {
                 console.log("Submission successful!");
                 setEmail("");
+                setShowSuccessModal(true);
               },
               onError: (error) => {
                 console.error("Submission error:", error);
@@ -613,6 +616,13 @@ const HeroSection = () => {
           </div>
         )}
       </div>
+
+      {/* Success Modal */}
+      <WaitlistSuccessModal 
+        open={showSuccessModal}
+        onOpenChange={setShowSuccessModal}
+        language={selectedLanguage}
+      />
     </div>
   );
 };

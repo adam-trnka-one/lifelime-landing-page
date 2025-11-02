@@ -123,10 +123,7 @@ export const useWaitlistSubmit = () => {
       return insertedData;
     },
     onSuccess: () => {
-      toast({
-        title: "Successfully joined the waitlist!",
-        description: "We'll notify you when we launch.",
-      });
+      // Remove toast notification since we're showing modal
     },
     onError: (error: Error) => {
       toast({
