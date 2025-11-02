@@ -46,7 +46,7 @@ const HeroSection = () => {
   const t = translations[selectedLanguage as keyof typeof translations];
 
   return (
-    <div className="min-h-screen relative overflow-hidden">
+    <div className="h-screen relative overflow-hidden">
       {/* Navigation */}
       <nav className="relative z-20 flex items-center justify-end gap-2 p-6 md:p-8">
         <a 
@@ -224,7 +224,7 @@ const HeroSection = () => {
       </svg>
 
       {/* Content */}
-      <div className="relative min-h-screen flex items-center justify-start p-8 md:p-16 lg:p-24">
+      <div className="relative h-full flex items-center justify-start p-8 md:p-16 lg:p-24">
         <div className="max-w-md w-full ml-[10%] relative">
           {/* Ground spot shadow */}
           <div 
