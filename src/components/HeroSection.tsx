@@ -11,13 +11,75 @@ const HeroSection = () => {
         }}
       />
       
-      {/* White Section with Angled Edge */}
-      <div 
-        className="absolute inset-0 bg-background"
-        style={{
-          clipPath: 'polygon(0 0, 40% 0, 60% 100%, 0 100%)'
-        }}
-      />
+      {/* White Section with Organic Wave Divider */}
+      <div className="absolute inset-0 bg-background">
+        <svg
+          className="absolute top-0 left-0 w-full h-full"
+          viewBox="0 0 100 100"
+          preserveAspectRatio="none"
+        >
+          <defs>
+            <linearGradient id="waveGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="hsl(var(--background))" stopOpacity="0.3" />
+              <stop offset="50%" stopColor="hsl(var(--background))" stopOpacity="0.6" />
+              <stop offset="100%" stopColor="hsl(var(--background))" stopOpacity="1" />
+            </linearGradient>
+          </defs>
+          
+          {/* Wave Layer 1 - Background */}
+          <path
+            d="M0,0 L35,0 Q40,25 45,50 T55,100 L0,100 Z"
+            fill="url(#waveGradient)"
+            opacity="0.4"
+          >
+            <animate
+              attributeName="d"
+              dur="8s"
+              repeatCount="indefinite"
+              values="
+                M0,0 L35,0 Q40,25 45,50 T55,100 L0,100 Z;
+                M0,0 L38,0 Q43,20 48,45 T58,100 L0,100 Z;
+                M0,0 L35,0 Q40,25 45,50 T55,100 L0,100 Z
+              "
+            />
+          </path>
+          
+          {/* Wave Layer 2 - Middle */}
+          <path
+            d="M0,0 L38,0 Q43,30 48,55 T58,100 L0,100 Z"
+            fill="hsl(var(--background))"
+            opacity="0.7"
+          >
+            <animate
+              attributeName="d"
+              dur="6s"
+              repeatCount="indefinite"
+              values="
+                M0,0 L38,0 Q43,30 48,55 T58,100 L0,100 Z;
+                M0,0 L35,0 Q40,35 45,60 T55,100 L0,100 Z;
+                M0,0 L38,0 Q43,30 48,55 T58,100 L0,100 Z
+              "
+            />
+          </path>
+          
+          {/* Wave Layer 3 - Front */}
+          <path
+            d="M0,0 L40,0 Q45,35 50,60 T60,100 L0,100 Z"
+            fill="hsl(var(--background))"
+          >
+            <animate
+              attributeName="d"
+              dur="10s"
+              repeatCount="indefinite"
+              values="
+                M0,0 L40,0 Q45,35 50,60 T60,100 L0,100 Z;
+                M0,0 L42,0 Q47,30 52,55 T62,100 L0,100 Z;
+                M0,0 L40,0 Q45,35 50,60 T60,100 L0,100 Z
+              "
+            />
+          </path>
+        </svg>
+      </div>
 
       {/* Content */}
       <div className="relative min-h-screen flex items-center justify-start p-8 md:p-16 lg:p-24">
