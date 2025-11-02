@@ -69,6 +69,42 @@ const HeroSection = () => {
             "
           />
         </path>
+        
+        {/* Second Layer - Wave 1 with Lower Opacity */}
+        <path
+          d="M0,5 L42,5 Q47,28 52,53 T62,95 L0,95 Z"
+          fill="hsl(var(--background))"
+          opacity="0.2"
+        >
+          <animate
+            attributeName="d"
+            dur="12s"
+            repeatCount="indefinite"
+            values="
+              M0,5 L42,5 Q47,28 52,53 T62,95 L0,95 Z;
+              M0,5 L45,5 Q50,33 55,58 T65,95 L0,95 Z;
+              M0,5 L42,5 Q47,28 52,53 T62,95 L0,95 Z
+            "
+          />
+        </path>
+        
+        {/* Second Layer - Wave 2 with Lower Opacity */}
+        <path
+          d="M0,8 L38,8 Q43,35 48,60 T58,92 L0,92 Z"
+          fill="hsl(var(--background))"
+          opacity="0.15"
+        >
+          <animate
+            attributeName="d"
+            dur="9s"
+            repeatCount="indefinite"
+            values="
+              M0,8 L38,8 Q43,35 48,60 T58,92 L0,92 Z;
+              M0,8 L40,8 Q45,30 50,55 T60,92 L0,92 Z;
+              M0,8 L38,8 Q43,35 48,60 T58,92 L0,92 Z
+            "
+          />
+        </path>
       </svg>
 
       {/* Content */}
