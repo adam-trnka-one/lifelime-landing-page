@@ -179,40 +179,55 @@ const HeroSection = () => {
       />
 
       {/* Animated Background Shapes - Mobile Only */}
-      <div className="lg:hidden absolute inset-0 overflow-hidden">
+      <div className="lg:hidden absolute inset-0 overflow-hidden pointer-events-none">
         {/* Floating blob 1 */}
         <div 
-          className="absolute w-72 h-72 rounded-full blur-3xl opacity-30 animate-pulse"
+          className="absolute w-64 h-64 rounded-full blur-2xl opacity-40"
           style={{
-            background: 'radial-gradient(circle, #835BD9 0%, transparent 70%)',
-            top: '10%',
-            left: '-10%',
-            animationDuration: '4s'
+            background: 'radial-gradient(circle, #9B6FFF 0%, transparent 60%)',
+            top: '15%',
+            left: '-20%',
+            animation: 'float1 8s ease-in-out infinite'
           }}
         />
         
         {/* Floating blob 2 */}
         <div 
-          className="absolute w-96 h-96 rounded-full blur-3xl opacity-20"
+          className="absolute w-80 h-80 rounded-full blur-3xl opacity-30"
           style={{
-            background: 'radial-gradient(circle, #6C2AFD 0%, transparent 70%)',
-            bottom: '20%',
-            right: '-15%',
-            animation: 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite'
+            background: 'radial-gradient(circle, #7C3FED 0%, transparent 60%)',
+            bottom: '10%',
+            right: '-25%',
+            animation: 'float2 10s ease-in-out infinite'
           }}
         />
         
         {/* Floating blob 3 */}
         <div 
-          className="absolute w-64 h-64 rounded-full blur-2xl opacity-25"
+          className="absolute w-56 h-56 rounded-full blur-xl opacity-50"
           style={{
-            background: 'radial-gradient(circle, #9B6FFF 0%, transparent 70%)',
-            top: '50%',
-            right: '10%',
-            animation: 'pulse 5s cubic-bezier(0.4, 0, 0.6, 1) infinite'
+            background: 'radial-gradient(circle, #A78BFA 0%, transparent 60%)',
+            top: '45%',
+            right: '5%',
+            animation: 'float3 7s ease-in-out infinite'
           }}
         />
       </div>
+
+      <style>{`
+        @keyframes float1 {
+          0%, 100% { transform: translate(0, 0) scale(1); }
+          50% { transform: translate(30px, -20px) scale(1.1); }
+        }
+        @keyframes float2 {
+          0%, 100% { transform: translate(0, 0) scale(1); }
+          50% { transform: translate(-40px, 30px) scale(1.15); }
+        }
+        @keyframes float3 {
+          0%, 100% { transform: translate(0, 0) scale(1); }
+          50% { transform: translate(-20px, -30px) scale(1.05); }
+        }
+      `}</style>
       
       {/* White Section with Organic Wave Divider - Desktop Only */}
       <svg
