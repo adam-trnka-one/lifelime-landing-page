@@ -250,13 +250,23 @@ const HeroSection = () => {
         </div>
       </nav>
 
-      {/* Gradient Background - Full Width */}
-      <div 
-        className="absolute inset-0"
-        style={{
-          background: 'linear-gradient(135deg, #6C2AFD 0%, #835BD9 100%)'
-        }}
-      />
+      {/* Split Background - 1/3 left, 2/3 right */}
+      <div className="absolute inset-0 flex">
+        {/* Left 1/3 - Darker gradient */}
+        <div 
+          className="w-1/3"
+          style={{
+            background: 'linear-gradient(135deg, #5A1FD8 0%, #6C2AFD 100%)'
+          }}
+        />
+        {/* Right 2/3 - Lighter gradient */}
+        <div 
+          className="w-2/3"
+          style={{
+            background: 'linear-gradient(135deg, #6C2AFD 0%, #835BD9 100%)'
+          }}
+        />
+      </div>
 
       {/* Animated Background Shapes - Mobile Only */}
       <div className="lg:hidden absolute inset-0 overflow-hidden pointer-events-none">
