@@ -5,7 +5,12 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { ChevronDown, Languages } from "lucide-react";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import { ChevronDown, Languages, Menu } from "lucide-react";
 import { useState } from "react";
 import logo from "@/assets/logo_lifelime_l.svg";
 
@@ -74,39 +79,95 @@ const HeroSection = () => {
   return (
     <div className="h-screen relative overflow-hidden">
       {/* Navigation */}
-      <nav className="relative z-20 flex items-center justify-end gap-2 p-6 md:p-8">
-        <a 
-          href="#waitlist" 
-          className="text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 font-medium px-4 py-2 rounded-lg"
-        >
-          {t.waitlist}
-        </a>
-        <a 
-          href="#about" 
-          className="text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 font-medium px-4 py-2 rounded-lg"
-        >
-          {t.about}
-        </a>
-        
-        {/* Language Selector */}
-        <DropdownMenu>
-          <DropdownMenuTrigger className="flex items-center gap-2 text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 font-medium outline-none px-4 py-2 rounded-lg">
-            <Languages size={18} />
-            {selectedLanguage}
-            <ChevronDown size={16} />
-          </DropdownMenuTrigger>
-          <DropdownMenuContent className="bg-white/95 backdrop-blur-sm">
-            {languages.map((lang) => (
-              <DropdownMenuItem
-                key={lang.code}
-                onClick={() => setSelectedLanguage(lang.code)}
-                className={selectedLanguage === lang.code ? "bg-primary/10" : ""}
-              >
-                {lang.code} - {lang.name}
-              </DropdownMenuItem>
-            ))}
-          </DropdownMenuContent>
-        </DropdownMenu>
+      <nav className="relative z-20 flex items-center justify-between p-4 md:p-6 lg:p-8">
+        {/* Mobile: Logo + Hamburger */}
+        <div className="flex items-center justify-between w-full lg:w-auto">
+          {/* Logo - visible on mobile */}
+          <img 
+            src={logo} 
+            alt="LifeLime Logo" 
+            className="h-8 w-auto lg:hidden" 
+          />
+          
+          {/* Mobile Hamburger Menu */}
+          <Sheet>
+            <SheetTrigger className="lg:hidden text-white p-2">
+              <Menu size={24} />
+            </SheetTrigger>
+            <SheetContent side="right" className="bg-white/95 backdrop-blur-sm">
+              <div className="flex flex-col gap-4 mt-8">
+                <a 
+                  href="#waitlist" 
+                  className="text-foreground hover:text-primary transition-colors font-medium px-4 py-2"
+                >
+                  {t.waitlist}
+                </a>
+                <a 
+                  href="#about" 
+                  className="text-foreground hover:text-primary transition-colors font-medium px-4 py-2"
+                >
+                  {t.about}
+                </a>
+                
+                {/* Language Selector in Mobile Menu */}
+                <DropdownMenu>
+                  <DropdownMenuTrigger className="flex items-center gap-2 text-foreground hover:text-primary transition-colors font-medium outline-none px-4 py-2">
+                    <Languages size={18} />
+                    {selectedLanguage}
+                    <ChevronDown size={16} />
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent className="bg-white/95 backdrop-blur-sm">
+                    {languages.map((lang) => (
+                      <DropdownMenuItem
+                        key={lang.code}
+                        onClick={() => setSelectedLanguage(lang.code)}
+                        className={selectedLanguage === lang.code ? "bg-primary/10" : ""}
+                      >
+                        {lang.code} - {lang.name}
+                      </DropdownMenuItem>
+                    ))}
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              </div>
+            </SheetContent>
+          </Sheet>
+        </div>
+
+        {/* Desktop Navigation - hidden on mobile */}
+        <div className="hidden lg:flex items-center justify-end gap-2 w-full">
+          <a 
+            href="#waitlist" 
+            className="text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 font-medium px-4 py-2 rounded-lg"
+          >
+            {t.waitlist}
+          </a>
+          <a 
+            href="#about" 
+            className="text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 font-medium px-4 py-2 rounded-lg"
+          >
+            {t.about}
+          </a>
+          
+          {/* Language Selector */}
+          <DropdownMenu>
+            <DropdownMenuTrigger className="flex items-center gap-2 text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 font-medium outline-none px-4 py-2 rounded-lg">
+              <Languages size={18} />
+              {selectedLanguage}
+              <ChevronDown size={16} />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="bg-white/95 backdrop-blur-sm">
+              {languages.map((lang) => (
+                <DropdownMenuItem
+                  key={lang.code}
+                  onClick={() => setSelectedLanguage(lang.code)}
+                  className={selectedLanguage === lang.code ? "bg-primary/10" : ""}
+                >
+                  {lang.code} - {lang.name}
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
       </nav>
 
       {/* Gradient Background - Full Width */}
