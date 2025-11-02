@@ -45,7 +45,7 @@ const HeroSection = () => {
     EN: {
       waitlist: "Waitlist",
       about: "About",
-      title: "Start preserving your true legacy",
+      title: "Preserving your true legacy",
       description: "Your legacy isn't written someday - it's built today. Lifeli.me preserve the moments, thoughts, and lessons that make your story worth remembering.",
       emailPlaceholder: "Enter your email",
       joinButton: "Join Waitlist",
