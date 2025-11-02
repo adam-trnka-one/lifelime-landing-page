@@ -53,7 +53,7 @@ const HeroSection = () => {
     CZ: {
       waitlist: "Čekací listina",
       about: "O nás",
-      title: "Začněte uchovávat své pravé dědictví",
+      title: "Uchovávání vašeho pravého dědictví",
       description: "Vaše dědictví není napsáno někdy - je budováno dnes. Lifeli.me uchovává okamžiky, myšlenky a lekce, které dělají váš příběh hodný zapamatování.",
       emailPlaceholder: "Zadejte svůj email",
       joinButton: "Připojit se k čekací listině",
@@ -61,7 +61,7 @@ const HeroSection = () => {
     DE: {
       waitlist: "Warteliste",
       about: "Über uns",
-      title: "Beginnen Sie, Ihr wahres Erbe zu bewahren",
+      title: "Bewahrung Ihres wahren Erbes",
       description: "Ihr Vermächtnis wird nicht irgendwann geschrieben - es wird heute aufgebaut. Lifeli.me bewahrt die Momente, Gedanken und Lektionen, die Ihre Geschichte erinnernswert machen.",
       emailPlaceholder: "Geben Sie Ihre E-Mail ein",
       joinButton: "Der Warteliste beitreten",
@@ -69,7 +69,7 @@ const HeroSection = () => {
     ES: {
       waitlist: "Lista de espera",
       about: "Acerca de",
-      title: "Comienza a preservar tu verdadero legado",
+      title: "Preservando tu verdadero legado",
       description: "Tu legado no se escribe algún día - se construye hoy. Lifeli.me preserva los momentos, pensamientos y lecciones que hacen que tu historia valga la pena recordar.",
       emailPlaceholder: "Ingresa tu correo electrónico",
       joinButton: "Unirse a la lista de espera",
@@ -77,7 +77,7 @@ const HeroSection = () => {
     PL: {
       waitlist: "Lista oczekujących",
       about: "O nas",
-      title: "Zacznij zachowywać swoje prawdziwe dziedzictwo",
+      title: "Zachowywanie twojego prawdziwego dziedzictwa",
       description: "Twoje dziedzictwo nie jest pisane kiedyś - jest budowane dzisiaj. Lifeli.me zachowuje chwile, myśli i lekcje, które sprawiają, że Twoja historia jest warta zapamiętania.",
       emailPlaceholder: "Wprowadź swój email",
       joinButton: "Dołącz do listy oczekujących",
