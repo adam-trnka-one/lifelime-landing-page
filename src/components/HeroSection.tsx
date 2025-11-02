@@ -79,7 +79,7 @@ const HeroSection = () => {
   return (
     <div className="h-screen relative overflow-hidden">
       {/* Navigation */}
-      <nav className="relative z-20 flex items-center justify-between p-4 md:p-6 lg:p-8">
+      <nav className="relative z-20 flex items-center justify-between p-4 md:p-6 lg:p-8 bg-white lg:bg-transparent">
         {/* Mobile: Logo + Hamburger */}
         <div className="flex items-center justify-between w-full lg:w-auto">
           {/* Logo - visible on mobile */}
@@ -91,7 +91,7 @@ const HeroSection = () => {
           
           {/* Mobile Hamburger Menu */}
           <Sheet>
-            <SheetTrigger className="lg:hidden text-white p-2">
+            <SheetTrigger className="lg:hidden text-primary p-2">
               <Menu size={24} />
             </SheetTrigger>
             <SheetContent side="right" className="bg-white/10 backdrop-blur-2xl border-white/20" style={{ boxShadow: 'inset 0 1px 0 0 rgba(255, 255, 255, 0.1)' }}>
