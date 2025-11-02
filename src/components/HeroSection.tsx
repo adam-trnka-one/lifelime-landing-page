@@ -394,27 +394,28 @@ const HeroSection = () => {
         </div>
 
         {/* Waitlist Section - Right */}
-        {currentView === 'waitlist' ? (
-          <div className="max-w-md lg:max-w-xl w-full mx-auto lg:mx-0 lg:-mt-[10vh] lg:mr-[5%]">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 sm:mb-8 text-white drop-shadow-lg">{t.title}</h2>
-            <p className="text-white/90 mb-8 sm:mb-10 leading-relaxed text-lg sm:text-xl drop-shadow-md">
-              {t.description}
-            </p>
-            <form className="space-y-5 sm:space-y-6" onSubmit={(e) => e.preventDefault()}>
-              <input
-                type="email"
-                placeholder={t.emailPlaceholder}
-                className="w-full px-5 sm:px-6 py-4 sm:py-5 text-base sm:text-lg rounded-xl bg-white/95 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-white shadow-xl backdrop-blur-sm border border-white/20"
-                required
-              />
-              <Button className="w-full bg-white text-primary hover:bg-white/90 text-lg sm:text-xl font-semibold shadow-2xl hover:shadow-white/20 transition-all duration-300" size="lg">
-                {t.joinButton}
-              </Button>
-            </form>
-          </div>
-        ) : (
-          <div className={`fixed inset-0 flex items-center justify-center p-4 sm:p-6 lg:p-8 z-30 bg-black/60 backdrop-blur-sm transition-opacity duration-300 ${isClosing ? 'opacity-0' : 'opacity-100'}`}>
-            <div className={`max-w-6xl w-full bg-white/10 backdrop-blur-2xl rounded-3xl p-8 sm:p-10 lg:p-14 shadow-2xl overflow-y-auto max-h-[90vh] scrollbar-hide relative transition-all duration-300 ${isClosing ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}`} style={{ boxShadow: 'inset 0 1px 0 0 rgba(255, 255, 255, 0.1), 0 20px 60px -15px rgba(0, 0, 0, 0.3)' }}>
+        <div className="max-w-md lg:max-w-xl w-full mx-auto lg:mx-0 lg:-mt-[10vh] lg:mr-[5%]">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 sm:mb-8 text-white drop-shadow-lg">{t.title}</h2>
+          <p className="text-white/90 mb-8 sm:mb-10 leading-relaxed text-lg sm:text-xl drop-shadow-md">
+            {t.description}
+          </p>
+          <form className="space-y-5 sm:space-y-6" onSubmit={(e) => e.preventDefault()}>
+            <input
+              type="email"
+              placeholder={t.emailPlaceholder}
+              className="w-full px-5 sm:px-6 py-4 sm:py-5 text-base sm:text-lg rounded-xl bg-white/95 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-white shadow-xl backdrop-blur-sm border border-white/20"
+              required
+            />
+            <Button className="w-full bg-white text-primary hover:bg-white/90 text-lg sm:text-xl font-semibold shadow-2xl hover:shadow-white/20 transition-all duration-300" size="lg">
+              {t.joinButton}
+            </Button>
+          </form>
+        </div>
+
+        {/* About Modal */}
+        {currentView === 'about' && (
+          <div className={`fixed inset-0 flex items-center justify-center p-4 sm:p-6 lg:p-8 z-30 bg-black/60 backdrop-blur-sm transition-opacity duration-300 ${isClosing ? 'opacity-0' : 'opacity-100 animate-fade-in'}`}>
+            <div className={`max-w-6xl w-full bg-white/10 backdrop-blur-2xl rounded-3xl p-8 sm:p-10 lg:p-14 shadow-2xl overflow-y-auto max-h-[90vh] scrollbar-hide relative transition-all duration-300 ${isClosing ? 'opacity-0 scale-95' : 'opacity-100 scale-100 animate-scale-in'}`} style={{ boxShadow: 'inset 0 1px 0 0 rgba(255, 255, 255, 0.1), 0 20px 60px -15px rgba(0, 0, 0, 0.3)' }}>
               {/* Close Button */}
               <button
                 onClick={handleCloseAbout}
