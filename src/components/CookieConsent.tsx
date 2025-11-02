@@ -52,7 +52,7 @@ const CookieConsent = () => {
   }
 
   return (
-    <div className="fixed bottom-4 left-4 right-4 md:left-auto md:right-4 md:max-w-sm z-50 animate-in slide-in-from-bottom-5 md:mb-0 mb-16">
+    <div className="fixed bottom-4 left-4 md:max-w-sm z-50 animate-in slide-in-from-bottom-5">
       <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl border border-gray-200 overflow-hidden">
         {/* Compact View */}
         {!isExpanded && (
