@@ -15,6 +15,7 @@ import { useState, useEffect } from "react";
 import { z } from "zod";
 import logo from "@/assets/logo_lifelime_l.svg";
 import { useWaitlistSubmit } from "@/hooks/useWaitlistSubmit";
+import { useToast } from "@/hooks/use-toast";
 
 // Email validation schema
 const emailSchema = z.object({
@@ -26,6 +27,7 @@ const emailSchema = z.object({
 });
 
 const HeroSection = () => {
+  const { toast } = useToast();
   const getBrowserLanguage = () => {
     const browserLang = navigator.language.split('-')[0].toUpperCase();
     const supportedLangs = ['CZ', 'EN', 'DE', 'ES', 'PL'];
@@ -493,21 +495,35 @@ const HeroSection = () => {
           </p>
           <form className="space-y-5 sm:space-y-6" onSubmit={(e) => {
             e.preventDefault();
+            console.log("Form submitted, email value:", email);
             
             // Validate email
             const validation = emailSchema.safeParse({ email });
+            console.log("Validation result:", validation);
             
             if (!validation.success) {
-              setEmailError(validation.error.errors[0].message);
+              const errorMessage = validation.error.errors[0].message;
+              console.log("Validation error:", errorMessage);
+              setEmailError(errorMessage);
+              toast({
+                title: "Invalid email",
+                description: errorMessage,
+                variant: "destructive",
+              });
               return;
             }
             
             setEmailError("");
+            console.log("Submitting to database...");
             
             // Submit to database
             submitWaitlist({ email }, {
               onSuccess: () => {
+                console.log("Submission successful!");
                 setEmail("");
+              },
+              onError: (error) => {
+                console.error("Submission error:", error);
               }
             });
           }}>
@@ -517,14 +533,18 @@ const HeroSection = () => {
                 placeholder={t.emailPlaceholder}
                 value={email}
                 onChange={(e) => {
+                  console.log("Email input changed:", e.target.value);
                   setEmail(e.target.value);
                   setEmailError("");
                 }}
                 className="w-full px-5 sm:px-6 py-4 sm:py-5 text-base sm:text-lg rounded-xl bg-white/95 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-white shadow-xl backdrop-blur-sm border border-white/20"
                 disabled={isPending}
+                autoComplete="email"
               />
               {emailError && (
-                <p className="text-red-200 text-sm px-2">{emailError}</p>
+                <p className="text-red-100 bg-red-500/20 text-sm px-3 py-2 rounded-lg backdrop-blur-sm font-medium">
+                  {emailError}
+                </p>
               )}
             </div>
             <Button 
