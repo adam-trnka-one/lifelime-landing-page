@@ -384,7 +384,7 @@ const HeroSection = () => {
           />
         </div>
 
-        {/* Waitlist Section - Right */}
+        {/* Content Section - Right */}
         {currentView === 'waitlist' ? (
           <div className="max-w-md lg:max-w-xl w-full mx-auto lg:mx-0 bg-white/10 backdrop-blur-2xl rounded-2xl p-6 sm:p-8 md:p-10 lg:p-12 shadow-2xl lg:-mt-[10vh] lg:mr-[10%]" style={{ boxShadow: 'inset 0 1px 0 0 rgba(255, 255, 255, 0.1), 0 20px 60px -15px rgba(0, 0, 0, 0.3)' }}>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 text-white">{t.title}</h2>
@@ -404,12 +404,14 @@ const HeroSection = () => {
             </form>
           </div>
         ) : (
-          <div className="max-w-4xl w-full mx-auto lg:mx-0 bg-white/10 backdrop-blur-2xl rounded-2xl p-6 sm:p-8 md:p-10 lg:p-12 shadow-2xl lg:-mt-[10vh] lg:mr-[10%] overflow-y-auto max-h-[80vh]" style={{ boxShadow: 'inset 0 1px 0 0 rgba(255, 255, 255, 0.1), 0 20px 60px -15px rgba(0, 0, 0, 0.3)' }}>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 text-white">A Personal Promise</h2>
-            <p className="text-white/90 mb-4 text-sm sm:text-base italic">From Adam Trnka, Founder of lifeli.me</p>
+          <div className="max-w-2xl lg:max-w-3xl w-full mx-auto lg:mx-0 lg:mr-[5%] space-y-6">
+            <div className="space-y-3">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">A Personal Promise</h2>
+              <p className="text-white/90 text-base sm:text-lg italic">From Adam Trnka, Founder of lifeli.me</p>
+            </div>
             
             {/* YouTube Video */}
-            <div className="relative w-full aspect-video mb-8 rounded-lg overflow-hidden">
+            <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl">
               <iframe
                 className="absolute inset-0 w-full h-full"
                 src="https://www.youtube.com/embed/_HWRGKfSq3A"
@@ -419,14 +421,14 @@ const HeroSection = () => {
               />
             </div>
 
-            <div className="space-y-4 text-white/90 leading-relaxed text-sm sm:text-base">
+            <div className="space-y-4 text-white/90 leading-relaxed text-sm sm:text-base lg:text-lg max-h-[50vh] lg:max-h-none overflow-y-auto pr-2">
               <p>I grew up with my mom and grandma, trying to piece together who I was from stories, photos in boxes. I'm a father now and everything changed when my son was born.</p>
               
               <p>I found myself filming little videos just for him. Not for social media. Not for likes. For the day he turns 15… 18… 30. I wanted him to know who I really was, how I laughed, what I believed, what mattered to me.</p>
               
               <p>But these pieces of my life and his were scattered everywhere. On phones. Clouds. Old drives. Nothing felt lasting. Nothing felt safe. So I built lifeli.me.</p>
               
-              <p className="font-semibold text-white">lifeli.me is my answer to a simple but powerful question:<br />What do we leave behind - and will it still matter 30... 50... 100... years from now?</p>
+              <p className="font-semibold text-white text-base sm:text-lg lg:text-xl">lifeli.me is my answer to a simple but powerful question: What do we leave behind - and will it still matter 30... 50... 100... years from now?</p>
               
               <p>It's a place to craft your legacy, one memory at a time. It's built for families—for the quiet, important moments. Births. First steps. Last hugs.</p>
               
@@ -438,7 +440,7 @@ const HeroSection = () => {
               
               <p>That's why I'm building lifeli.me. Not as a product. But as a promise.</p>
               
-              <p className="font-semibold text-white mt-6">Adam Trnka<br />Founder of lifeli.me</p>
+              <p className="font-bold text-white mt-6 text-base sm:text-lg">Adam Trnka<br />Founder of lifeli.me</p>
             </div>
           </div>
         )}
