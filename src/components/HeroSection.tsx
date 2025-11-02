@@ -1,9 +1,63 @@
 import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { ChevronDown, Languages } from "lucide-react";
+import { useState } from "react";
 import logo from "@/assets/logo_lifelime_l.svg";
 
 const HeroSection = () => {
+  const [selectedLanguage, setSelectedLanguage] = useState("EN");
+  
+  const languages = [
+    { code: "CZ", name: "Czech" },
+    { code: "EN", name: "English" },
+    { code: "DE", name: "German" },
+    { code: "ES", name: "Spanish" },
+    { code: "PL", name: "Polish" },
+  ];
+
   return (
     <div className="min-h-screen relative overflow-hidden">
+      {/* Navigation */}
+      <nav className="relative z-20 flex items-center justify-end gap-8 p-6 md:p-8">
+        <a 
+          href="#waitlist" 
+          className="text-white/90 hover:text-white transition-colors font-medium"
+        >
+          Waitlist
+        </a>
+        <a 
+          href="#about" 
+          className="text-white/90 hover:text-white transition-colors font-medium"
+        >
+          About
+        </a>
+        
+        {/* Language Selector */}
+        <DropdownMenu>
+          <DropdownMenuTrigger className="flex items-center gap-2 text-white/90 hover:text-white transition-colors font-medium outline-none">
+            <Languages size={18} />
+            {selectedLanguage}
+            <ChevronDown size={16} />
+          </DropdownMenuTrigger>
+          <DropdownMenuContent className="bg-white/95 backdrop-blur-sm">
+            {languages.map((lang) => (
+              <DropdownMenuItem
+                key={lang.code}
+                onClick={() => setSelectedLanguage(lang.code)}
+                className={selectedLanguage === lang.code ? "bg-primary/10" : ""}
+              >
+                {lang.code} - {lang.name}
+              </DropdownMenuItem>
+            ))}
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </nav>
+
       {/* Gradient Background - Full Width */}
       <div 
         className="absolute inset-0"
