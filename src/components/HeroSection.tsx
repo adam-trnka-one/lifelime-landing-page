@@ -22,6 +22,7 @@ const HeroSection = () => {
   };
 
   const [selectedLanguage, setSelectedLanguage] = useState(getBrowserLanguage());
+  const [currentView, setCurrentView] = useState<'waitlist' | 'about'>('waitlist');
   
   const languages = [
     { code: "CZ", name: "Czech" },
@@ -98,12 +99,14 @@ const HeroSection = () => {
               <div className="flex flex-col gap-4 mt-8">
                 <a 
                   href="#waitlist" 
+                  onClick={(e) => { e.preventDefault(); setCurrentView('waitlist'); }}
                   className="text-gray-900 hover:text-primary transition-colors font-semibold px-4 py-2"
                 >
                   {t.waitlist}
                 </a>
                 <a 
                   href="#about" 
+                  onClick={(e) => { e.preventDefault(); setCurrentView('about'); }}
                   className="text-gray-900 hover:text-primary transition-colors font-semibold px-4 py-2"
                 >
                   {t.about}
@@ -137,12 +140,14 @@ const HeroSection = () => {
         <div className="hidden lg:flex items-center justify-end gap-2 w-full">
           <a 
             href="#waitlist" 
+            onClick={(e) => { e.preventDefault(); setCurrentView('waitlist'); }}
             className="text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 font-medium px-4 py-2 rounded-lg"
           >
             {t.waitlist}
           </a>
           <a 
             href="#about" 
+            onClick={(e) => { e.preventDefault(); setCurrentView('about'); }}
             className="text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 font-medium px-4 py-2 rounded-lg"
           >
             {t.about}
@@ -380,23 +385,63 @@ const HeroSection = () => {
         </div>
 
         {/* Waitlist Section - Right */}
-        <div className="max-w-md lg:max-w-xl w-full mx-auto lg:mx-0 bg-white/10 backdrop-blur-2xl rounded-2xl p-6 sm:p-8 md:p-10 lg:p-12 shadow-2xl lg:-mt-[10vh] lg:mr-[10%]" style={{ boxShadow: 'inset 0 1px 0 0 rgba(255, 255, 255, 0.1), 0 20px 60px -15px rgba(0, 0, 0, 0.3)' }}>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 text-white">{t.title}</h2>
-          <p className="text-white/80 mb-6 sm:mb-8 leading-relaxed text-base sm:text-lg">
-            {t.description}
-          </p>
-          <form className="space-y-4 sm:space-y-5" onSubmit={(e) => e.preventDefault()}>
-            <input
-              type="email"
-              placeholder={t.emailPlaceholder}
-              className="w-full px-4 sm:px-5 py-3 sm:py-4 text-base sm:text-lg rounded-lg bg-white/20 text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-white/50 border-none"
-              required
-            />
-            <Button className="w-full bg-white text-primary hover:bg-white/90 text-base sm:text-lg" size="lg">
-              {t.joinButton}
-            </Button>
-          </form>
-        </div>
+        {currentView === 'waitlist' ? (
+          <div className="max-w-md lg:max-w-xl w-full mx-auto lg:mx-0 bg-white/10 backdrop-blur-2xl rounded-2xl p-6 sm:p-8 md:p-10 lg:p-12 shadow-2xl lg:-mt-[10vh] lg:mr-[10%]" style={{ boxShadow: 'inset 0 1px 0 0 rgba(255, 255, 255, 0.1), 0 20px 60px -15px rgba(0, 0, 0, 0.3)' }}>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 text-white">{t.title}</h2>
+            <p className="text-white/80 mb-6 sm:mb-8 leading-relaxed text-base sm:text-lg">
+              {t.description}
+            </p>
+            <form className="space-y-4 sm:space-y-5" onSubmit={(e) => e.preventDefault()}>
+              <input
+                type="email"
+                placeholder={t.emailPlaceholder}
+                className="w-full px-4 sm:px-5 py-3 sm:py-4 text-base sm:text-lg rounded-lg bg-white/20 text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-white/50 border-none"
+                required
+              />
+              <Button className="w-full bg-white text-primary hover:bg-white/90 text-base sm:text-lg" size="lg">
+                {t.joinButton}
+              </Button>
+            </form>
+          </div>
+        ) : (
+          <div className="max-w-4xl w-full mx-auto lg:mx-0 bg-white/10 backdrop-blur-2xl rounded-2xl p-6 sm:p-8 md:p-10 lg:p-12 shadow-2xl lg:-mt-[10vh] lg:mr-[10%] overflow-y-auto max-h-[80vh]" style={{ boxShadow: 'inset 0 1px 0 0 rgba(255, 255, 255, 0.1), 0 20px 60px -15px rgba(0, 0, 0, 0.3)' }}>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 text-white">A Personal Promise</h2>
+            <p className="text-white/90 mb-4 text-sm sm:text-base italic">From Adam Trnka, Founder of lifeli.me</p>
+            
+            {/* YouTube Video */}
+            <div className="relative w-full aspect-video mb-8 rounded-lg overflow-hidden">
+              <iframe
+                className="absolute inset-0 w-full h-full"
+                src="https://www.youtube.com/embed/_HWRGKfSq3A"
+                title="lifeli.me Story"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+
+            <div className="space-y-4 text-white/90 leading-relaxed text-sm sm:text-base">
+              <p>I grew up with my mom and grandma, trying to piece together who I was from stories, photos in boxes. I'm a father now and everything changed when my son was born.</p>
+              
+              <p>I found myself filming little videos just for him. Not for social media. Not for likes. For the day he turns 15… 18… 30. I wanted him to know who I really was, how I laughed, what I believed, what mattered to me.</p>
+              
+              <p>But these pieces of my life and his were scattered everywhere. On phones. Clouds. Old drives. Nothing felt lasting. Nothing felt safe. So I built lifeli.me.</p>
+              
+              <p className="font-semibold text-white">lifeli.me is my answer to a simple but powerful question:<br />What do we leave behind - and will it still matter 30... 50... 100... years from now?</p>
+              
+              <p>It's a place to craft your legacy, one memory at a time. It's built for families—for the quiet, important moments. Births. First steps. Last hugs.</p>
+              
+              <p>Photos, videos, letters to your future self. Milestones. Your treasures. All organized, preserved, and portable for decades—like a Svalbard Global Seed Vault, only for your memories.</p>
+              
+              <p>This isn't about going viral. It's about being remembered for who you are and remembering who we are.</p>
+              
+              <p>I believe every person deserves a place to hold their story. Not just for today, but for generations to come.</p>
+              
+              <p>That's why I'm building lifeli.me. Not as a product. But as a promise.</p>
+              
+              <p className="font-semibold text-white mt-6">Adam Trnka<br />Founder of lifeli.me</p>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
