@@ -30,7 +30,7 @@ const HeroSection = () => {
     EN: {
       waitlist: "Waitlist",
       about: "About",
-      title: "Start preserving your truly legacy",
+      title: "Start preserving your true legacy",
       description: "Your legacy isn't written someday - it's built today. Lifeli.me preserve the moments, thoughts, and lessons that make your story worth remembering.",
       emailPlaceholder: "Enter your email",
       joinButton: "Join Waitlist",
@@ -38,7 +38,7 @@ const HeroSection = () => {
     CZ: {
       waitlist: "Čekací listina",
       about: "O nás",
-      title: "Začněte uchovávat své skutečné dědictví",
+      title: "Začněte uchovávat své pravé dědictví",
       description: "Vaše dědictví není napsáno někdy - je budováno dnes. Lifeli.me uchovává okamžiky, myšlenky a lekce, které dělají váš příběh hodný zapamatování.",
       emailPlaceholder: "Zadejte svůj email",
       joinButton: "Připojit se k čekací listině",
@@ -268,19 +268,19 @@ const HeroSection = () => {
         </div>
 
         {/* Waitlist Section - Right */}
-        <div className="max-w-md w-full bg-white/10 backdrop-blur-2xl rounded-2xl p-8 shadow-2xl -mt-[10vh]" style={{ boxShadow: 'inset 0 1px 0 0 rgba(255, 255, 255, 0.1), 0 20px 60px -15px rgba(0, 0, 0, 0.3)' }}>
-          <h2 className="text-3xl font-bold mb-4 text-white">{t.title}</h2>
-          <p className="text-white/80 mb-6 leading-relaxed">
+        <div className="max-w-xl w-full bg-white/10 backdrop-blur-2xl rounded-2xl p-10 shadow-2xl -mt-[10vh]" style={{ boxShadow: 'inset 0 1px 0 0 rgba(255, 255, 255, 0.1), 0 20px 60px -15px rgba(0, 0, 0, 0.3)' }}>
+          <h2 className="text-4xl font-bold mb-6 text-white">{t.title}</h2>
+          <p className="text-white/80 mb-8 leading-relaxed text-lg">
             {t.description}
           </p>
-          <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+          <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
             <input
               type="email"
               placeholder={t.emailPlaceholder}
-              className="w-full px-4 py-3 rounded-lg bg-white/20 text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-white/50 border-none"
+              className="w-full px-5 py-4 text-lg rounded-lg bg-white/20 text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-white/50 border-none"
               required
             />
-            <Button className="w-full bg-white text-primary hover:bg-white/90" size="lg">
+            <Button className="w-full bg-white text-primary hover:bg-white/90 text-lg" size="lg">
               {t.joinButton}
             </Button>
           </form>
