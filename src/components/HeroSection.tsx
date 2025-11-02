@@ -380,7 +380,7 @@ const HeroSection = () => {
         </div>
 
         {/* Waitlist Section - Right */}
-        <div className="max-w-md lg:max-w-xl w-full bg-white/10 backdrop-blur-2xl rounded-2xl p-6 sm:p-8 md:p-10 lg:p-12 shadow-2xl lg:-mt-[10vh] lg:mr-[10%]" style={{ boxShadow: 'inset 0 1px 0 0 rgba(255, 255, 255, 0.1), 0 20px 60px -15px rgba(0, 0, 0, 0.3)' }}>
+        <div className="max-w-md lg:max-w-xl w-full mx-auto lg:mx-0 bg-white/10 backdrop-blur-2xl rounded-2xl p-6 sm:p-8 md:p-10 lg:p-12 shadow-2xl lg:-mt-[10vh] lg:mr-[10%]" style={{ boxShadow: 'inset 0 1px 0 0 rgba(255, 255, 255, 0.1), 0 20px 60px -15px rgba(0, 0, 0, 0.3)' }}>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 text-white">{t.title}</h2>
           <p className="text-white/80 mb-6 sm:mb-8 leading-relaxed text-base sm:text-lg">
             {t.description}
