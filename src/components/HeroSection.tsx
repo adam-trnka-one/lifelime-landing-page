@@ -146,7 +146,7 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="relative min-h-screen flex items-center justify-start p-8 md:p-16 lg:p-24">
-        <div className="max-w-md w-full">
+        <div className="max-w-md w-full ml-[20%]">
           <img src={logo} alt="LifeLime Logo" className="w-full h-auto" />
         </div>
       </div>
