@@ -23,23 +23,23 @@ const HeroSection = () => {
   return (
     <div className="min-h-screen relative overflow-hidden">
       {/* Navigation */}
-      <nav className="relative z-20 flex items-center justify-end gap-8 p-6 md:p-8">
+      <nav className="relative z-20 flex items-center justify-end gap-2 p-6 md:p-8">
         <a 
           href="#waitlist" 
-          className="text-white/90 hover:text-white transition-colors font-medium"
+          className="text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 font-medium px-4 py-2 rounded-lg"
         >
           Waitlist
         </a>
         <a 
           href="#about" 
-          className="text-white/90 hover:text-white transition-colors font-medium"
+          className="text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 font-medium px-4 py-2 rounded-lg"
         >
           About
         </a>
         
         {/* Language Selector */}
         <DropdownMenu>
-          <DropdownMenuTrigger className="flex items-center gap-2 text-white/90 hover:text-white transition-colors font-medium outline-none">
+          <DropdownMenuTrigger className="flex items-center gap-2 text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 font-medium outline-none px-4 py-2 rounded-lg">
             <Languages size={18} />
             {selectedLanguage}
             <ChevronDown size={16} />
