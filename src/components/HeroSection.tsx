@@ -171,14 +171,11 @@ const HeroSection = () => {
       </nav>
 
       {/* Gradient Background */}
-      {/* Mobile: White area around logo (top left) with gradient for rest */}
+      {/* Mobile: Gradient from top right to bottom right */}
       <div 
         className="absolute inset-0 lg:hidden"
         style={{
-          background: `
-            radial-gradient(circle at 15% 8%, white 0%, white 120px, transparent 200px),
-            linear-gradient(135deg, #6C2AFD 0%, #835BD9 100%)
-          `
+          background: 'linear-gradient(to bottom right, #6C2AFD 0%, #835BD9 100%)'
         }}
       />
       
