@@ -94,24 +94,24 @@ const HeroSection = () => {
             <SheetTrigger className="lg:hidden text-white p-2">
               <Menu size={24} />
             </SheetTrigger>
-            <SheetContent side="right" className="bg-white/95 backdrop-blur-sm">
+            <SheetContent side="right" className="bg-white/10 backdrop-blur-2xl border-white/20" style={{ boxShadow: 'inset 0 1px 0 0 rgba(255, 255, 255, 0.1)' }}>
               <div className="flex flex-col gap-4 mt-8">
                 <a 
                   href="#waitlist" 
-                  className="text-foreground hover:text-primary transition-colors font-medium px-4 py-2"
+                  className="text-white hover:text-white/80 transition-colors font-medium px-4 py-2"
                 >
                   {t.waitlist}
                 </a>
                 <a 
                   href="#about" 
-                  className="text-foreground hover:text-primary transition-colors font-medium px-4 py-2"
+                  className="text-white hover:text-white/80 transition-colors font-medium px-4 py-2"
                 >
                   {t.about}
                 </a>
                 
                 {/* Language Selector in Mobile Menu */}
                 <DropdownMenu>
-                  <DropdownMenuTrigger className="flex items-center gap-2 text-foreground hover:text-primary transition-colors font-medium outline-none px-4 py-2">
+                  <DropdownMenuTrigger className="flex items-center gap-2 text-white hover:text-white/80 transition-colors font-medium outline-none px-4 py-2">
                     <Languages size={18} />
                     {selectedLanguage}
                     <ChevronDown size={16} />
@@ -312,8 +312,8 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="relative h-full flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-8 lg:gap-0 p-4 sm:p-6 md:p-12 lg:p-16 xl:p-24 overflow-y-auto lg:overflow-y-hidden">
-        {/* Logo Section - Left */}
-        <div className="max-w-xs sm:max-w-sm md:max-w-md w-full relative lg:-mt-[10vh] lg:ml-[10%]">
+        {/* Logo Section - Left - hidden on mobile */}
+        <div className="hidden lg:block max-w-xs sm:max-w-sm md:max-w-md w-full relative lg:-mt-[10vh] lg:ml-[10%]">
           {/* Ground spot shadow */}
           <div 
             className="absolute -bottom-16 left-1/2 -translate-x-1/2 w-full h-16 rounded-full blur-3xl"
