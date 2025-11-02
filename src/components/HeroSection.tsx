@@ -178,9 +178,9 @@ const HeroSection = () => {
         }}
       />
       
-      {/* White Section with Organic Wave Divider */}
+      {/* White Section with Organic Wave Divider - Desktop Only */}
       <svg
-        className="absolute top-0 left-0 w-full h-full pointer-events-none"
+        className="hidden lg:block absolute top-0 left-0 w-full h-full pointer-events-none"
         viewBox="0 0 100 100"
         preserveAspectRatio="none"
       >
