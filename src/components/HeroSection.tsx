@@ -145,7 +145,7 @@ const HeroSection = () => {
       </svg>
 
       {/* Content */}
-      <div className="relative min-h-screen flex items-center justify-start p-8 md:p-16 lg:p-24">
+      <div className="relative min-h-screen flex items-center justify-center p-8 md:p-16 lg:p-24">
         <div className="max-w-md w-full">
           <img src={logo} alt="LifeLime Logo" className="w-full h-auto" />
         </div>
