@@ -2,9 +2,25 @@ import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
   return (
-    <div className="min-h-screen flex flex-col md:flex-row">
-      {/* Left Side - White */}
-      <div className="w-full md:w-1/2 bg-background flex items-center justify-center p-8 md:p-16">
+    <div className="min-h-screen relative overflow-hidden">
+      {/* Gradient Background - Full Width */}
+      <div 
+        className="absolute inset-0"
+        style={{
+          background: 'linear-gradient(135deg, #6C2AFD 0%, #835BD9 100%)'
+        }}
+      />
+      
+      {/* White Section with Angled Edge */}
+      <div 
+        className="absolute inset-0 bg-background"
+        style={{
+          clipPath: 'polygon(0 0, 60% 0, 40% 100%, 0 100%)'
+        }}
+      />
+
+      {/* Content */}
+      <div className="relative min-h-screen flex items-center justify-start p-8 md:p-16 lg:p-24">
         <div className="max-w-xl w-full space-y-8">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight">
             Transform Your Digital Experience
@@ -22,14 +38,6 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-
-      {/* Right Side - Gradient */}
-      <div 
-        className="w-full md:w-1/2 min-h-[400px] md:min-h-screen"
-        style={{
-          background: 'linear-gradient(135deg, #6C2AFD 0%, #835BD9 100%)'
-        }}
-      />
     </div>
   );
 };
