@@ -91,7 +91,7 @@ export const useWaitlistSubmit = () => {
       }
 
       // Insert into database
-      const { data: insertedData, error } = await supabase
+      const { error } = await supabase
         .from("waitlist")
         .insert([
           {
@@ -108,9 +108,7 @@ export const useWaitlistSubmit = () => {
             consent_timestamp: hasConsent ? new Date().toISOString() : null,
             ...locationData,
           },
-        ])
-        .select()
-        .single();
+        ]);
 
       if (error) {
         // Check if it's a duplicate email error
@@ -120,7 +118,7 @@ export const useWaitlistSubmit = () => {
         throw error;
       }
 
-      return insertedData;
+      return true;
     },
     onSuccess: () => {
       // Remove toast notification since we're showing modal
