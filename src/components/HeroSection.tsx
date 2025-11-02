@@ -94,24 +94,24 @@ const HeroSection = () => {
             <SheetTrigger className="lg:hidden text-primary p-2">
               <Menu size={24} />
             </SheetTrigger>
-            <SheetContent side="right" className="bg-white/80 backdrop-blur-2xl border-white/20" style={{ boxShadow: 'inset 0 1px 0 0 rgba(255, 255, 255, 0.3)' }}>
+            <SheetContent side="right" className="bg-white/30 backdrop-blur-xl border-white/30" style={{ boxShadow: 'inset 0 1px 0 0 rgba(255, 255, 255, 0.5), 0 8px 32px 0 rgba(0, 0, 0, 0.1)' }}>
               <div className="flex flex-col gap-4 mt-8">
                 <a 
                   href="#waitlist" 
-                  className="text-gray-900 hover:text-primary transition-colors font-medium px-4 py-2"
+                  className="text-gray-900 hover:text-primary transition-colors font-semibold px-4 py-2"
                 >
                   {t.waitlist}
                 </a>
                 <a 
                   href="#about" 
-                  className="text-gray-900 hover:text-primary transition-colors font-medium px-4 py-2"
+                  className="text-gray-900 hover:text-primary transition-colors font-semibold px-4 py-2"
                 >
                   {t.about}
                 </a>
                 
                 {/* Language Selector in Mobile Menu */}
                 <DropdownMenu>
-                  <DropdownMenuTrigger className="flex items-center gap-2 text-gray-900 hover:text-primary transition-colors font-medium outline-none px-4 py-2">
+                  <DropdownMenuTrigger className="flex items-center gap-2 text-gray-900 hover:text-primary transition-colors font-semibold outline-none px-4 py-2">
                     <Languages size={18} />
                     {selectedLanguage}
                     <ChevronDown size={16} />
