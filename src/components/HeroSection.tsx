@@ -49,6 +49,20 @@ const HeroSection = () => {
       description: "Your legacy isn't written someday - it's built today. Lifeli.me preserve the moments, thoughts, and lessons that make your story worth remembering.",
       emailPlaceholder: "Enter your email",
       joinButton: "Join Waitlist",
+      aboutTitle: "A Personal Promise",
+      aboutSubtitle: "From Adam Trnka, Founder of lifeli.me",
+      aboutP1: "I grew up with my mom and grandma, trying to piece together who I was from stories, photos in boxes. I'm a father now and everything changed when my son was born.",
+      aboutP2: "I found myself filming little videos just for him. Not for social media. Not for likes. For the day he turns 15… 18… 30. I wanted him to know who I really was, how I laughed, what I believed, what mattered to me.",
+      aboutP3: "But these pieces of my life and his were scattered everywhere. On phones. Clouds. Old drives. Nothing felt lasting. Nothing felt safe. So I built lifeli.me.",
+      aboutP4: "lifeli.me is my answer to a simple but powerful question:",
+      aboutP4b: "What do we leave behind - and will it still matter 30... 50... 100... years from now?",
+      aboutP5: "It's a place to craft your legacy, one memory at a time. It's built for families—for the quiet, important moments. Births. First steps. Last hugs.",
+      aboutP6: "Photos, videos, letters to your future self. Milestones. Your treasures. All organized, preserved, and portable for decades—like a Svalbard Global Seed Vault, only for your memories.",
+      aboutP7: "This isn't about going viral. It's about being remembered for who you are and remembering who we are.",
+      aboutP8: "I believe every person deserves a place to hold their story. Not just for today, but for generations to come.",
+      aboutP9: "That's why I'm building lifeli.me. Not as a product. But as a promise.",
+      aboutSignature: "Adam Trnka",
+      aboutSignatureTitle: "Founder of lifeli.me",
     },
     CZ: {
       waitlist: "Čekací listina",
@@ -57,6 +71,20 @@ const HeroSection = () => {
       description: "Vaše dědictví není napsáno někdy - je budováno dnes. Lifeli.me uchovává okamžiky, myšlenky a lekce, které dělají váš příběh hodný zapamatování.",
       emailPlaceholder: "Zadejte svůj email",
       joinButton: "Připojit se k čekací listině",
+      aboutTitle: "Osobní příslib",
+      aboutSubtitle: "Od Adama Trnky, zakladatele lifeli.me",
+      aboutP1: "Vyrůstal jsem s mámou a babičkou, snažil jsem se poskládat, kdo jsem, z příběhů a fotek v krabicích. Teď jsem otec a všechno se změnilo, když se mi narodil syn.",
+      aboutP2: "Začal jsem natáčet malá videa jen pro něj. Ne pro sociální sítě. Ne pro lajky. Pro ten den, kdy mu bude 15... 18... 30. Chtěl jsem, aby věděl, kdo jsem opravdu byl, jak jsem se smál, čemu jsem věřil, na čem mi záleželo.",
+      aboutP3: "Ale tyto kousky mého života a jeho byly rozptýlené všude. V telefonech. Cloudech. Starých discích. Nic se necítilo trvalé. Nic se necítilo bezpečné. Tak jsem vytvořil lifeli.me.",
+      aboutP4: "lifeli.me je moje odpověď na jednoduchou, ale silnou otázku:",
+      aboutP4b: "Co po sobě zanecháme - a bude to ještě důležité za 30... 50... 100... let?",
+      aboutP5: "Je to místo pro vytváření vašeho dědictví, jedna vzpomínka najednou. Je to postavené pro rodiny—pro tiché, důležité okamžiky. Narození. První kroky. Poslední objetí.",
+      aboutP6: "Fotky, videa, dopisy budoucímu sobě. Milníky. Vaše poklady. Vše organizované, uchované a přenosné po desetiletí—jako globální semenná banka Svalbard, jen pro vaše vzpomínky.",
+      aboutP7: "Nejde o to stát se virálním. Jde o to být zapamatován pro to, kdo jste a zapamatovat si, kdo jsme.",
+      aboutP8: "Věřím, že každý člověk si zaslouží místo pro svůj příběh. Nejen pro dnes, ale pro budoucí generace.",
+      aboutP9: "Proto stavím lifeli.me. Ne jako produkt. Ale jako příslib.",
+      aboutSignature: "Adam Trnka",
+      aboutSignatureTitle: "Zakladatel lifeli.me",
     },
     DE: {
       waitlist: "Warteliste",
@@ -65,6 +93,20 @@ const HeroSection = () => {
       description: "Ihr Vermächtnis wird nicht irgendwann geschrieben - es wird heute aufgebaut. Lifeli.me bewahrt die Momente, Gedanken und Lektionen, die Ihre Geschichte erinnernswert machen.",
       emailPlaceholder: "Geben Sie Ihre E-Mail ein",
       joinButton: "Der Warteliste beitreten",
+      aboutTitle: "Ein persönliches Versprechen",
+      aboutSubtitle: "Von Adam Trnka, Gründer von lifeli.me",
+      aboutP1: "Ich bin bei meiner Mutter und Großmutter aufgewachsen und versuchte herauszufinden, wer ich war, aus Geschichten und Fotos in Kisten. Ich bin jetzt Vater und alles änderte sich, als mein Sohn geboren wurde.",
+      aboutP2: "Ich filmte kleine Videos nur für ihn. Nicht für soziale Medien. Nicht für Likes. Für den Tag, an dem er 15... 18... 30 wird. Ich wollte, dass er weiß, wer ich wirklich war, wie ich lachte, woran ich glaubte, was mir wichtig war.",
+      aboutP3: "Aber diese Teile meines Lebens und seines waren überall verstreut. Auf Handys. Clouds. Alten Festplatten. Nichts fühlte sich dauerhaft an. Nichts fühlte sich sicher an. Also baute ich lifeli.me.",
+      aboutP4: "lifeli.me ist meine Antwort auf eine einfache, aber kraftvolle Frage:",
+      aboutP4b: "Was hinterlassen wir - und wird es in 30... 50... 100... Jahren noch von Bedeutung sein?",
+      aboutP5: "Es ist ein Ort, um Ihr Vermächtnis zu gestalten, eine Erinnerung nach der anderen. Es ist für Familien gebaut—für die stillen, wichtigen Momente. Geburten. Erste Schritte. Letzte Umarmungen.",
+      aboutP6: "Fotos, Videos, Briefe an Ihr zukünftiges Ich. Meilensteine. Ihre Schätze. Alles organisiert, bewahrt und tragbar für Jahrzehnte—wie der globale Saatgut-Tresor von Svalbard, nur für Ihre Erinnerungen.",
+      aboutP7: "Es geht nicht darum, viral zu werden. Es geht darum, für das in Erinnerung zu bleiben, wer Sie sind, und sich daran zu erinnern, wer wir sind.",
+      aboutP8: "Ich glaube, dass jeder Mensch einen Platz verdient, um seine Geschichte zu bewahren. Nicht nur für heute, sondern für kommende Generationen.",
+      aboutP9: "Deshalb baue ich lifeli.me. Nicht als Produkt. Sondern als Versprechen.",
+      aboutSignature: "Adam Trnka",
+      aboutSignatureTitle: "Gründer von lifeli.me",
     },
     ES: {
       waitlist: "Lista de espera",
@@ -73,6 +115,20 @@ const HeroSection = () => {
       description: "Tu legado no se escribe algún día - se construye hoy. Lifeli.me preserva los momentos, pensamientos y lecciones que hacen que tu historia valga la pena recordar.",
       emailPlaceholder: "Ingresa tu correo electrónico",
       joinButton: "Unirse a la lista de espera",
+      aboutTitle: "Una Promesa Personal",
+      aboutSubtitle: "De Adam Trnka, Fundador de lifeli.me",
+      aboutP1: "Crecí con mi mamá y mi abuela, tratando de entender quién era a partir de historias y fotos en cajas. Ahora soy padre y todo cambió cuando nació mi hijo.",
+      aboutP2: "Me encontré filmando pequeños videos solo para él. No para redes sociales. No para likes. Para el día en que cumpla 15... 18... 30. Quería que supiera quién era realmente, cómo reía, en qué creía, qué me importaba.",
+      aboutP3: "Pero estas piezas de mi vida y la suya estaban dispersas por todas partes. En teléfonos. Nubes. Discos antiguos. Nada se sentía duradero. Nada se sentía seguro. Así que construí lifeli.me.",
+      aboutP4: "lifeli.me es mi respuesta a una pregunta simple pero poderosa:",
+      aboutP4b: "¿Qué dejamos atrás - y seguirá importando en 30... 50... 100... años?",
+      aboutP5: "Es un lugar para crear tu legado, un recuerdo a la vez. Está construido para familias—para los momentos tranquilos e importantes. Nacimientos. Primeros pasos. Últimos abrazos.",
+      aboutP6: "Fotos, videos, cartas a tu yo futuro. Hitos. Tus tesoros. Todo organizado, preservado y portable durante décadas—como la Bóveda Global de Semillas de Svalbard, solo que para tus recuerdos.",
+      aboutP7: "Esto no se trata de volverse viral. Se trata de ser recordado por quién eres y recordar quiénes somos.",
+      aboutP8: "Creo que cada persona merece un lugar para guardar su historia. No solo para hoy, sino para las generaciones venideras.",
+      aboutP9: "Por eso estoy construyendo lifeli.me. No como un producto. Sino como una promesa.",
+      aboutSignature: "Adam Trnka",
+      aboutSignatureTitle: "Fundador de lifeli.me",
     },
     PL: {
       waitlist: "Lista oczekujących",
@@ -81,6 +137,20 @@ const HeroSection = () => {
       description: "Twoje dziedzictwo nie jest pisane kiedyś - jest budowane dzisiaj. Lifeli.me zachowuje chwile, myśli i lekcje, które sprawiają, że Twoja historia jest warta zapamiętania.",
       emailPlaceholder: "Wprowadź swój email",
       joinButton: "Dołącz do listy oczekujących",
+      aboutTitle: "Osobista Obietnica",
+      aboutSubtitle: "Od Adama Trnki, założyciela lifeli.me",
+      aboutP1: "Dorastałem z mamą i babcią, próbując zrozumieć, kim jestem, z historii i zdjęć w pudełkach. Teraz jestem ojcem i wszystko się zmieniło, kiedy urodził się mój syn.",
+      aboutP2: "Zacząłem nagrywać małe filmy tylko dla niego. Nie dla mediów społecznościowych. Nie dla polubień. Na dzień, kiedy skończy 15... 18... 30. Chciałem, żeby wiedział, kim naprawdę byłem, jak się śmiałem, w co wierzyłem, co było dla mnie ważne.",
+      aboutP3: "Ale te kawałki mojego życia i jego były rozproszone wszędzie. W telefonach. Chmurach. Starych dyskach. Nic nie wydawało się trwałe. Nic nie wydawało się bezpieczne. Więc zbudowałem lifeli.me.",
+      aboutP4: "lifeli.me jest moją odpowiedzią na proste, ale potężne pytanie:",
+      aboutP4b: "Co zostawiamy po sobie - i czy będzie to miało znaczenie za 30... 50... 100... lat?",
+      aboutP5: "To miejsce do tworzenia twojego dziedzictwa, jedna pamięć na raz. Jest zbudowane dla rodzin—dla cichych, ważnych chwil. Narodziny. Pierwsze kroki. Ostatnie uściski.",
+      aboutP6: "Zdjęcia, filmy, listy do przyszłego siebie. Kamienie milowe. Twoje skarby. Wszystko zorganizowane, zachowane i przenośne przez dziesięciolecia—jak Globalny Skarbiec Nasion w Svalbardzie, tylko dla twoich wspomnień.",
+      aboutP7: "To nie o stawanie się viralem. To o bycie zapamiętanym za to, kim jesteś i pamiętaniu, kim jesteśmy.",
+      aboutP8: "Wierzę, że każda osoba zasługuje na miejsce do przechowywania swojej historii. Nie tylko na dziś, ale dla przyszłych pokoleń.",
+      aboutP9: "Dlatego buduję lifeli.me. Nie jako produkt. Ale jako obietnicę.",
+      aboutSignature: "Adam Trnka",
+      aboutSignatureTitle: "Założyciel lifeli.me",
     },
   };
 
@@ -413,8 +483,8 @@ const HeroSection = () => {
                   <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>
               </button>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-white">A Personal Promise</h2>
-              <p className="text-white/90 mb-6 text-base sm:text-lg italic">From Adam Trnka, Founder of lifeli.me</p>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-white">{t.aboutTitle}</h2>
+              <p className="text-white/90 mb-6 text-base sm:text-lg italic">{t.aboutSubtitle}</p>
               
               {/* YouTube Video */}
               <div className="relative w-full aspect-video mb-8 rounded-xl overflow-hidden shadow-2xl">
@@ -428,25 +498,25 @@ const HeroSection = () => {
               </div>
 
               <div className="space-y-5 text-white/90 leading-relaxed text-base sm:text-lg">
-                <p>I grew up with my mom and grandma, trying to piece together who I was from stories, photos in boxes. I'm a father now and everything changed when my son was born.</p>
+                <p>{t.aboutP1}</p>
                 
-                <p>I found myself filming little videos just for him. Not for social media. Not for likes. For the day he turns 15… 18… 30. I wanted him to know who I really was, how I laughed, what I believed, what mattered to me.</p>
+                <p>{t.aboutP2}</p>
                 
-                <p>But these pieces of my life and his were scattered everywhere. On phones. Clouds. Old drives. Nothing felt lasting. Nothing felt safe. So I built lifeli.me.</p>
+                <p>{t.aboutP3}</p>
                 
-                <p className="font-semibold text-white">lifeli.me is my answer to a simple but powerful question:<br />What do we leave behind - and will it still matter 30... 50... 100... years from now?</p>
+                <p className="font-semibold text-white">{t.aboutP4}<br />{t.aboutP4b}</p>
                 
-                <p>It's a place to craft your legacy, one memory at a time. It's built for families—for the quiet, important moments. Births. First steps. Last hugs.</p>
+                <p>{t.aboutP5}</p>
                 
-                <p>Photos, videos, letters to your future self. Milestones. Your treasures. All organized, preserved, and portable for decades—like a Svalbard Global Seed Vault, only for your memories.</p>
+                <p>{t.aboutP6}</p>
                 
-                <p>This isn't about going viral. It's about being remembered for who you are and remembering who we are.</p>
+                <p>{t.aboutP7}</p>
                 
-                <p>I believe every person deserves a place to hold their story. Not just for today, but for generations to come.</p>
+                <p>{t.aboutP8}</p>
                 
-                <p>That's why I'm building lifeli.me. Not as a product. But as a promise.</p>
+                <p>{t.aboutP9}</p>
                 
-                <p className="font-semibold text-white mt-6">Adam Trnka<br />Founder of lifeli.me</p>
+                <p className="font-semibold text-white mt-6">{t.aboutSignature}<br />{t.aboutSignatureTitle}</p>
               </div>
             </div>
           </div>
