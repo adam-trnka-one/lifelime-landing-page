@@ -268,7 +268,7 @@ const HeroSection = () => {
         </div>
 
         {/* Waitlist Section - Right */}
-        <div className="max-w-xl w-full bg-white/10 backdrop-blur-2xl rounded-2xl p-10 shadow-2xl -mt-[10vh]" style={{ boxShadow: 'inset 0 1px 0 0 rgba(255, 255, 255, 0.1), 0 20px 60px -15px rgba(0, 0, 0, 0.3)' }}>
+        <div className="max-w-xl w-full bg-white/10 backdrop-blur-2xl rounded-2xl p-12 shadow-2xl -mt-[10vh]" style={{ boxShadow: 'inset 0 1px 0 0 rgba(255, 255, 255, 0.1), 0 20px 60px -15px rgba(0, 0, 0, 0.3)' }}>
           <h2 className="text-4xl font-bold mb-6 text-white">{t.title}</h2>
           <p className="text-white/80 mb-8 leading-relaxed text-lg">
             {t.description}
