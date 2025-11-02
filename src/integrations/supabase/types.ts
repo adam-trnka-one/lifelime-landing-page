@@ -18,6 +18,8 @@ export type Database = {
         Row: {
           browser_name: string | null
           browser_version: string | null
+          consent_timestamp: string | null
+          cookies_consent: boolean | null
           created_at: string
           email: string
           id: string
@@ -34,6 +36,8 @@ export type Database = {
         Insert: {
           browser_name?: string | null
           browser_version?: string | null
+          consent_timestamp?: string | null
+          cookies_consent?: boolean | null
           created_at?: string
           email: string
           id?: string
@@ -50,6 +54,8 @@ export type Database = {
         Update: {
           browser_name?: string | null
           browser_version?: string | null
+          consent_timestamp?: string | null
+          cookies_consent?: boolean | null
           created_at?: string
           email?: string
           id?: string

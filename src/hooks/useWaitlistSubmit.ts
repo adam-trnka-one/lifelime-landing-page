@@ -49,41 +49,45 @@ export const useWaitlistSubmit = () => {
 
   return useMutation({
     mutationFn: async (data: WaitlistData) => {
-      // Get browser information
+      // Check for cookie consent
+      const cookieConsent = localStorage.getItem("cookie_consent");
+      const hasConsent = cookieConsent === "accepted";
+
+      // Get browser information (always collected - essential data)
       const { browserName, browserVersion, osName } = getBrowserInfo();
 
-      // Get screen information
+      // Get screen information (always collected - essential data)
       const screenWidth = window.screen.width;
       const screenHeight = window.screen.height;
 
-      // Get language and timezone
+      // Get language and timezone (always collected - essential data)
       const language = navigator.language;
       const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
-      // Get user agent
+      // Get user agent (always collected - essential data)
       const userAgent = navigator.userAgent;
 
-      // Get approximate location (using IP geolocation - will be null for now, can be enhanced)
-      // For production, you'd use an IP geolocation service
+      // Get approximate location ONLY if user consented (non-essential data)
       let locationData = {
-        location_country: null,
-        location_region: null,
-        location_city: null,
+        location_country: null as string | null,
+        location_region: null as string | null,
+        location_city: null as string | null,
       };
 
-      // Try to get location from IP using a free service
-      try {
-        const response = await fetch('https://ipapi.co/json/');
-        if (response.ok) {
-          const ipData = await response.json();
-          locationData = {
-            location_country: ipData.country_name || null,
-            location_region: ipData.region || null,
-            location_city: ipData.city || null,
-          };
+      if (hasConsent) {
+        try {
+          const response = await fetch('https://ipapi.co/json/');
+          if (response.ok) {
+            const ipData = await response.json();
+            locationData = {
+              location_country: ipData.country_name || null,
+              location_region: ipData.region || null,
+              location_city: ipData.city || null,
+            };
+          }
+        } catch (error) {
+          console.log('Location detection unavailable, continuing without location');
         }
-      } catch (error) {
-        console.log('Location detection unavailable, continuing without location');
       }
 
       // Insert into database
@@ -100,6 +104,8 @@ export const useWaitlistSubmit = () => {
             language: language,
             timezone: timezone,
             user_agent: userAgent,
+            cookies_consent: hasConsent,
+            consent_timestamp: hasConsent ? new Date().toISOString() : null,
             ...locationData,
           },
         ])
