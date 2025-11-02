@@ -386,19 +386,19 @@ const HeroSection = () => {
 
         {/* Waitlist Section - Right */}
         {currentView === 'waitlist' ? (
-          <div className="max-w-md lg:max-w-xl w-full mx-auto lg:mx-0 bg-white/10 backdrop-blur-2xl rounded-2xl p-6 sm:p-8 md:p-10 lg:p-12 shadow-2xl lg:-mt-[10vh] lg:mr-[10%]" style={{ boxShadow: 'inset 0 1px 0 0 rgba(255, 255, 255, 0.1), 0 20px 60px -15px rgba(0, 0, 0, 0.3)' }}>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 text-white">{t.title}</h2>
-            <p className="text-white/80 mb-6 sm:mb-8 leading-relaxed text-base sm:text-lg">
+          <div className="max-w-md lg:max-w-xl w-full mx-auto lg:mx-0 lg:-mt-[10vh] lg:mr-[10%]">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 sm:mb-8 text-white drop-shadow-lg">{t.title}</h2>
+            <p className="text-white/90 mb-8 sm:mb-10 leading-relaxed text-lg sm:text-xl drop-shadow-md">
               {t.description}
             </p>
-            <form className="space-y-4 sm:space-y-5" onSubmit={(e) => e.preventDefault()}>
+            <form className="space-y-5 sm:space-y-6" onSubmit={(e) => e.preventDefault()}>
               <input
                 type="email"
                 placeholder={t.emailPlaceholder}
-                className="w-full px-4 sm:px-5 py-3 sm:py-4 text-base sm:text-lg rounded-lg bg-white/20 text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-white/50 border-none"
+                className="w-full px-5 sm:px-6 py-4 sm:py-5 text-base sm:text-lg rounded-xl bg-white/95 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-white shadow-xl backdrop-blur-sm border border-white/20"
                 required
               />
-              <Button className="w-full bg-white text-primary hover:bg-white/90 text-base sm:text-lg" size="lg">
+              <Button className="w-full bg-white text-primary hover:bg-white/90 text-lg sm:text-xl font-semibold shadow-2xl hover:shadow-white/20 transition-all duration-300" size="lg">
                 {t.joinButton}
               </Button>
             </form>
