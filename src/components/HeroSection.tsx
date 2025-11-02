@@ -30,22 +30,42 @@ const HeroSection = () => {
     EN: {
       waitlist: "Waitlist",
       about: "About",
+      title: "Start preserving your truly legacy",
+      description: "Your legacy isn't written someday - it's built today. Lifeli.me preserve the moments, thoughts, and lessons that make your story worth remembering.",
+      emailPlaceholder: "Enter your email",
+      joinButton: "Join Waitlist",
     },
     CZ: {
       waitlist: "Čekací listina",
       about: "O nás",
+      title: "Začněte uchovávat své skutečné dědictví",
+      description: "Vaše dědictví není napsáno někdy - je budováno dnes. Lifeli.me uchovává okamžiky, myšlenky a lekce, které dělají váš příběh hodný zapamatování.",
+      emailPlaceholder: "Zadejte svůj email",
+      joinButton: "Připojit se k čekací listině",
     },
     DE: {
       waitlist: "Warteliste",
       about: "Über uns",
+      title: "Beginnen Sie, Ihr wahres Erbe zu bewahren",
+      description: "Ihr Vermächtnis wird nicht irgendwann geschrieben - es wird heute aufgebaut. Lifeli.me bewahrt die Momente, Gedanken und Lektionen, die Ihre Geschichte erinnernswert machen.",
+      emailPlaceholder: "Geben Sie Ihre E-Mail ein",
+      joinButton: "Der Warteliste beitreten",
     },
     ES: {
       waitlist: "Lista de espera",
       about: "Acerca de",
+      title: "Comienza a preservar tu verdadero legado",
+      description: "Tu legado no se escribe algún día - se construye hoy. Lifeli.me preserva los momentos, pensamientos y lecciones que hacen que tu historia valga la pena recordar.",
+      emailPlaceholder: "Ingresa tu correo electrónico",
+      joinButton: "Unirse a la lista de espera",
     },
     PL: {
       waitlist: "Lista oczekujących",
       about: "O nas",
+      title: "Zacznij zachowywać swoje prawdziwe dziedzictwo",
+      description: "Twoje dziedzictwo nie jest pisane kiedyś - jest budowane dzisiaj. Lifeli.me zachowuje chwile, myśli i lekcje, które sprawiają, że Twoja historia jest warta zapamiętania.",
+      emailPlaceholder: "Wprowadź swój email",
+      joinButton: "Dołącz do listy oczekujących",
     },
   };
 
@@ -230,8 +250,9 @@ const HeroSection = () => {
       </svg>
 
       {/* Content */}
-      <div className="relative h-full flex items-center justify-start p-8 md:p-16 lg:p-24">
-        <div className="max-w-md w-full ml-[10%] relative">
+      <div className="relative h-full flex items-center justify-between p-8 md:p-16 lg:p-24">
+        {/* Logo Section - Left */}
+        <div className="max-w-md w-full relative">
           {/* Ground spot shadow */}
           <div 
             className="absolute -bottom-16 left-1/2 -translate-x-1/2 w-full h-16 rounded-full blur-3xl"
@@ -244,6 +265,25 @@ const HeroSection = () => {
             alt="LifeLime Logo" 
             className="w-full h-auto relative z-10" 
           />
+        </div>
+
+        {/* Waitlist Section - Right */}
+        <div className="max-w-md w-full bg-background/95 backdrop-blur-sm rounded-2xl p-8 shadow-2xl">
+          <h2 className="text-3xl font-bold mb-4 text-foreground">{t.title}</h2>
+          <p className="text-muted-foreground mb-6 leading-relaxed">
+            {t.description}
+          </p>
+          <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+            <input
+              type="email"
+              placeholder={t.emailPlaceholder}
+              className="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+              required
+            />
+            <Button className="w-full" size="lg">
+              {t.joinButton}
+            </Button>
+          </form>
         </div>
       </div>
     </div>
