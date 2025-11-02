@@ -11,7 +11,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { ChevronDown, Languages, Menu } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import logo from "@/assets/logo_lifelime_l.svg";
 
 const HeroSection = () => {
@@ -24,14 +24,24 @@ const HeroSection = () => {
   const [selectedLanguage, setSelectedLanguage] = useState(getBrowserLanguage());
   const [currentView, setCurrentView] = useState<'waitlist' | 'about'>('waitlist');
   const [isClosing, setIsClosing] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   const handleCloseAbout = () => {
     setIsClosing(true);
     setTimeout(() => {
       setCurrentView('waitlist');
       setIsClosing(false);
+      setShowModal(false);
     }, 300); // Match animation duration
   };
+
+  // Trigger fade-in animation when About view opens
+  useEffect(() => {
+    if (currentView === 'about') {
+      // Small delay to ensure CSS transition triggers
+      setTimeout(() => setShowModal(true), 10);
+    }
+  }, [currentView]);
   
   const languages = [
     { code: "CZ", name: "Czech" },
@@ -470,8 +480,8 @@ const HeroSection = () => {
 
         {/* About Modal */}
         {currentView === 'about' && (
-          <div className={`fixed inset-0 flex items-center justify-center p-4 sm:p-6 lg:p-8 z-30 bg-black/60 backdrop-blur-sm transition-all duration-300 ease-out ${isClosing ? 'opacity-0' : 'opacity-100'}`}>
-            <div className={`max-w-6xl w-full bg-white/10 backdrop-blur-2xl rounded-3xl p-8 sm:p-10 lg:p-14 shadow-2xl overflow-y-auto max-h-[90vh] scrollbar-hide relative transition-all duration-300 ease-out ${isClosing ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}`} 
+          <div className={`fixed inset-0 flex items-center justify-center p-4 sm:p-6 lg:p-8 z-30 bg-black/60 backdrop-blur-sm transition-all duration-300 ease-out ${showModal && !isClosing ? 'opacity-100' : 'opacity-0'}`}>
+            <div className={`max-w-6xl w-full bg-white/10 backdrop-blur-2xl rounded-3xl p-8 sm:p-10 lg:p-14 shadow-2xl overflow-y-auto max-h-[90vh] scrollbar-hide relative transition-all duration-300 ease-out ${showModal && !isClosing ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`} 
               style={{ boxShadow: 'inset 0 1px 0 0 rgba(255, 255, 255, 0.1), 0 20px 60px -15px rgba(0, 0, 0, 0.3)' }}>
               {/* Close Button */}
               <button
