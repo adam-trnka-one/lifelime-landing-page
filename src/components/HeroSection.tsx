@@ -177,6 +177,42 @@ const HeroSection = () => {
           background: 'linear-gradient(135deg, #6C2AFD 0%, #835BD9 100%)'
         }}
       />
+
+      {/* Animated Background Shapes - Mobile Only */}
+      <div className="lg:hidden absolute inset-0 overflow-hidden">
+        {/* Floating blob 1 */}
+        <div 
+          className="absolute w-72 h-72 rounded-full blur-3xl opacity-30 animate-pulse"
+          style={{
+            background: 'radial-gradient(circle, #835BD9 0%, transparent 70%)',
+            top: '10%',
+            left: '-10%',
+            animationDuration: '4s'
+          }}
+        />
+        
+        {/* Floating blob 2 */}
+        <div 
+          className="absolute w-96 h-96 rounded-full blur-3xl opacity-20"
+          style={{
+            background: 'radial-gradient(circle, #6C2AFD 0%, transparent 70%)',
+            bottom: '20%',
+            right: '-15%',
+            animation: 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite'
+          }}
+        />
+        
+        {/* Floating blob 3 */}
+        <div 
+          className="absolute w-64 h-64 rounded-full blur-2xl opacity-25"
+          style={{
+            background: 'radial-gradient(circle, #9B6FFF 0%, transparent 70%)',
+            top: '50%',
+            right: '10%',
+            animation: 'pulse 5s cubic-bezier(0.4, 0, 0.6, 1) infinite'
+          }}
+        />
+      </div>
       
       {/* White Section with Organic Wave Divider - Desktop Only */}
       <svg
