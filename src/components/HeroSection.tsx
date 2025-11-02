@@ -149,9 +149,9 @@ const HeroSection = () => {
         <div className="max-w-md w-full ml-[10%] relative">
           {/* Ground spot shadow */}
           <div 
-            className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-3/4 h-8 rounded-full blur-2xl"
+            className="absolute -bottom-16 left-1/2 -translate-x-1/2 w-full h-16 rounded-full blur-3xl"
             style={{
-              background: 'radial-gradient(ellipse at center, rgba(108, 42, 253, 0.6) 0%, rgba(108, 42, 253, 0.3) 40%, transparent 70%)'
+              background: 'radial-gradient(ellipse at center, rgba(108, 42, 253, 0.8) 0%, rgba(108, 42, 253, 0.5) 40%, transparent 70%)'
             }}
           />
           <img 
