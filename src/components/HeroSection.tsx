@@ -20,6 +20,31 @@ const HeroSection = () => {
     { code: "PL", name: "Polish" },
   ];
 
+  const translations = {
+    EN: {
+      waitlist: "Waitlist",
+      about: "About",
+    },
+    CZ: {
+      waitlist: "Čekací listina",
+      about: "O nás",
+    },
+    DE: {
+      waitlist: "Warteliste",
+      about: "Über uns",
+    },
+    ES: {
+      waitlist: "Lista de espera",
+      about: "Acerca de",
+    },
+    PL: {
+      waitlist: "Lista oczekujących",
+      about: "O nas",
+    },
+  };
+
+  const t = translations[selectedLanguage as keyof typeof translations];
+
   return (
     <div className="min-h-screen relative overflow-hidden">
       {/* Navigation */}
@@ -28,13 +53,13 @@ const HeroSection = () => {
           href="#waitlist" 
           className="text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 font-medium px-4 py-2 rounded-lg"
         >
-          Waitlist
+          {t.waitlist}
         </a>
         <a 
           href="#about" 
           className="text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 font-medium px-4 py-2 rounded-lg"
         >
-          About
+          {t.about}
         </a>
         
         {/* Language Selector */}
