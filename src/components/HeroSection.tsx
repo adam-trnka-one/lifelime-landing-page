@@ -8,7 +8,7 @@ const HeroSection = () => {
       <div 
         className="absolute inset-0"
         style={{
-          background: 'linear-gradient(135deg, #6C2AFD 0%, #835BD9 70%, #9B8FE3 75%, #AFACE9 82%, #B8C9ED 88%, #C0DAF2 94%, #1EC9FB 100%)'
+          background: 'linear-gradient(135deg, #6C2AFD 0%, #835BD9 70%, #9B8FE3 80%, #7DBDE7 90%, #1EC9FB 100%)'
         }}
       />
       
