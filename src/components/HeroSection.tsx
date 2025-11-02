@@ -252,7 +252,7 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative h-full flex items-center justify-between p-8 md:p-16 lg:p-24">
         {/* Logo Section - Left */}
-        <div className="max-w-md w-full relative -mt-[10vh]">
+        <div className="max-w-md w-full relative -mt-[10vh] ml-[10%]">
           {/* Ground spot shadow */}
           <div 
             className="absolute -bottom-16 left-1/2 -translate-x-1/2 w-full h-16 rounded-full blur-3xl"
