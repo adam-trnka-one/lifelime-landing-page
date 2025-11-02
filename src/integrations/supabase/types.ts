@@ -14,7 +14,57 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      waitlist: {
+        Row: {
+          browser_name: string | null
+          browser_version: string | null
+          created_at: string
+          email: string
+          id: string
+          language: string | null
+          location_city: string | null
+          location_country: string | null
+          location_region: string | null
+          os_name: string | null
+          screen_height: number | null
+          screen_width: number | null
+          timezone: string | null
+          user_agent: string | null
+        }
+        Insert: {
+          browser_name?: string | null
+          browser_version?: string | null
+          created_at?: string
+          email: string
+          id?: string
+          language?: string | null
+          location_city?: string | null
+          location_country?: string | null
+          location_region?: string | null
+          os_name?: string | null
+          screen_height?: number | null
+          screen_width?: number | null
+          timezone?: string | null
+          user_agent?: string | null
+        }
+        Update: {
+          browser_name?: string | null
+          browser_version?: string | null
+          created_at?: string
+          email?: string
+          id?: string
+          language?: string | null
+          location_city?: string | null
+          location_country?: string | null
+          location_region?: string | null
+          os_name?: string | null
+          screen_height?: number | null
+          screen_width?: number | null
+          timezone?: string | null
+          user_agent?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

@@ -12,7 +12,18 @@ import {
 } from "@/components/ui/sheet";
 import { ChevronDown, Languages, Menu } from "lucide-react";
 import { useState, useEffect } from "react";
+import { z } from "zod";
 import logo from "@/assets/logo_lifelime_l.svg";
+import { useWaitlistSubmit } from "@/hooks/useWaitlistSubmit";
+
+// Email validation schema
+const emailSchema = z.object({
+  email: z.string()
+    .trim()
+    .nonempty({ message: "Email cannot be empty" })
+    .email({ message: "Invalid email address" })
+    .max(255, { message: "Email must be less than 255 characters" })
+});
 
 const HeroSection = () => {
   const getBrowserLanguage = () => {
@@ -25,6 +36,10 @@ const HeroSection = () => {
   const [currentView, setCurrentView] = useState<'waitlist' | 'about'>('waitlist');
   const [isClosing, setIsClosing] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [email, setEmail] = useState("");
+  const [emailError, setEmailError] = useState("");
+
+  const { mutate: submitWaitlist, isPending } = useWaitlistSubmit();
 
   const handleCloseAbout = () => {
     setIsClosing(true);
@@ -476,15 +491,49 @@ const HeroSection = () => {
           <p className="text-white/90 mb-8 sm:mb-10 leading-relaxed text-lg sm:text-xl drop-shadow-md">
             {t.description}
           </p>
-          <form className="space-y-5 sm:space-y-6" onSubmit={(e) => e.preventDefault()}>
-            <input
-              type="email"
-              placeholder={t.emailPlaceholder}
-              className="w-full px-5 sm:px-6 py-4 sm:py-5 text-base sm:text-lg rounded-xl bg-white/95 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-white shadow-xl backdrop-blur-sm border border-white/20"
-              required
-            />
-            <Button className="w-full bg-white text-primary hover:bg-white/90 text-lg sm:text-xl font-semibold shadow-2xl hover:shadow-white/20 transition-all duration-300" size="lg">
-              {t.joinButton}
+          <form className="space-y-5 sm:space-y-6" onSubmit={(e) => {
+            e.preventDefault();
+            
+            // Validate email
+            const validation = emailSchema.safeParse({ email });
+            
+            if (!validation.success) {
+              setEmailError(validation.error.errors[0].message);
+              return;
+            }
+            
+            setEmailError("");
+            
+            // Submit to database
+            submitWaitlist({ email }, {
+              onSuccess: () => {
+                setEmail("");
+              }
+            });
+          }}>
+            <div className="space-y-2">
+              <input
+                type="email"
+                placeholder={t.emailPlaceholder}
+                value={email}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                  setEmailError("");
+                }}
+                className="w-full px-5 sm:px-6 py-4 sm:py-5 text-base sm:text-lg rounded-xl bg-white/95 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-white shadow-xl backdrop-blur-sm border border-white/20"
+                disabled={isPending}
+              />
+              {emailError && (
+                <p className="text-red-200 text-sm px-2">{emailError}</p>
+              )}
+            </div>
+            <Button 
+              type="submit"
+              disabled={isPending}
+              className="w-full bg-white text-primary hover:bg-white/90 text-lg sm:text-xl font-semibold shadow-2xl hover:shadow-white/20 transition-all duration-300" 
+              size="lg"
+            >
+              {isPending ? "Joining..." : t.joinButton}
             </Button>
           </form>
         </div>
