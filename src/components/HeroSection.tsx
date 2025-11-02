@@ -405,7 +405,18 @@ const HeroSection = () => {
           </div>
         ) : (
           <div className="fixed inset-0 flex items-center justify-center p-4 sm:p-6 lg:p-8 z-30 bg-black/60 backdrop-blur-sm">
-            <div className="max-w-6xl w-full bg-white/10 backdrop-blur-2xl rounded-3xl p-8 sm:p-10 lg:p-14 shadow-2xl overflow-y-auto max-h-[90vh]" style={{ boxShadow: 'inset 0 1px 0 0 rgba(255, 255, 255, 0.1), 0 20px 60px -15px rgba(0, 0, 0, 0.3)' }}>
+            <div className="max-w-6xl w-full bg-white/10 backdrop-blur-2xl rounded-3xl p-8 sm:p-10 lg:p-14 shadow-2xl overflow-y-auto max-h-[90vh] scrollbar-hide relative" style={{ boxShadow: 'inset 0 1px 0 0 rgba(255, 255, 255, 0.1), 0 20px 60px -15px rgba(0, 0, 0, 0.3)' }}>
+              {/* Close Button */}
+              <button
+                onClick={() => setCurrentView('waitlist')}
+                className="absolute top-4 right-4 sm:top-6 sm:right-6 text-white/70 hover:text-white transition-colors"
+                aria-label="Close"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </button>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-white">A Personal Promise</h2>
               <p className="text-white/90 mb-6 text-base sm:text-lg italic">From Adam Trnka, Founder of lifeli.me</p>
               
