@@ -10,7 +10,13 @@ import { useState } from "react";
 import logo from "@/assets/logo_lifelime_l.svg";
 
 const HeroSection = () => {
-  const [selectedLanguage, setSelectedLanguage] = useState("EN");
+  const getBrowserLanguage = () => {
+    const browserLang = navigator.language.split('-')[0].toUpperCase();
+    const supportedLangs = ['CZ', 'EN', 'DE', 'ES', 'PL'];
+    return supportedLangs.includes(browserLang) ? browserLang : 'EN';
+  };
+
+  const [selectedLanguage, setSelectedLanguage] = useState(getBrowserLanguage());
   
   const languages = [
     { code: "CZ", name: "Czech" },
