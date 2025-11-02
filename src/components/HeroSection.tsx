@@ -362,7 +362,7 @@ const HeroSection = () => {
       </svg>
 
       {/* Content */}
-      <div className="relative h-full flex flex-col lg:flex-row items-start lg:items-center justify-center lg:justify-between gap-8 lg:gap-0 p-4 sm:p-6 md:p-12 lg:p-16 xl:p-24 overflow-y-auto lg:overflow-y-hidden pt-8 lg:pt-0">
+      <div className="relative h-full flex flex-col lg:flex-row items-start lg:items-center justify-start lg:justify-between gap-8 lg:gap-0 p-4 sm:p-6 md:p-12 lg:p-16 xl:p-24 overflow-y-auto lg:overflow-y-hidden">
         {/* Logo Section - Left - hidden on mobile */}
         <div className="hidden lg:block max-w-xs sm:max-w-sm md:max-w-md w-full relative lg:-mt-[10vh] lg:ml-[10%]">
           {/* Ground spot shadow */}
