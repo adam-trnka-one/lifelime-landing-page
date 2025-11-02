@@ -1,11 +1,48 @@
 import { useMutation } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
-import UAParser from "ua-parser-js";
 
 interface WaitlistData {
   email: string;
 }
+
+// Helper function to parse user agent
+const getBrowserInfo = () => {
+  const ua = navigator.userAgent;
+  let browserName = "Unknown";
+  let browserVersion = "Unknown";
+  let osName = "Unknown";
+
+  // Detect browser
+  if (ua.includes("Firefox/")) {
+    browserName = "Firefox";
+    browserVersion = ua.match(/Firefox\/(\d+\.\d+)/)?.[1] || "Unknown";
+  } else if (ua.includes("Edg/")) {
+    browserName = "Edge";
+    browserVersion = ua.match(/Edg\/(\d+\.\d+)/)?.[1] || "Unknown";
+  } else if (ua.includes("Chrome/") && !ua.includes("Edg/")) {
+    browserName = "Chrome";
+    browserVersion = ua.match(/Chrome\/(\d+\.\d+)/)?.[1] || "Unknown";
+  } else if (ua.includes("Safari/") && !ua.includes("Chrome/")) {
+    browserName = "Safari";
+    browserVersion = ua.match(/Version\/(\d+\.\d+)/)?.[1] || "Unknown";
+  }
+
+  // Detect OS
+  if (ua.includes("Windows NT")) {
+    osName = "Windows";
+  } else if (ua.includes("Mac OS X")) {
+    osName = "macOS";
+  } else if (ua.includes("Linux")) {
+    osName = "Linux";
+  } else if (ua.includes("Android")) {
+    osName = "Android";
+  } else if (ua.includes("iOS") || ua.includes("iPhone") || ua.includes("iPad")) {
+    osName = "iOS";
+  }
+
+  return { browserName, browserVersion, osName };
+};
 
 export const useWaitlistSubmit = () => {
   const { toast } = useToast();
@@ -13,8 +50,7 @@ export const useWaitlistSubmit = () => {
   return useMutation({
     mutationFn: async (data: WaitlistData) => {
       // Get browser information
-      const parser = new (UAParser as any)();
-      const result = parser.getResult();
+      const { browserName, browserVersion, osName } = getBrowserInfo();
 
       // Get screen information
       const screenWidth = window.screen.width;
@@ -56,9 +92,9 @@ export const useWaitlistSubmit = () => {
         .insert([
           {
             email: data.email.trim().toLowerCase(),
-            browser_name: result.browser.name || null,
-            browser_version: result.browser.version || null,
-            os_name: result.os.name || null,
+            browser_name: browserName,
+            browser_version: browserVersion,
+            os_name: osName,
             screen_width: screenWidth,
             screen_height: screenHeight,
             language: language,
