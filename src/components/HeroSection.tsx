@@ -268,7 +268,7 @@ const HeroSection = () => {
         </div>
 
         {/* Waitlist Section - Right */}
-        <div className="max-w-md w-full bg-background/95 backdrop-blur-sm rounded-2xl p-8 shadow-2xl">
+        <div className="max-w-md w-full bg-background/95 backdrop-blur-sm rounded-2xl p-8 shadow-2xl -mt-[10vh]">
           <h2 className="text-3xl font-bold mb-4 text-foreground">{t.title}</h2>
           <p className="text-muted-foreground mb-6 leading-relaxed">
             {t.description}
