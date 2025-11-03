@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Cookie, X, Settings } from "lucide-react";
 
 const CookieConsent = () => {
+  const { t } = useTranslation();
   const [showBanner, setShowBanner] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
   const [hasConsent, setHasConsent] = useState<string | null>(null);
@@ -59,7 +61,7 @@ const CookieConsent = () => {
           <div className="p-4 flex items-center gap-3">
             <Cookie className="text-primary flex-shrink-0" size={24} />
             <p className="text-sm text-gray-700 flex-1">
-              We use cookies to enhance your experience
+              {t('cookieCompact')}
             </p>
             <Button
               onClick={() => setIsExpanded(true)}
@@ -67,7 +69,7 @@ const CookieConsent = () => {
               size="sm"
               className="text-primary hover:text-white"
             >
-              Details
+              {t('cookieDetails')}
             </Button>
           </div>
         )}
@@ -78,7 +80,7 @@ const CookieConsent = () => {
             <div className="flex items-start justify-between mb-3">
               <div className="flex items-center gap-2">
                 <Cookie className="text-primary" size={24} />
-                <h3 className="font-semibold text-gray-900">Cookie Consent</h3>
+                <h3 className="font-semibold text-gray-900">{t('cookieTitle')}</h3>
               </div>
               <button
                 onClick={() => setIsExpanded(false)}
@@ -89,7 +91,7 @@ const CookieConsent = () => {
             </div>
             
             <p className="text-sm text-gray-600 mb-4">
-              We collect browser information and approximate location (country/region) to improve our service. This data helps us understand our users better and is stored securely in accordance with GDPR regulations.
+              {t('cookieDescription')}
             </p>
 
             <div className="space-y-2">
@@ -98,7 +100,7 @@ const CookieConsent = () => {
                 className="w-full bg-primary text-white hover:bg-primary/90"
                 size="sm"
               >
-                Accept All
+                {t('cookieAccept')}
               </Button>
               <Button
                 onClick={handleReject}
@@ -106,12 +108,12 @@ const CookieConsent = () => {
                 className="w-full"
                 size="sm"
               >
-                Reject Non-Essential
+                {t('cookieReject')}
               </Button>
             </div>
 
             <p className="text-xs text-gray-500 mt-3">
-              By accepting, you agree to the storage of cookies and data collection as described in our Privacy Policy.
+              {t('cookieFooter')}
             </p>
           </div>
         )}

@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, Sparkles } from "lucide-react";
@@ -7,39 +8,10 @@ import confetti from "canvas-confetti";
 interface WaitlistSuccessModalProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
-  language?: string;
 }
 
-const translations = {
-  EN: {
-    title: "You're on the list!",
-    description: "Thank you for joining our waitlist. We'll notify you as soon as we launch.",
-    button: "Got it!"
-  },
-  CZ: {
-    title: "Jste na seznamu!",
-    description: "Děkujeme za připojení k naší čekací listině. Dáme vám vědět, jakmile spustíme.",
-    button: "Rozumím!"
-  },
-  DE: {
-    title: "Sie sind auf der Liste!",
-    description: "Vielen Dank für Ihre Anmeldung. Wir benachrichtigen Sie, sobald wir starten.",
-    button: "Verstanden!"
-  },
-  ES: {
-    title: "¡Estás en la lista!",
-    description: "Gracias por unirte a nuestra lista de espera. Te notificaremos tan pronto como lancemos.",
-    button: "¡Entendido!"
-  },
-  PL: {
-    title: "Jesteś na liście!",
-    description: "Dziękujemy za dołączenie do naszej listy oczekujących. Powiadomimy Cię, gdy tylko wystartujemy.",
-    button: "Rozumiem!"
-  }
-};
-
-const WaitlistSuccessModal = ({ open, onOpenChange, language = "EN" }: WaitlistSuccessModalProps) => {
-  const t = translations[language as keyof typeof translations] || translations.EN;
+const WaitlistSuccessModal = ({ open, onOpenChange }: WaitlistSuccessModalProps) => {
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (open) {
@@ -88,10 +60,10 @@ const WaitlistSuccessModal = ({ open, onOpenChange, language = "EN" }: WaitlistS
             <CheckCircle2 className="w-12 h-12 text-white" />
           </div>
           <DialogTitle className="text-2xl sm:text-3xl font-bold text-center bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-            {t.title}
+            {t('successTitle')}
           </DialogTitle>
           <DialogDescription className="text-center text-base sm:text-lg text-gray-600 px-2">
-            {t.description}
+            {t('successDescription')}
           </DialogDescription>
         </DialogHeader>
         
@@ -105,7 +77,7 @@ const WaitlistSuccessModal = ({ open, onOpenChange, language = "EN" }: WaitlistS
           onClick={() => onOpenChange(false)}
           className="w-full bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-white font-semibold text-lg py-6 shadow-lg hover:shadow-xl transition-all duration-300"
         >
-          {t.button}
+          {t('successButton')}
         </Button>
       </DialogContent>
     </Dialog>
