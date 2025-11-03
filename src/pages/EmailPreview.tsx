@@ -1,5 +1,5 @@
 import emailBackground from "@/assets/bg_lifelime.png";
-import logoLifelime from "@/assets/logo_lifelime_l.svg";
+import logoLifelime from "@/assets/logo_lifelime_l_white.svg";
 
 const EmailPreview = () => {
   return (
