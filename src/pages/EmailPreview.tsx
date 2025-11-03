@@ -48,7 +48,7 @@ const EmailPreview = () => {
             <p className="text-base text-foreground">
               You're now part of the early circle shaping how lifeli.me evolves. Until the public launch, you can follow our progress and updates on social like{" "}
               <a href="https://instagram.com/lifeli.me" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold">Instagram</a>,{" "}
-              <a href="https://facebook.com/lifeli.me" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold">Facebook</a> and{" "}
+              <a href="https://facebook.com/mylifelime/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold">Facebook</a> and{" "}
               <a href="https://linkedin.com/company/lifelime/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold">LinkedIn</a>.
             </p>
 
