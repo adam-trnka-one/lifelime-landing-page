@@ -1,9 +1,7 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { Resend } from "https://esm.sh/resend@4.0.0";
-import React from 'https://esm.sh/react@18.3.1';
-import { renderAsync } from 'https://esm.sh/@react-email/components@0.0.22';
 import generateWaitlistConfirmationHTML from './_templates/waitlist-confirmation.tsx';
-import { AdminNotificationEmail } from './_templates/admin-notification.tsx';
+import generateAdminNotificationHTML from './_templates/admin-notification.tsx';
 
 const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
 
@@ -31,15 +29,13 @@ const handler = async (req: Request): Promise<Response> => {
 
     console.log("Sending waitlist notification for:", email, "in language:", language);
 
-    // Render admin email template
-    const adminHtml = await renderAsync(
-      React.createElement(AdminNotificationEmail, {
-        email,
-        browserName,
-        osName,
-        locationCountry,
-      })
-    );
+    // Generate admin email HTML
+    const adminHtml = generateAdminNotificationHTML({
+      email,
+      browserName,
+      osName,
+      locationCountry,
+    });
 
     // Send notification to admin
     const adminEmailResponse = await resend.emails.send({
