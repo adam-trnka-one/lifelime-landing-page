@@ -101,7 +101,7 @@ export const generateWaitlistConfirmationHTML = (
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body style="margin: 0; padding: 0; background-color: #f3f0ff; background-image: url('http://lifelime.trnka.one/bg_lifelime.png'); background-size: cover; background-position: center; background-repeat: no-repeat; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;">
-    <div style="max-width: 672px; margin: 100px auto; padding: 0 20px;">
+    <div style="max-width: 672px; margin: 100px auto; padding: 80px 20px;">
       <!-- Email Container -->
       <div style="background-color: rgba(255, 255, 255, 0.95); backdrop-filter: blur(8px); border-radius: 16px; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); overflow: hidden;">
         
