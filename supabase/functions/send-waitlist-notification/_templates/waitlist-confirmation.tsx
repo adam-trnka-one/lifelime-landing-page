@@ -84,7 +84,8 @@ export const WaitlistConfirmationEmail = ({
             </tr>
           </table>
           <Text style={footerSmall}>
-            You received this email because you signed up for the lifeli.me waitlist with {email}
+            You received this email because you signed up for the lifeli.me waitlist with {email}<br />
+            <a href={`https://drljjepaolzzlirxhbit.supabase.co/functions/v1/unsubscribe-waitlist?email=${encodeURIComponent(email)}`} style={link}>Unsubscribe</a>
           </Text>
         </Section>
       </Container>

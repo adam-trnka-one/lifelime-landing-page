@@ -70,7 +70,8 @@ const EmailPreview = () => {
               </p>
             </div>
             <p className="text-xs text-muted-foreground/70 mt-4 text-center">
-              You received this email because you signed up for the lifeli.me waitlist
+              You received this email because you signed up for the lifeli.me waitlist<br />
+              <a href="#" className="text-primary hover:underline">Unsubscribe</a>
             </p>
           </div>
         </div>
