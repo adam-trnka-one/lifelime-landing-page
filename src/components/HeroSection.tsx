@@ -4,7 +4,7 @@ import {
   SheetContent,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Menu } from "lucide-react";
+import { Menu, Instagram, Facebook, Linkedin } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { z } from "zod";
@@ -463,6 +463,37 @@ const HeroSection = () => {
         open={showSuccessModal}
         onOpenChange={setShowSuccessModal}
       />
+
+      {/* Social Links - Bottom Right */}
+      <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+        <a 
+          href="https://www.instagram.com/lifeli.me" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="bg-white/10 backdrop-blur-sm p-3 rounded-full text-white hover:bg-white/20 hover:scale-110 transition-all duration-300 shadow-lg"
+          aria-label="Instagram"
+        >
+          <Instagram className="w-5 h-5" />
+        </a>
+        <a 
+          href="https://facebook.com/mylifelime/" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="bg-white/10 backdrop-blur-sm p-3 rounded-full text-white hover:bg-white/20 hover:scale-110 transition-all duration-300 shadow-lg"
+          aria-label="Facebook"
+        >
+          <Facebook className="w-5 h-5" />
+        </a>
+        <a 
+          href="https://linkedin.com/company/lifelime/" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="bg-white/10 backdrop-blur-sm p-3 rounded-full text-white hover:bg-white/20 hover:scale-110 transition-all duration-300 shadow-lg"
+          aria-label="LinkedIn"
+        >
+          <Linkedin className="w-5 h-5" />
+        </a>
+      </div>
     </div>
   );
 };
