@@ -29,37 +29,40 @@ const EmailPreview = () => {
           {/* Content */}
           <div className="p-8 space-y-6">
             <p className="text-lg text-foreground">
-              Thank you for joining the <strong className="text-primary">Lifeli.me</strong> waitlist. 
-              We're excited to have you!
+              Thank you for joining the <strong className="text-primary">lifeli.me</strong> waitlist.
             </p>
-
-            <div className="bg-gradient-to-br from-primary/10 to-purple-600/10 rounded-xl p-6 border border-primary/20">
-              <p className="text-foreground italic">
-                We're building something special – a place where you can{" "}
-                <span className="text-primary font-semibold">craft your legacy</span> and{" "}
-                <span className="text-primary font-semibold">preserve what defines you</span>.
-              </p>
-            </div>
 
             <p className="text-foreground">
-              We'll keep you updated on our progress and let you know as soon as we're ready to launch.
+              I started building lifeli.me because I wanted a place to capture the parts of life that truly define us — the moments, sounds, stories, and lessons that deserve to last.
             </p>
 
-            <div className="text-center py-4">
-              <p className="text-xl font-semibold text-primary">
-                Stay tuned!
-              </p>
-            </div>
+            <p className="text-foreground">
+              Soon, you'll be able to craft your own timeline, week by week — adding photos, videos, voice notes, and reflections that grow into your personal legacy.
+            </p>
+
+            <p className="text-foreground">
+              You're now part of the early circle shaping how lifeli.me evolves. Until the public launch, you can follow our progress and updates on{" "}
+              <a href="https://instagram.com/lifeli.me" className="text-primary hover:underline font-semibold">Instagram</a> |{" "}
+              <a href="https://facebook.com/lifeli.me" className="text-primary hover:underline font-semibold">Facebook</a> |{" "}
+              <a href="https://linkedin.com/company/lifeli-me" className="text-primary hover:underline font-semibold">LinkedIn</a>.
+            </p>
+
+            <p className="text-foreground">
+              If you'd like to share your thoughts, ideas, or just say hi — I'd love to hear from you. You can reach me directly at{" "}
+              <a href="mailto:adam@lifeli.me" className="text-primary hover:underline font-semibold">adam@lifeli.me</a>.
+            </p>
           </div>
 
           {/* Footer */}
           <div className="bg-muted/50 p-6 text-center border-t">
             <p className="text-sm text-muted-foreground mb-2">
-              Best regards,<br />
-              <span className="font-semibold">The Lifeli.me Team</span>
+              Gratefully,<br />
+              <span className="font-semibold">Adam Trnka</span><br />
+              Founder, lifeli.me<br />
+              <a href="https://www.lifeli.me" className="text-primary hover:underline">www.lifeli.me</a>
             </p>
             <p className="text-xs text-muted-foreground/70 mt-4">
-              You received this email because you signed up for the Lifeli.me waitlist
+              You received this email because you signed up for the lifeli.me waitlist
             </p>
           </div>
         </div>

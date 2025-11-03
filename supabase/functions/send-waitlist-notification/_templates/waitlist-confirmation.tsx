@@ -37,29 +37,39 @@ export const WaitlistConfirmationEmail = ({
           <Heading style={h1}>You're on the list! 🎉</Heading>
           
           <Text style={text}>
-            Thank you for joining the <strong>Lifeli.me</strong> waitlist. We're excited to have you!
+            Thank you for joining the <strong>lifeli.me</strong> waitlist.
           </Text>
           
           <Text style={text}>
-            We're building something special – a place where you can craft your legacy and preserve what defines you.
+            I started building lifeli.me because I wanted a place to capture the parts of life that truly define us — the moments, sounds, stories, and lessons that deserve to last.
           </Text>
           
           <Text style={text}>
-            We'll keep you updated on our progress and let you know as soon as we're ready to launch.
+            Soon, you'll be able to craft your own timeline, week by week — adding photos, videos, voice notes, and reflections that grow into your personal legacy.
           </Text>
           
-          <Text style={highlightText}>
-            Stay tuned!
+          <Text style={text}>
+            You're now part of the early circle shaping how lifeli.me evolves. Until the public launch, you can follow our progress and updates on{' '}
+            <a href="https://instagram.com/lifeli.me" style={link}>Instagram</a> |{' '}
+            <a href="https://facebook.com/lifeli.me" style={link}>Facebook</a> |{' '}
+            <a href="https://linkedin.com/company/lifeli-me" style={link}>LinkedIn</a>.
+          </Text>
+          
+          <Text style={text}>
+            If you'd like to share your thoughts, ideas, or just say hi — I'd love to hear from you. You can reach me directly at{' '}
+            <a href="mailto:adam@lifeli.me" style={link}>adam@lifeli.me</a>.
           </Text>
         </Section>
         
         <Section style={footer}>
           <Text style={footerText}>
-            Best regards,<br />
-            The Lifeli.me Team
+            Gratefully,<br />
+            <strong>Adam Trnka</strong><br />
+            Founder, lifeli.me<br />
+            <a href="https://www.lifeli.me" style={link}>www.lifeli.me</a>
           </Text>
           <Text style={footerSmall}>
-            You received this email because you signed up for the Lifeli.me waitlist with {email}
+            You received this email because you signed up for the lifeli.me waitlist with {email}
           </Text>
         </Section>
       </Container>
@@ -111,6 +121,11 @@ const text = {
   fontSize: '16px',
   lineHeight: '1.6',
   margin: '0 0 16px',
+}
+
+const link = {
+  color: '#ffffff',
+  textDecoration: 'underline',
 }
 
 const highlightText = {
