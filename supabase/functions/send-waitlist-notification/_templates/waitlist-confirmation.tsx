@@ -136,11 +136,11 @@ export const generateWaitlistConfirmationHTML = (
           </p>
 
           <p style="color: #0f172a; font-size: 16px; line-height: 1.6; margin: 0 0 24px;">
-            ${t.emailP4} <a href="https://www.instagram.com/lifeli.me" target="_blank" style="color: #9b87f5; text-decoration: none; font-weight: 600;">Instagram</a>, <a href="https://facebook.com/mylifelime/" target="_blank" style="color: #9b87f5; text-decoration: none; font-weight: 600;">Facebook</a> and <a href="https://linkedin.com/company/lifelime/" target="_blank" style="color: #9b87f5; text-decoration: none; font-weight: 600;">LinkedIn</a>.
+            ${t.emailP4} <a href="https://www.instagram.com/lifeli.me" target="_blank" style="color: #9b87f5; text-decoration: none; font-weight: 600;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">Instagram</a>, <a href="https://facebook.com/mylifelime/" target="_blank" style="color: #9b87f5; text-decoration: none; font-weight: 600;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">Facebook</a> and <a href="https://linkedin.com/company/lifelime/" target="_blank" style="color: #9b87f5; text-decoration: none; font-weight: 600;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">LinkedIn</a>.
           </p>
 
           <p style="color: #0f172a; font-size: 16px; line-height: 1.6; margin: 0;">
-            ${t.emailP5} <a href="mailto:adam@lifeli.me" style="color: #9b87f5; text-decoration: none; font-weight: 600;">adam@lifeli.me</a> ${t.emailP5b}
+            ${t.emailP5} <a href="mailto:adam@lifeli.me" style="color: #9b87f5; text-decoration: none; font-weight: 600;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">adam@lifeli.me</a> ${t.emailP5b}
           </p>
         </div>
 
@@ -163,23 +163,23 @@ export const generateWaitlistConfirmationHTML = (
                         ${t.emailSignature}<br />
                         <strong style="color: #0f172a;">Adam Trnka</strong><br />
                         Founder, lifeli.me<br />
-                        <a href="https://www.lifeli.me" target="_blank" style="color: #9b87f5; text-decoration: none;">www.lifeli.me</a>
+                        <a href="https://www.lifeli.me" target="_blank" style="color: #9b87f5; text-decoration: none;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">www.lifeli.me</a>
                       </p>
                     </td>
                   </tr>
                 </table>
               </td>
               <td style="text-align: right; vertical-align: top; padding-bottom: 16px;">
-                <a href="https://www.instagram.com/lifeli.me" target="_blank" style="display: inline-block; margin-left: 12px; color: #64748b; text-decoration: none; font-size: 14px;">Instagram</a>
-                <a href="https://facebook.com/mylifelime/" target="_blank" style="display: inline-block; margin-left: 12px; color: #64748b; text-decoration: none; font-size: 14px;">Facebook</a>
-                <a href="https://linkedin.com/company/lifelime/" target="_blank" style="display: inline-block; margin-left: 12px; color: #64748b; text-decoration: none; font-size: 14px;">LinkedIn</a>
+                <a href="https://www.instagram.com/lifeli.me" target="_blank" style="display: inline-block; margin-left: 12px; color: #64748b; text-decoration: none; font-size: 14px;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">Instagram</a>
+                <a href="https://facebook.com/mylifelime/" target="_blank" style="display: inline-block; margin-left: 12px; color: #64748b; text-decoration: none; font-size: 14px;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">Facebook</a>
+                <a href="https://linkedin.com/company/lifelime/" target="_blank" style="display: inline-block; margin-left: 12px; color: #64748b; text-decoration: none; font-size: 14px;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">LinkedIn</a>
               </td>
             </tr>
           </table>
           
           <p style="color: #94a3b8; font-size: 12px; line-height: 1.5; margin: 16px 0 0; text-align: center;">
             ${t.emailFooter}<br />
-            ${t.emailUnsubscribe} <a href="https://drljjepaolzzlirxhbit.supabase.co/functions/v1/unsubscribe-waitlist?email=${encodeURIComponent(email)}" style="color: #9b87f5; text-decoration: none;">unsubscribe anytime</a>.
+            ${t.emailUnsubscribe} <a href="https://drljjepaolzzlirxhbit.supabase.co/functions/v1/unsubscribe-waitlist?email=${encodeURIComponent(email)}" style="color: #9b87f5; text-decoration: none;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">unsubscribe anytime</a>.
           </p>
         </div>
       </div>
