@@ -62,12 +62,27 @@ export const WaitlistConfirmationEmail = ({
         </Section>
         
         <Section style={footer}>
-          <Text style={footerText}>
-            Gratefully,<br />
-            <strong>Adam Trnka</strong><br />
-            Founder, lifeli.me<br />
-            <a href="https://www.lifeli.me" style={link}>www.lifeli.me</a>
-          </Text>
+          <table style={{ margin: '0 auto', marginBottom: '16px' }}>
+            <tr>
+              <td style={{ paddingRight: '16px', verticalAlign: 'top' }}>
+                <Img
+                  src="https://drljjepaolzzlirxhbit.supabase.co/storage/v1/object/public/assets/adam_lifelime.png"
+                  width="64"
+                  height="64"
+                  alt="Adam Trnka"
+                  style={{ borderRadius: '50%', objectFit: 'cover' }}
+                />
+              </td>
+              <td style={{ verticalAlign: 'top' }}>
+                <Text style={{ ...footerText, textAlign: 'left', margin: '0' }}>
+                  Gratefully,<br />
+                  <strong>Adam Trnka</strong><br />
+                  Founder, lifeli.me<br />
+                  <a href="https://www.lifeli.me" style={link}>www.lifeli.me</a>
+                </Text>
+              </td>
+            </tr>
+          </table>
           <Text style={footerSmall}>
             You received this email because you signed up for the lifeli.me waitlist with {email}
           </Text>
