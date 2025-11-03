@@ -56,7 +56,7 @@ export const WaitlistConfirmationEmail = ({
             You're now part of the early circle shaping how lifeli.me evolves. Until the public launch, you can follow our progress and updates on social like{' '}
             <a href="https://instagram.com/lifeli.me" style={link}>Instagram</a>,{' '}
             <a href="https://facebook.com/lifeli.me" style={link}>Facebook</a> and{' '}
-            <a href="https://linkedin.com/company/lifeli-me" style={link}>LinkedIn</a>.
+            <a href="https://linkedin.com/company/lifelime/" style={link}>LinkedIn</a>.
           </Text>
           
           <Text style={text}>
