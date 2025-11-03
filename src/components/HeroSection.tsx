@@ -412,7 +412,7 @@ const HeroSection = () => {
               </button>
               
               {/* Scrollable Content */}
-              <div className="bg-white/10 backdrop-blur-2xl rounded-3xl p-6 sm:p-8 lg:p-14 shadow-2xl overflow-y-auto max-h-[85vh] sm:max-h-[90vh] overscroll-contain touch-pan-y"
+              <div className="bg-white/10 backdrop-blur-2xl rounded-3xl p-6 sm:p-8 lg:p-14 shadow-2xl overflow-y-auto max-h-[85vh] sm:max-h-[90vh] overscroll-contain touch-pan-y scrollbar-hide"
                 style={{ 
                   boxShadow: 'inset 0 1px 0 0 rgba(255, 255, 255, 0.1), 0 20px 60px -15px rgba(0, 0, 0, 0.3)',
                   WebkitOverflowScrolling: 'touch'
