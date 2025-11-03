@@ -101,75 +101,93 @@ export const generateWaitlistConfirmationHTML = (
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body style="margin: 0; padding: 0; background-color: #f3f0ff; background-image: url('http://lifelime.trnka.one/bg_lifelime.png'); background-size: cover; background-position: center; background-repeat: no-repeat; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;">
-    <div style="margin: 0 auto; padding: 40px 20px; max-width: 600px;">
-      <!-- Logo Section -->
-      <div style="text-align: center; margin-bottom: 32px;">
-        <img src="http://lifelime.trnka.one/logo_lifelime_l_white.png" width="120" height="40" alt="Lifeli.me" style="display: block; margin: 0 auto; max-width: 120px; height: auto;" />
-      </div>
-      
-      <!-- Content Section -->
-      <div style="background: linear-gradient(135deg, #9b87f5 0%, #7E69AB 100%); border-radius: 16px; padding: 40px 32px; box-shadow: 0 10px 30px -10px rgba(155, 135, 245, 0.3);">
-        <h1 style="color: #ffffff; font-size: 32px; font-weight: 700; margin: 0 0 24px; text-align: center; line-height: 1.2;">${t.emailTitle}</h1>
+    <div style="max-width: 672px; margin: 40px auto; padding: 0 20px;">
+      <!-- Email Container -->
+      <div style="background-color: rgba(255, 255, 255, 0.95); backdrop-filter: blur(8px); border-radius: 16px; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); overflow: hidden;">
         
-        <p style="color: #ffffff; font-size: 16px; line-height: 1.6; margin: 0 0 16px;">${t.emailGreeting}</p>
-        
-        <p style="color: #ffffff; font-size: 16px; line-height: 1.6; margin: 0 0 16px;">${t.emailP1}</p>
-        
-        <p style="color: #ffffff; font-size: 16px; line-height: 1.6; margin: 0 0 16px;">${t.emailP2}</p>
-        
-        <p style="color: #ffffff; font-size: 16px; line-height: 1.6; margin: 0 0 16px;">${t.emailP3}</p>
-        
-        <p style="color: #ffffff; font-size: 16px; line-height: 1.6; margin: 0 0 16px;">
-          ${t.emailP4} <a href="https://www.instagram.com/lifeli.me" target="_blank" style="color: #ffffff; text-decoration: underline;">Instagram</a>, <a href="https://facebook.com/mylifelime/" target="_blank" style="color: #ffffff; text-decoration: underline;">Facebook</a> and <a href="https://linkedin.com/company/lifelime/" target="_blank" style="color: #ffffff; text-decoration: underline;">LinkedIn</a>.
-        </p>
-        
-        <p style="color: #ffffff; font-size: 16px; line-height: 1.6; margin: 0 0 16px;">
-          ${t.emailP5} <a href="mailto:adam@lifeli.me" style="color: #ffffff; text-decoration: underline;">adam@lifeli.me</a> ${t.emailP5b}
-        </p>
-      </div>
-      
-      <!-- Footer -->
-      <div style="margin-top: 32px; text-align: center;">
-        <table style="width: 100%; margin-bottom: 16px;">
-          <tr>
-            <td style="padding-right: 16px; vertical-align: middle;">
-              <table style="border-collapse: collapse;">
-                <tr>
-                  <td style="padding-right: 16px; vertical-align: middle;">
-                    <img src="http://lifelime.trnka.one/adam_lifelime.png" width="64" height="64" alt="Adam Trnka" style="border-radius: 50%; object-fit: cover; display: block; max-width: 64px; height: auto;" />
-                  </td>
-                  <td style="vertical-align: middle;">
-                    <p style="color: #666666; font-size: 14px; line-height: 1.4; margin: 0; text-align: left;">
-                      ${t.emailSignature}<br />
-                      <strong>Adam Trnka</strong><br />
-                      Founder, lifeli.me<br />
-                      <a href="https://www.lifeli.me" target="_blank" style="color: #ffffff; text-decoration: underline;">www.lifeli.me</a>
-                    </p>
-                  </td>
-                </tr>
-              </table>
-            </td>
-            <td style="text-align: right; vertical-align: middle; padding-top: 8px;">
-              <table style="margin-left: auto;">
-                <tr>
-                  <td style="padding-left: 12px;">
-                    <a href="https://www.instagram.com/lifeli.me" target="_blank" style="color: #9b87f5; text-decoration: none; font-size: 14px; font-weight: 500;">Instagram</a>
-                  </td>
-                  <td style="padding-left: 12px;">
-                    <a href="https://facebook.com/mylifelime/" target="_blank" style="color: #9b87f5; text-decoration: none; font-size: 14px; font-weight: 500;">Facebook</a>
-                  </td>
-                  <td style="padding-left: 12px;">
-                    <a href="https://linkedin.com/company/lifelime/" target="_blank" style="color: #9b87f5; text-decoration: none; font-size: 14px; font-weight: 500;">LinkedIn</a>
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-        </table>
-        <p style="color: #999999; font-size: 12px; line-height: 1.5; margin: 0;">
-          ${t.emailFooter}<br />
-          ${t.emailUnsubscribe} <a href="https://drljjepaolzzlirxhbit.supabase.co/functions/v1/unsubscribe-waitlist?email=${encodeURIComponent(email)}" style="color: #ffffff; text-decoration: underline;">unsubscribe</a>.
-        </p>
+        <!-- Header Section -->
+        <div style="background: linear-gradient(to right, #9b87f5, #9333ea, rgba(155, 135, 245, 0.8)); padding: 48px 32px; text-align: center;">
+          <img 
+            src="http://lifelime.trnka.one/logo_lifelime_l_white.png" 
+            alt="Lifeli.me" 
+            style="height: 48px; margin: 0 auto 24px; display: block;"
+          />
+          <h1 style="color: #ffffff; font-size: 36px; font-weight: 700; margin: 0; line-height: 1.2;">
+            ${t.emailTitle}
+          </h1>
+        </div>
+
+        <!-- Content Section -->
+        <div style="padding: 48px 32px; background-color: #ffffff;">
+          <p style="color: #0f172a; font-size: 16px; line-height: 1.6; margin: 0 0 24px;">
+            ${t.emailGreeting}
+          </p>
+
+          <p style="color: #0f172a; font-size: 16px; line-height: 1.6; margin: 0 0 24px;">
+            ${t.emailP1}
+          </p>
+
+          <p style="color: #0f172a; font-size: 16px; line-height: 1.6; margin: 0 0 24px;">
+            ${t.emailP2}
+          </p>
+
+          <p style="color: #0f172a; font-size: 16px; line-height: 1.6; margin: 0 0 24px;">
+            ${t.emailP3}
+          </p>
+
+          <p style="color: #0f172a; font-size: 16px; line-height: 1.6; margin: 0 0 24px;">
+            ${t.emailP4} <a href="https://www.instagram.com/lifeli.me" target="_blank" style="color: #9b87f5; text-decoration: none; font-weight: 600;">Instagram</a>, <a href="https://facebook.com/mylifelime/" target="_blank" style="color: #9b87f5; text-decoration: none; font-weight: 600;">Facebook</a> and <a href="https://linkedin.com/company/lifelime/" target="_blank" style="color: #9b87f5; text-decoration: none; font-weight: 600;">LinkedIn</a>.
+          </p>
+
+          <p style="color: #0f172a; font-size: 16px; line-height: 1.6; margin: 0;">
+            ${t.emailP5} <a href="mailto:adam@lifeli.me" style="color: #9b87f5; text-decoration: none; font-weight: 600;">adam@lifeli.me</a> ${t.emailP5b}
+          </p>
+        </div>
+
+        <!-- Footer Section -->
+        <div style="background-color: #f8fafc; padding: 24px 32px; border-top: 1px solid #e2e8f0;">
+          <table style="width: 100%; border-collapse: collapse;">
+            <tr>
+              <td style="vertical-align: top; padding-bottom: 16px;">
+                <table style="border-collapse: collapse;">
+                  <tr>
+                    <td style="padding-right: 16px; vertical-align: top;">
+                      <img 
+                        src="http://lifelime.trnka.one/adam_lifelime.png" 
+                        alt="Adam Trnka" 
+                        style="width: 64px; height: 64px; border-radius: 50%; object-fit: cover; display: block;"
+                      />
+                    </td>
+                    <td style="vertical-align: top;">
+                      <p style="color: #64748b; font-size: 14px; line-height: 1.5; margin: 0; text-align: left;">
+                        ${t.emailSignature}<br />
+                        <strong style="color: #0f172a;">Adam Trnka</strong><br />
+                        Founder, lifeli.me<br />
+                        <a href="https://www.lifeli.me" target="_blank" style="color: #9b87f5; text-decoration: none;">www.lifeli.me</a>
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+              <td style="text-align: right; vertical-align: top; padding-bottom: 16px;">
+                <a href="https://www.instagram.com/lifeli.me" target="_blank" style="display: inline-block; margin-left: 12px; color: #64748b; text-decoration: none;">
+                  <span style="font-size: 20px;">📷</span>
+                </a>
+                <a href="https://facebook.com/mylifelime/" target="_blank" style="display: inline-block; margin-left: 12px; color: #64748b; text-decoration: none;">
+                  <span style="font-size: 20px;">📘</span>
+                </a>
+                <a href="https://linkedin.com/company/lifelime/" target="_blank" style="display: inline-block; margin-left: 12px; color: #64748b; text-decoration: none;">
+                  <span style="font-size: 20px;">💼</span>
+                </a>
+              </td>
+            </tr>
+          </table>
+          
+          <p style="color: #94a3b8; font-size: 12px; line-height: 1.5; margin: 16px 0 0; text-align: center;">
+            ${t.emailFooter}<br />
+            ${t.emailUnsubscribe} <a href="https://drljjepaolzzlirxhbit.supabase.co/functions/v1/unsubscribe-waitlist?email=${encodeURIComponent(email)}" style="color: #9b87f5; text-decoration: none;">unsubscribe anytime</a>.
+          </p>
+        </div>
       </div>
     </div>
   </body>
