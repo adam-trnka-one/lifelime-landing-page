@@ -1,17 +1,3 @@
-import {
-  Body,
-  Container,
-  Head,
-  Heading,
-  Html,
-  Img,
-  Link,
-  Preview,
-  Section,
-  Text,
-} from 'https://esm.sh/@react-email/components@0.0.22'
-import * as React from 'https://esm.sh/react@18.3.1'
-
 interface WaitlistConfirmationEmailProps {
   email: string
   language?: string
@@ -99,193 +85,102 @@ const translations: Record<string, any> = {
   }
 }
 
-export const WaitlistConfirmationEmail = ({
-  email,
-  language = 'en',
-}: WaitlistConfirmationEmailProps) => {
+export const generateWaitlistConfirmationHTML = (
+  email: string,
+  language: string = 'en'
+): string => {
   // Normalize language code (en-US -> en, etc.)
   const normalizedLang = language.split('-')[0].toLowerCase()
   const t = translations[normalizedLang] || translations.en
   
-  return (
-    <Html>
-      <Head />
-      <Preview>{t.emailTitle}</Preview>
-      <Body style={main}>
-        <Container style={container}>
-          <Section style={logoSection}>
-            <Img
-              src="https://drljjepaolzzlirxhbit.supabase.co/storage/v1/object/public/assets/logo_lifelime_l.svg"
-              width="120"
-              height="40"
-              alt="Lifeli.me"
-              style={logo}
-            />
-          </Section>
-          
-          <Section style={contentSection}>
-            <Heading style={h1}>{t.emailTitle}</Heading>
-            
-            <Text style={text}>
-              {t.emailGreeting}
-            </Text>
-            
-            <Text style={text}>
-              {t.emailP1}
-            </Text>
-            
-            <Text style={text}>
-              {t.emailP2}
-            </Text>
-            
-            <Text style={text}>
-              {t.emailP3}
-            </Text>
-            
-            <Text style={text}>
-              {t.emailP4} <Link href="https://www.instagram.com/lifeli.me" target="_blank" style={link}>Instagram</Link>, <Link href="https://facebook.com/mylifelime/" target="_blank" style={link}>Facebook</Link> and <Link href="https://linkedin.com/company/lifelime/" target="_blank" style={link}>LinkedIn</Link>.
-            </Text>
-            
-            <Text style={text}>
-              {t.emailP5} <Link href="mailto:adam@lifeli.me" style={link}>adam@lifeli.me</Link> {t.emailP5b}
-            </Text>
-          </Section>
-          
-          <Section style={footer}>
-            <table style={{ width: '100%', marginBottom: '16px' }}>
-              <tr>
-                <td style={{ paddingRight: '16px', verticalAlign: 'middle' }}>
-                  <table style={{ borderCollapse: 'collapse' }}>
-                    <tr>
-                      <td style={{ paddingRight: '16px', verticalAlign: 'middle' }}>
-                        <Img
-                          src="https://drljjepaolzzlirxhbit.supabase.co/storage/v1/object/public/assets/adam_lifelime.png"
-                          width="64"
-                          height="64"
-                          alt="Adam Trnka"
-                          style={{ borderRadius: '50%', objectFit: 'cover', display: 'block' }}
-                        />
-                      </td>
-                      <td style={{ verticalAlign: 'middle' }}>
-                        <Text style={{ ...footerText, textAlign: 'left', margin: '0', lineHeight: '1.4' }}>
-                          {t.emailSignature}<br />
-                          <strong>Adam Trnka</strong><br />
-                          Founder, lifeli.me<br />
-                          <Link href="https://www.lifeli.me" target="_blank" style={link}>www.lifeli.me</Link>
-                        </Text>
-                      </td>
-                    </tr>
-                  </table>
-                </td>
-                <td style={{ textAlign: 'right', verticalAlign: 'middle', paddingTop: '8px' }}>
-                  <table style={{ marginLeft: 'auto' }}>
-                    <tr>
-                      <td style={{ paddingLeft: '12px' }}>
-                        <Link href="https://www.instagram.com/lifeli.me" target="_blank" style={{ textDecoration: 'none' }}>
-                          <Img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" width="24" height="24" alt="Instagram" style={{ display: 'block' }} />
-                        </Link>
-                      </td>
-                      <td style={{ paddingLeft: '12px' }}>
-                        <Link href="https://facebook.com/mylifelime/" target="_blank" style={{ textDecoration: 'none' }}>
-                          <Img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/facebook.svg" width="24" height="24" alt="Facebook" style={{ display: 'block' }} />
-                        </Link>
-                      </td>
-                      <td style={{ paddingLeft: '12px' }}>
-                        <Link href="https://linkedin.com/company/lifelime/" target="_blank" style={{ textDecoration: 'none' }}>
-                          <Img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" width="24" height="24" alt="LinkedIn" style={{ display: 'block' }} />
-                        </Link>
-                      </td>
-                    </tr>
-                  </table>
-                </td>
-              </tr>
-            </table>
-            <Text style={footerSmall}>
-              {t.emailFooter}<br />
-              {t.emailUnsubscribe} <Link href={`https://drljjepaolzzlirxhbit.supabase.co/functions/v1/unsubscribe-waitlist?email=${encodeURIComponent(email)}`} style={link}>unsubscribe</Link>.
-            </Text>
-          </Section>
-        </Container>
-      </Body>
-    </Html>
-  )
+  return `
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body style="margin: 0; padding: 0; background-color: #f3f0ff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;">
+    <div style="margin: 0 auto; padding: 40px 20px; max-width: 600px;">
+      <!-- Logo Section -->
+      <div style="text-align: center; margin-bottom: 32px;">
+        <img src="https://drljjepaolzzlirxhbit.supabase.co/storage/v1/object/public/assets/logo_lifelime_l.svg" width="120" height="40" alt="Lifeli.me" style="margin: 0 auto;" />
+      </div>
+      
+      <!-- Content Section -->
+      <div style="background: linear-gradient(135deg, #9b87f5 0%, #7E69AB 100%); border-radius: 16px; padding: 40px 32px; box-shadow: 0 10px 30px -10px rgba(155, 135, 245, 0.3);">
+        <h1 style="color: #ffffff; font-size: 32px; font-weight: 700; margin: 0 0 24px; text-align: center; line-height: 1.2;">${t.emailTitle}</h1>
+        
+        <p style="color: #ffffff; font-size: 16px; line-height: 1.6; margin: 0 0 16px;">${t.emailGreeting}</p>
+        
+        <p style="color: #ffffff; font-size: 16px; line-height: 1.6; margin: 0 0 16px;">${t.emailP1}</p>
+        
+        <p style="color: #ffffff; font-size: 16px; line-height: 1.6; margin: 0 0 16px;">${t.emailP2}</p>
+        
+        <p style="color: #ffffff; font-size: 16px; line-height: 1.6; margin: 0 0 16px;">${t.emailP3}</p>
+        
+        <p style="color: #ffffff; font-size: 16px; line-height: 1.6; margin: 0 0 16px;">
+          ${t.emailP4} <a href="https://www.instagram.com/lifeli.me" target="_blank" style="color: #ffffff; text-decoration: underline;">Instagram</a>, <a href="https://facebook.com/mylifelime/" target="_blank" style="color: #ffffff; text-decoration: underline;">Facebook</a> and <a href="https://linkedin.com/company/lifelime/" target="_blank" style="color: #ffffff; text-decoration: underline;">LinkedIn</a>.
+        </p>
+        
+        <p style="color: #ffffff; font-size: 16px; line-height: 1.6; margin: 0 0 16px;">
+          ${t.emailP5} <a href="mailto:adam@lifeli.me" style="color: #ffffff; text-decoration: underline;">adam@lifeli.me</a> ${t.emailP5b}
+        </p>
+      </div>
+      
+      <!-- Footer -->
+      <div style="margin-top: 32px; text-align: center;">
+        <table style="width: 100%; margin-bottom: 16px;">
+          <tr>
+            <td style="padding-right: 16px; vertical-align: middle;">
+              <table style="border-collapse: collapse;">
+                <tr>
+                  <td style="padding-right: 16px; vertical-align: middle;">
+                    <img src="https://drljjepaolzzlirxhbit.supabase.co/storage/v1/object/public/assets/adam_lifelime.png" width="64" height="64" alt="Adam Trnka" style="border-radius: 50%; object-fit: cover; display: block;" />
+                  </td>
+                  <td style="vertical-align: middle;">
+                    <p style="color: #666666; font-size: 14px; line-height: 1.4; margin: 0; text-align: left;">
+                      ${t.emailSignature}<br />
+                      <strong>Adam Trnka</strong><br />
+                      Founder, lifeli.me<br />
+                      <a href="https://www.lifeli.me" target="_blank" style="color: #ffffff; text-decoration: underline;">www.lifeli.me</a>
+                    </p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+            <td style="text-align: right; vertical-align: middle; padding-top: 8px;">
+              <table style="margin-left: auto;">
+                <tr>
+                  <td style="padding-left: 12px;">
+                    <a href="https://www.instagram.com/lifeli.me" target="_blank" style="text-decoration: none;">
+                      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" width="24" height="24" alt="Instagram" style="display: block;" />
+                    </a>
+                  </td>
+                  <td style="padding-left: 12px;">
+                    <a href="https://facebook.com/mylifelime/" target="_blank" style="text-decoration: none;">
+                      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/facebook.svg" width="24" height="24" alt="Facebook" style="display: block;" />
+                    </a>
+                  </td>
+                  <td style="padding-left: 12px;">
+                    <a href="https://linkedin.com/company/lifelime/" target="_blank" style="text-decoration: none;">
+                      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" width="24" height="24" alt="LinkedIn" style="display: block;" />
+                    </a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+        <p style="color: #999999; font-size: 12px; line-height: 1.5; margin: 0;">
+          ${t.emailFooter}<br />
+          ${t.emailUnsubscribe} <a href="https://drljjepaolzzlirxhbit.supabase.co/functions/v1/unsubscribe-waitlist?email=${encodeURIComponent(email)}" style="color: #ffffff; text-decoration: underline;">unsubscribe</a>.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
+  `
 }
 
-export default WaitlistConfirmationEmail
-
-const main = {
-  backgroundColor: '#f3f0ff',
-  fontFamily:
-    '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
-}
-
-const container = {
-  margin: '0 auto',
-  padding: '40px 20px',
-  maxWidth: '600px',
-}
-
-const logoSection = {
-  textAlign: 'center' as const,
-  marginBottom: '32px',
-}
-
-const logo = {
-  margin: '0 auto',
-}
-
-const contentSection = {
-  background: 'linear-gradient(135deg, #9b87f5 0%, #7E69AB 100%)',
-  borderRadius: '16px',
-  padding: '40px 32px',
-  boxShadow: '0 10px 30px -10px rgba(155, 135, 245, 0.3)',
-}
-
-const h1 = {
-  color: '#ffffff',
-  fontSize: '32px',
-  fontWeight: '700',
-  margin: '0 0 24px',
-  textAlign: 'center' as const,
-  lineHeight: '1.2',
-}
-
-const text = {
-  color: '#ffffff',
-  fontSize: '16px',
-  lineHeight: '1.6',
-  margin: '0 0 16px',
-}
-
-const link = {
-  color: '#ffffff',
-  textDecoration: 'underline',
-}
-
-const highlightText = {
-  color: '#ffffff',
-  fontSize: '18px',
-  fontWeight: '600',
-  lineHeight: '1.6',
-  margin: '24px 0 0',
-  textAlign: 'center' as const,
-}
-
-const footer = {
-  marginTop: '32px',
-  textAlign: 'center' as const,
-}
-
-const footerText = {
-  color: '#666666',
-  fontSize: '14px',
-  lineHeight: '1.6',
-  margin: '0 0 16px',
-}
-
-const footerSmall = {
-  color: '#999999',
-  fontSize: '12px',
-  lineHeight: '1.5',
-  margin: '0',
-}
+export default generateWaitlistConfirmationHTML
