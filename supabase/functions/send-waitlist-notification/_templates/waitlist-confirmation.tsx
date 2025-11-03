@@ -37,7 +37,7 @@ export const WaitlistConfirmationEmail = ({
           <Heading style={h1}>You're on the list! 🎉</Heading>
           
           <Text style={text}>
-            Thank you for joining the <strong>lifeli.me</strong> waitlist.
+            Hello, thank you for joining the <strong>lifeli.me</strong> waitlist.
           </Text>
           
           <Text style={text}>

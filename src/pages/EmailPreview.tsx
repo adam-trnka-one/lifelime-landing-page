@@ -30,7 +30,7 @@ const EmailPreview = () => {
           {/* Content */}
           <div className="p-8 space-y-6">
             <p className="text-base text-foreground">
-              Thank you for joining the <strong className="text-primary">lifeli.me</strong> waitlist.
+              Hello, thank you for joining the <strong className="text-primary">lifeli.me</strong> waitlist.
             </p>
 
             <p className="text-base text-foreground">
