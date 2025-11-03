@@ -1,6 +1,7 @@
 import emailBackground from "@/assets/bg_lifelime.png";
 import logoLifelime from "@/assets/logo_lifelime_l_white.svg";
 import adamPhoto from "@/assets/adam_lifelime.png";
+import { Instagram, Facebook, Linkedin } from "lucide-react";
 
 const EmailPreview = () => {
   return (
@@ -60,18 +61,31 @@ const EmailPreview = () => {
 
           {/* Footer */}
           <div className="bg-muted/50 p-6 border-t">
-            <div className="flex items-center justify-center gap-4 mb-2">
-              <img 
-                src={adamPhoto} 
-                alt="Adam Trnka" 
-                className="w-16 h-16 rounded-full object-cover"
-              />
-              <p className="text-sm text-muted-foreground text-left">
-                Gratefully,<br />
-                <span className="font-semibold">Adam Trnka</span><br />
-                Founder, lifeli.me<br />
-                <a href="https://www.lifeli.me" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">www.lifeli.me</a>
-              </p>
+            <div className="flex items-center justify-between mb-2">
+              <div className="flex items-center gap-4">
+                <img 
+                  src={adamPhoto} 
+                  alt="Adam Trnka" 
+                  className="w-16 h-16 rounded-full object-cover"
+                />
+                <p className="text-sm text-muted-foreground text-left">
+                  Gratefully,<br />
+                  <span className="font-semibold">Adam Trnka</span><br />
+                  Founder, lifeli.me<br />
+                  <a href="https://www.lifeli.me" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">www.lifeli.me</a>
+                </p>
+              </div>
+              <div className="flex gap-3">
+                <a href="https://www.instagram.com/lifeli.me" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                  <Instagram className="w-5 h-5" />
+                </a>
+                <a href="https://facebook.com/mylifelime/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                  <Facebook className="w-5 h-5" />
+                </a>
+                <a href="https://linkedin.com/company/lifelime/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                  <Linkedin className="w-5 h-5" />
+                </a>
+              </div>
             </div>
             <p className="text-xs text-muted-foreground/70 mt-4 text-center">
               You received this email because you signed up for the lifeli.me waitlist.<br />
