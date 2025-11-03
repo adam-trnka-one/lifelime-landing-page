@@ -118,6 +118,16 @@ export const useWaitlistSubmit = () => {
         throw error;
       }
 
+      // Send notification email (don't await - background task)
+      supabase.functions.invoke('send-waitlist-notification', {
+        body: {
+          email: data.email.trim().toLowerCase(),
+          browserName,
+          osName,
+          locationCountry: locationData.location_country,
+        }
+      }).catch(error => console.error('Failed to send notification:', error));
+
       return true;
     },
     onSuccess: () => {
