@@ -41,10 +41,10 @@ const CookieConsent = () => {
     return (
       <button
         onClick={handleEditPreferences}
-        className="fixed bottom-4 left-4 z-40 bg-white/95 backdrop-blur-sm rounded-full p-3 shadow-lg border border-gray-200 hover:bg-white hover:shadow-xl transition-all duration-300 group"
+        className="fixed bottom-4 left-4 z-40 text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 p-2 rounded-lg"
         aria-label="Edit cookie preferences"
       >
-        <Settings className="w-5 h-5 text-gray-600 group-hover:text-primary group-hover:rotate-90 transition-all duration-300" />
+        <Settings className="w-5 h-5 hover:rotate-90 transition-all duration-300" />
       </button>
     );
   }
