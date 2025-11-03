@@ -5,6 +5,7 @@ import {
   Heading,
   Html,
   Img,
+  Link,
   Preview,
   Section,
   Text,
@@ -142,15 +143,11 @@ export const WaitlistConfirmationEmail = ({
             </Text>
             
             <Text style={text}>
-              {t.emailP4}{' '}
-              <a href="https://www.instagram.com/lifeli.me" target="_blank" style={link}>Instagram</a>,{' '}
-              <a href="https://facebook.com/mylifelime/" target="_blank" style={link}>Facebook</a> and{' '}
-              <a href="https://linkedin.com/company/lifelime/" target="_blank" style={link}>LinkedIn</a>.
+              {t.emailP4} <Link href="https://www.instagram.com/lifeli.me" target="_blank" style={link}>Instagram</Link>, <Link href="https://facebook.com/mylifelime/" target="_blank" style={link}>Facebook</Link> and <Link href="https://linkedin.com/company/lifelime/" target="_blank" style={link}>LinkedIn</Link>.
             </Text>
             
             <Text style={text}>
-              {t.emailP5}{' '}
-              <a href="mailto:adam@lifeli.me" style={link}>adam@lifeli.me</a> {t.emailP5b}
+              {t.emailP5} <Link href="mailto:adam@lifeli.me" style={link}>adam@lifeli.me</Link> {t.emailP5b}
             </Text>
           </Section>
           
@@ -174,7 +171,7 @@ export const WaitlistConfirmationEmail = ({
                           {t.emailSignature}<br />
                           <strong>Adam Trnka</strong><br />
                           Founder, lifeli.me<br />
-                          <a href="https://www.lifeli.me" target="_blank" style={link}>www.lifeli.me</a>
+                          <Link href="https://www.lifeli.me" target="_blank" style={link}>www.lifeli.me</Link>
                         </Text>
                       </td>
                     </tr>
@@ -184,19 +181,19 @@ export const WaitlistConfirmationEmail = ({
                   <table style={{ marginLeft: 'auto' }}>
                     <tr>
                       <td style={{ paddingLeft: '12px' }}>
-                        <a href="https://www.instagram.com/lifeli.me" target="_blank" style={{ textDecoration: 'none' }}>
+                        <Link href="https://www.instagram.com/lifeli.me" target="_blank" style={{ textDecoration: 'none' }}>
                           <Img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" width="24" height="24" alt="Instagram" style={{ display: 'block' }} />
-                        </a>
+                        </Link>
                       </td>
                       <td style={{ paddingLeft: '12px' }}>
-                        <a href="https://facebook.com/mylifelime/" target="_blank" style={{ textDecoration: 'none' }}>
+                        <Link href="https://facebook.com/mylifelime/" target="_blank" style={{ textDecoration: 'none' }}>
                           <Img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/facebook.svg" width="24" height="24" alt="Facebook" style={{ display: 'block' }} />
-                        </a>
+                        </Link>
                       </td>
                       <td style={{ paddingLeft: '12px' }}>
-                        <a href="https://linkedin.com/company/lifelime/" target="_blank" style={{ textDecoration: 'none' }}>
+                        <Link href="https://linkedin.com/company/lifelime/" target="_blank" style={{ textDecoration: 'none' }}>
                           <Img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" width="24" height="24" alt="LinkedIn" style={{ display: 'block' }} />
-                        </a>
+                        </Link>
                       </td>
                     </tr>
                   </table>
@@ -205,7 +202,7 @@ export const WaitlistConfirmationEmail = ({
             </table>
             <Text style={footerSmall}>
               {t.emailFooter}<br />
-              {t.emailUnsubscribe} <a href={`https://drljjepaolzzlirxhbit.supabase.co/functions/v1/unsubscribe-waitlist?email=${encodeURIComponent(email)}`} style={link}>unsubscribe</a>.
+              {t.emailUnsubscribe} <Link href={`https://drljjepaolzzlirxhbit.supabase.co/functions/v1/unsubscribe-waitlist?email=${encodeURIComponent(email)}`} style={link}>unsubscribe</Link>.
             </Text>
           </Section>
         </Container>
