@@ -104,7 +104,7 @@ export const generateWaitlistConfirmationHTML = (
     <div style="margin: 0 auto; padding: 40px 20px; max-width: 600px;">
       <!-- Logo Section -->
       <div style="text-align: center; margin-bottom: 32px;">
-        <img src="https://drljjepaolzzlirxhbit.supabase.co/storage/v1/object/public/assets/logo_lifelime_l.svg" width="120" height="40" alt="Lifeli.me" style="margin: 0 auto;" />
+        <img src="https://drljjepaolzzlirxhbit.supabase.co/storage/v1/object/public/assets/logo_lifelime_l.svg" width="120" height="40" alt="Lifeli.me" style="display: block; margin: 0 auto; max-width: 120px; height: auto;" />
       </div>
       
       <!-- Content Section -->
@@ -136,7 +136,7 @@ export const generateWaitlistConfirmationHTML = (
               <table style="border-collapse: collapse;">
                 <tr>
                   <td style="padding-right: 16px; vertical-align: middle;">
-                    <img src="https://drljjepaolzzlirxhbit.supabase.co/storage/v1/object/public/assets/adam_lifelime.png" width="64" height="64" alt="Adam Trnka" style="border-radius: 50%; object-fit: cover; display: block;" />
+                    <img src="https://drljjepaolzzlirxhbit.supabase.co/storage/v1/object/public/assets/adam_lifelime.png" width="64" height="64" alt="Adam Trnka" style="border-radius: 50%; object-fit: cover; display: block; max-width: 64px; height: auto;" />
                   </td>
                   <td style="vertical-align: middle;">
                     <p style="color: #666666; font-size: 14px; line-height: 1.4; margin: 0; text-align: left;">
@@ -153,19 +153,13 @@ export const generateWaitlistConfirmationHTML = (
               <table style="margin-left: auto;">
                 <tr>
                   <td style="padding-left: 12px;">
-                    <a href="https://www.instagram.com/lifeli.me" target="_blank" style="text-decoration: none;">
-                      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" width="24" height="24" alt="Instagram" style="display: block;" />
-                    </a>
+                    <a href="https://www.instagram.com/lifeli.me" target="_blank" style="color: #9b87f5; text-decoration: none; font-size: 14px; font-weight: 500;">Instagram</a>
                   </td>
                   <td style="padding-left: 12px;">
-                    <a href="https://facebook.com/mylifelime/" target="_blank" style="text-decoration: none;">
-                      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/facebook.svg" width="24" height="24" alt="Facebook" style="display: block;" />
-                    </a>
+                    <a href="https://facebook.com/mylifelime/" target="_blank" style="color: #9b87f5; text-decoration: none; font-size: 14px; font-weight: 500;">Facebook</a>
                   </td>
                   <td style="padding-left: 12px;">
-                    <a href="https://linkedin.com/company/lifelime/" target="_blank" style="text-decoration: none;">
-                      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" width="24" height="24" alt="LinkedIn" style="display: block;" />
-                    </a>
+                    <a href="https://linkedin.com/company/lifelime/" target="_blank" style="color: #9b87f5; text-decoration: none; font-size: 14px; font-weight: 500;">LinkedIn</a>
                   </td>
                 </tr>
               </table>
