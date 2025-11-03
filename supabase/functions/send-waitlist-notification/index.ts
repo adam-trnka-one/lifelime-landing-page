@@ -26,7 +26,8 @@ const handler = async (req: Request): Promise<Response> => {
 
     console.log("Sending waitlist notification for:", email);
 
-    const emailResponse = await resend.emails.send({
+    // Send notification to admin
+    const adminEmailResponse = await resend.emails.send({
       from: "Lifeli.me Waitlist <newjoinwaitlist@lifeli.me>",
       to: ["newjoinwaitlist@lifeli.me"],
       subject: "New Waitlist Signup",
@@ -40,7 +41,26 @@ const handler = async (req: Request): Promise<Response> => {
       `,
     });
 
-    console.log("Email sent successfully:", emailResponse);
+    console.log("Admin notification sent:", adminEmailResponse);
+
+    // Send confirmation to user
+    const userEmailResponse = await resend.emails.send({
+      from: "Lifeli.me <newjoinwaitlist@lifeli.me>",
+      to: [email],
+      subject: "Welcome to the Lifeli.me Waitlist!",
+      html: `
+        <h1>You're on the list! 🎉</h1>
+        <p>Thank you for joining the Lifeli.me waitlist. We're excited to have you!</p>
+        <p>We'll keep you updated on our progress and let you know as soon as we're ready to launch.</p>
+        <p>Stay tuned!</p>
+        <br>
+        <p>Best regards,<br>The Lifeli.me Team</p>
+      `,
+    });
+
+    console.log("User confirmation sent:", userEmailResponse);
+
+    const emailResponse = { admin: adminEmailResponse, user: userEmailResponse };
 
     return new Response(JSON.stringify(emailResponse), {
       status: 200,
