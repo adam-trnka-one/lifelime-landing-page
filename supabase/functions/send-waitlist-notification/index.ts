@@ -1,5 +1,9 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { Resend } from "https://esm.sh/resend@4.0.0";
+import React from 'https://esm.sh/react@18.3.1';
+import { renderAsync } from 'https://esm.sh/@react-email/components@0.0.22';
+import { WaitlistConfirmationEmail } from './_templates/waitlist-confirmation.tsx';
+import { AdminNotificationEmail } from './_templates/admin-notification.tsx';
 
 const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
 
@@ -26,36 +30,39 @@ const handler = async (req: Request): Promise<Response> => {
 
     console.log("Sending waitlist notification for:", email);
 
+    // Render admin email template
+    const adminHtml = await renderAsync(
+      React.createElement(AdminNotificationEmail, {
+        email,
+        browserName,
+        osName,
+        locationCountry,
+      })
+    );
+
     // Send notification to admin
     const adminEmailResponse = await resend.emails.send({
       from: "Lifeli.me Waitlist <newjoinwaitlist@lifeli.me>",
       to: ["newjoinwaitlist@lifeli.me"],
       subject: "New Waitlist Signup",
-      html: `
-        <h2>New User Joined the Waitlist!</h2>
-        <p><strong>Email:</strong> ${email}</p>
-        ${browserName ? `<p><strong>Browser:</strong> ${browserName}</p>` : ''}
-        ${osName ? `<p><strong>OS:</strong> ${osName}</p>` : ''}
-        ${locationCountry ? `<p><strong>Location:</strong> ${locationCountry}</p>` : ''}
-        <p><strong>Time:</strong> ${new Date().toLocaleString()}</p>
-      `,
+      html: adminHtml,
     });
 
     console.log("Admin notification sent:", adminEmailResponse);
+
+    // Render user confirmation email template
+    const userHtml = await renderAsync(
+      React.createElement(WaitlistConfirmationEmail, {
+        email,
+      })
+    );
 
     // Send confirmation to user
     const userEmailResponse = await resend.emails.send({
       from: "Lifeli.me <newjoinwaitlist@lifeli.me>",
       to: [email],
       subject: "Welcome to the Lifeli.me Waitlist!",
-      html: `
-        <h1>You're on the list! 🎉</h1>
-        <p>Thank you for joining the Lifeli.me waitlist. We're excited to have you!</p>
-        <p>We'll keep you updated on our progress and let you know as soon as we're ready to launch.</p>
-        <p>Stay tuned!</p>
-        <br>
-        <p>Best regards,<br>The Lifeli.me Team</p>
-      `,
+      html: userHtml,
     });
 
     console.log("User confirmation sent:", userEmailResponse);
