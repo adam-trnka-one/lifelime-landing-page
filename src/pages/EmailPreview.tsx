@@ -1,4 +1,4 @@
-import emailBackground from "@/assets/email-background.png";
+import emailBackground from "@/assets/bg_lifelime.png";
 import logoLifelime from "@/assets/logo_lifelime_l.svg";
 
 const EmailPreview = () => {
