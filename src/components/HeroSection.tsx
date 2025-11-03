@@ -465,12 +465,12 @@ const HeroSection = () => {
       />
 
       {/* Social Links - Bottom Right */}
-      <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+      <div className="fixed bottom-6 right-6 z-50 flex gap-2">
         <a 
           href="https://www.instagram.com/lifeli.me" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="bg-white/10 backdrop-blur-sm p-3 rounded-full text-white hover:bg-white/20 hover:scale-110 transition-all duration-300 shadow-lg"
+          className="text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 p-2 rounded-lg"
           aria-label="Instagram"
         >
           <Instagram className="w-5 h-5" />
@@ -479,7 +479,7 @@ const HeroSection = () => {
           href="https://facebook.com/mylifelime/" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="bg-white/10 backdrop-blur-sm p-3 rounded-full text-white hover:bg-white/20 hover:scale-110 transition-all duration-300 shadow-lg"
+          className="text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 p-2 rounded-lg"
           aria-label="Facebook"
         >
           <Facebook className="w-5 h-5" />
@@ -488,7 +488,7 @@ const HeroSection = () => {
           href="https://linkedin.com/company/lifelime/" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="bg-white/10 backdrop-blur-sm p-3 rounded-full text-white hover:bg-white/20 hover:scale-110 transition-all duration-300 shadow-lg"
+          className="text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 p-2 rounded-lg"
           aria-label="LinkedIn"
         >
           <Linkedin className="w-5 h-5" />
