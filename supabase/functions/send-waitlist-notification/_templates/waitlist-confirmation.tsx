@@ -15,8 +15,8 @@ const translations: Record<string, any> = {
     emailP5: "If you'd like to share your thoughts, ideas, or just say hi - I'd love to hear from you. You can reach me directly at",
     emailP5b: "and we can even plan a call ;-)",
     emailSignature: "Gratefully,",
-    emailFooter: "You received this email because you signed up for the lifeli.me waitlist.",
-    emailUnsubscribe: "We dont wan't want to hold you and if you don't want you can"
+    emailFooter: "You're receiving this because you joined our waitlist - thank you for that!",
+    emailUnsubscribe: "No pressure though - if you change your mind, you can"
   },
   fr: {
     emailTitle: "Incroyable, vous êtes sur la liste ! 🎉",
@@ -28,8 +28,8 @@ const translations: Record<string, any> = {
     emailP5: "Si vous souhaitez partager vos pensées, vos idées ou simplement dire bonjour - j'aimerais avoir de vos nouvelles. Vous pouvez me contacter directement à",
     emailP5b: "et nous pouvons même planifier un appel ;-)",
     emailSignature: "Avec gratitude,",
-    emailFooter: "Vous avez reçu cet e-mail parce que vous vous êtes inscrit à la liste d'attente de lifeli.me.",
-    emailUnsubscribe: "Nous ne voulons pas vous retenir et si vous ne voulez pas vous pouvez"
+    emailFooter: "Vous recevez ceci parce que vous avez rejoint notre liste d'attente - merci pour cela!",
+    emailUnsubscribe: "Aucune pression cependant - si vous changez d'avis, vous pouvez"
   },
   de: {
     emailTitle: "Fantastisch, Sie sind auf der Liste! 🎉",
@@ -41,8 +41,8 @@ const translations: Record<string, any> = {
     emailP5: "Wenn Sie Ihre Gedanken, Ideen teilen oder einfach Hallo sagen möchten - ich würde mich freuen, von Ihnen zu hören. Sie können mich direkt erreichen unter",
     emailP5b: "und wir können sogar einen Anruf planen ;-)",
     emailSignature: "Mit Dankbarkeit,",
-    emailFooter: "Sie haben diese E-Mail erhalten, weil Sie sich für die lifeli.me-Warteliste angemeldet haben.",
-    emailUnsubscribe: "Wir wollen Sie nicht festhalten und wenn Sie nicht möchten, können Sie sich"
+    emailFooter: "Sie erhalten dies, weil Sie unserer Warteliste beigetreten sind - vielen Dank dafür!",
+    emailUnsubscribe: "Kein Druck - wenn Sie Ihre Meinung ändern, können Sie sich jederzeit"
   },
   cz: {
     emailTitle: "Úžasné, jste na seznamu! 🎉",
@@ -54,8 +54,8 @@ const translations: Record<string, any> = {
     emailP5: "Pokud byste chtěli sdílet své myšlenky, nápady nebo jen říct ahoj - rád se od vás ozvu. Můžete mě kontaktovat přímo na",
     emailP5b: "a můžeme si dokonce naplánovat hovor ;-)",
     emailSignature: "S vděčností,",
-    emailFooter: "Tento e-mail jste obdrželi, protože jste se zaregistrovali na čekací listinu lifeli.me.",
-    emailUnsubscribe: "Nechceme vás držet a pokud nechcete, můžete se"
+    emailFooter: "Dostáváte toto, protože jste se připojili k naší čekací listině - děkujeme vám za to!",
+    emailUnsubscribe: "Žádný tlak - pokud si to rozmyslíte, můžete se kdykoli"
   },
   es: {
     emailTitle: "¡Increíble, estás en la lista! 🎉",
@@ -67,8 +67,8 @@ const translations: Record<string, any> = {
     emailP5: "Si te gustaría compartir tus pensamientos, ideas o simplemente saludar, me encantaría saber de ti. Puedes contactarme directamente en",
     emailP5b: "¡y hasta podemos planear una llamada! ;-)",
     emailSignature: "Agradecidamente,",
-    emailFooter: "Recibiste este correo porque te registraste en la lista de espera de lifeli.me.",
-    emailUnsubscribe: "No queremos retenerte y si no quieres puedes"
+    emailFooter: "Recibes esto porque te uniste a nuestra lista de espera - ¡gracias por eso!",
+    emailUnsubscribe: "Sin presión - si cambias de opinión, puedes"
   },
   pl: {
     emailTitle: "Niesamowite, jesteś na liście! 🎉",
@@ -80,8 +80,8 @@ const translations: Record<string, any> = {
     emailP5: "Jeśli chciałbyś podzielić się swoimi przemyśleniami, pomysłami lub po prostu porozmawiać - chętnie od ciebie usłyszę. Możesz skontaktować się ze mną bezpośrednio pod adresem",
     emailP5b: "i możemy nawet zaplanować rozmowę ;-)",
     emailSignature: "Z wdzięcznością,",
-    emailFooter: "Otrzymałeś ten e-mail, ponieważ zapisałeś się na listę oczekujących lifeli.me.",
-    emailUnsubscribe: "Nie chcemy cię zatrzymywać i jeśli nie chcesz, możesz"
+    emailFooter: "Otrzymujesz to, ponieważ dołączyłeś do naszej listy oczekujących - dziękujemy za to!",
+    emailUnsubscribe: "Bez presji - jeśli zmienisz zdanie, możesz"
   }
 }
 
