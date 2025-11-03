@@ -88,8 +88,8 @@ const EmailPreview = () => {
               </div>
             </div>
             <p className="text-xs text-muted-foreground/70 mt-4 text-center">
-              You received this email because you signed up for the lifeli.me waitlist.<br />
-              We dont wan't want to hold you and if you don't want you can <a href="#" className="text-primary hover:underline">unsubscribe</a>.
+              You're receiving this because you joined our waitlist - thank you for that!<br />
+              No pressure though - if you change your mind, you can <a href="#" className="text-primary hover:underline">unsubscribe anytime</a>.
             </p>
           </div>
         </div>
