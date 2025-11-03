@@ -68,20 +68,20 @@ export const WaitlistConfirmationEmail = ({
         <Section style={footer}>
           <table style={{ width: '100%', marginBottom: '16px' }}>
             <tr>
-              <td style={{ paddingRight: '16px', verticalAlign: 'top', width: '50%' }}>
-                <table>
+              <td style={{ paddingRight: '16px', verticalAlign: 'middle' }}>
+                <table style={{ borderCollapse: 'collapse' }}>
                   <tr>
-                    <td style={{ paddingRight: '16px', verticalAlign: 'top' }}>
+                    <td style={{ paddingRight: '16px', verticalAlign: 'middle' }}>
                       <Img
                         src="https://drljjepaolzzlirxhbit.supabase.co/storage/v1/object/public/assets/adam_lifelime.png"
                         width="64"
                         height="64"
                         alt="Adam Trnka"
-                        style={{ borderRadius: '50%', objectFit: 'cover' }}
+                        style={{ borderRadius: '50%', objectFit: 'cover', display: 'block' }}
                       />
                     </td>
-                    <td style={{ verticalAlign: 'top' }}>
-                      <Text style={{ ...footerText, textAlign: 'left', margin: '0' }}>
+                    <td style={{ verticalAlign: 'middle' }}>
+                      <Text style={{ ...footerText, textAlign: 'left', margin: '0', lineHeight: '1.4' }}>
                         Gratefully,<br />
                         <strong>Adam Trnka</strong><br />
                         Founder, lifeli.me<br />
@@ -91,16 +91,26 @@ export const WaitlistConfirmationEmail = ({
                   </tr>
                 </table>
               </td>
-              <td style={{ textAlign: 'right', verticalAlign: 'top', width: '50%' }}>
-                <a href="https://www.instagram.com/lifeli.me" target="_blank" style={{ display: 'inline-block', marginLeft: '12px', color: '#666666', textDecoration: 'none' }}>
-                  <Img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" width="20" height="20" alt="Instagram" style={{ display: 'inline-block' }} />
-                </a>
-                <a href="https://facebook.com/mylifelime/" target="_blank" style={{ display: 'inline-block', marginLeft: '12px', color: '#666666', textDecoration: 'none' }}>
-                  <Img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/facebook.svg" width="20" height="20" alt="Facebook" style={{ display: 'inline-block' }} />
-                </a>
-                <a href="https://linkedin.com/company/lifelime/" target="_blank" style={{ display: 'inline-block', marginLeft: '12px', color: '#666666', textDecoration: 'none' }}>
-                  <Img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" width="20" height="20" alt="LinkedIn" style={{ display: 'inline-block' }} />
-                </a>
+              <td style={{ textAlign: 'right', verticalAlign: 'middle', paddingTop: '8px' }}>
+                <table style={{ marginLeft: 'auto' }}>
+                  <tr>
+                    <td style={{ paddingLeft: '12px' }}>
+                      <a href="https://www.instagram.com/lifeli.me" target="_blank" style={{ textDecoration: 'none' }}>
+                        <Img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" width="24" height="24" alt="Instagram" style={{ display: 'block' }} />
+                      </a>
+                    </td>
+                    <td style={{ paddingLeft: '12px' }}>
+                      <a href="https://facebook.com/mylifelime/" target="_blank" style={{ textDecoration: 'none' }}>
+                        <Img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/facebook.svg" width="24" height="24" alt="Facebook" style={{ display: 'block' }} />
+                      </a>
+                    </td>
+                    <td style={{ paddingLeft: '12px' }}>
+                      <a href="https://linkedin.com/company/lifelime/" target="_blank" style={{ textDecoration: 'none' }}>
+                        <Img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" width="24" height="24" alt="LinkedIn" style={{ display: 'block' }} />
+                      </a>
+                    </td>
+                  </tr>
+                </table>
               </td>
             </tr>
           </table>
