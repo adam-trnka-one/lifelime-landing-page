@@ -29,26 +29,26 @@ const EmailPreview = () => {
 
           {/* Content */}
           <div className="p-8 space-y-6">
-            <p className="text-lg text-foreground">
+            <p className="text-base text-foreground">
               Thank you for joining the <strong className="text-primary">lifeli.me</strong> waitlist.
             </p>
 
-            <p className="text-foreground">
+            <p className="text-base text-foreground">
               I started building lifeli.me because I wanted a place to capture the parts of life that truly define us — the moments, sounds, stories, and lessons that deserve to last.
             </p>
 
-            <p className="text-foreground">
+            <p className="text-base text-foreground">
               Soon, you'll be able to craft your own timeline, week by week — adding photos, videos, voice notes, and reflections that grow into your personal legacy.
             </p>
 
-            <p className="text-foreground">
+            <p className="text-base text-foreground">
               You're now part of the early circle shaping how lifeli.me evolves. Until the public launch, you can follow our progress and updates on{" "}
               <a href="https://instagram.com/lifeli.me" className="text-primary hover:underline font-semibold">Instagram</a> |{" "}
               <a href="https://facebook.com/lifeli.me" className="text-primary hover:underline font-semibold">Facebook</a> |{" "}
               <a href="https://linkedin.com/company/lifeli-me" className="text-primary hover:underline font-semibold">LinkedIn</a>.
             </p>
 
-            <p className="text-foreground">
+            <p className="text-base text-foreground">
               If you'd like to share your thoughts, ideas, or just say hi — I'd love to hear from you. You can reach me directly at{" "}
               <a href="mailto:adam@lifeli.me" className="text-primary hover:underline font-semibold">adam@lifeli.me</a>.
             </p>
