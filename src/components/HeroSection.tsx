@@ -402,7 +402,7 @@ const HeroSection = () => {
               {/* Close Button - Fixed, not scrolling */}
               <button
                 onClick={handleCloseAbout}
-                className="absolute top-4 right-4 sm:top-6 sm:right-6 text-white/70 hover:text-white transition-colors z-10"
+                className="absolute top-2 right-2 sm:top-4 sm:right-4 text-white/70 hover:text-white transition-colors z-10 p-2 touch-manipulation"
                 aria-label="Close"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -412,8 +412,11 @@ const HeroSection = () => {
               </button>
               
               {/* Scrollable Content */}
-              <div className="bg-white/10 backdrop-blur-2xl rounded-3xl p-8 sm:p-10 lg:p-14 shadow-2xl overflow-y-auto max-h-[90vh] scrollbar-hide"
-                style={{ boxShadow: 'inset 0 1px 0 0 rgba(255, 255, 255, 0.1), 0 20px 60px -15px rgba(0, 0, 0, 0.3)' }}>
+              <div className="bg-white/10 backdrop-blur-2xl rounded-3xl p-6 sm:p-8 lg:p-14 shadow-2xl overflow-y-auto max-h-[85vh] sm:max-h-[90vh] overscroll-contain touch-pan-y"
+                style={{ 
+                  boxShadow: 'inset 0 1px 0 0 rgba(255, 255, 255, 0.1), 0 20px 60px -15px rgba(0, 0, 0, 0.3)',
+                  WebkitOverflowScrolling: 'touch'
+                }}>
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-white">{t('aboutTitle')}</h2>
               <p className="text-white/90 mb-6 text-base sm:text-lg italic">{t('aboutSubtitle')}</p>
               
