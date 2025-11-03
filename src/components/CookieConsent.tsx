@@ -65,7 +65,7 @@ const CookieConsent = () => {
               onClick={() => setIsExpanded(true)}
               variant="ghost"
               size="sm"
-              className="text-primary hover:text-primary/80"
+              className="text-primary hover:text-white"
             >
               Details
             </Button>
