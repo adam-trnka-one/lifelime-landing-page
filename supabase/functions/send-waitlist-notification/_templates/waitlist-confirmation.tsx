@@ -34,30 +34,34 @@ export const WaitlistConfirmationEmail = ({
         </Section>
         
         <Section style={contentSection}>
-          <Heading style={h1}>You're on the list! 🎉</Heading>
+          <Heading style={h1}>Amazing, You're on the list! 🎉</Heading>
           
           <Text style={text}>
-            Hello, thank you for joining the <strong>lifeli.me</strong> waitlist.
+            Hello,
           </Text>
           
           <Text style={text}>
-            I started building lifeli.me because I wanted a place to capture the parts of life that truly define us — the moments, sounds, stories, and lessons that deserve to last.
+            I'm Adam, founder of <strong>lifeli.me</strong> and I want to personaly thank you for joining the waitlist.
           </Text>
           
           <Text style={text}>
-            Soon, you'll be able to craft your own timeline, week by week — adding photos, videos, voice notes, and reflections that grow into your personal legacy.
+            I started building lifeli.me because I wanted a place to capture the parts of life that truly define us - the moments, sounds, stories, and lessons that deserve to last for future generations.
           </Text>
           
           <Text style={text}>
-            You're now part of the early circle shaping how lifeli.me evolves. Until the public launch, you can follow our progress and updates on{' '}
-            <a href="https://instagram.com/lifeli.me" style={link}>Instagram</a> |{' '}
-            <a href="https://facebook.com/lifeli.me" style={link}>Facebook</a> |{' '}
+            Soon, you'll be able to craft your own timeline, week by week - adding photos, videos, voice, notes, and reflections that grow into your personal legacy - same as the medieval kings and monarchs.
+          </Text>
+          
+          <Text style={text}>
+            You're now part of the early circle shaping how lifeli.me evolves. Until the public launch, you can follow our progress and updates on social like{' '}
+            <a href="https://instagram.com/lifeli.me" style={link}>Instagram</a>,{' '}
+            <a href="https://facebook.com/lifeli.me" style={link}>Facebook</a> and{' '}
             <a href="https://linkedin.com/company/lifeli-me" style={link}>LinkedIn</a>.
           </Text>
           
           <Text style={text}>
-            If you'd like to share your thoughts, ideas, or just say hi — I'd love to hear from you. You can reach me directly at{' '}
-            <a href="mailto:adam@lifeli.me" style={link}>adam@lifeli.me</a>.
+            If you'd like to share your thoughts, ideas, or just say hi - I'd love to hear from you. You can reach me directly at{' '}
+            <a href="mailto:adam@lifeli.me" style={link}>adam@lifeli.me</a> and we can even plan a call ;-)
           </Text>
         </Section>
         
@@ -84,8 +88,8 @@ export const WaitlistConfirmationEmail = ({
             </tr>
           </table>
           <Text style={footerSmall}>
-            You received this email because you signed up for the lifeli.me waitlist with {email}<br />
-            <a href={`https://drljjepaolzzlirxhbit.supabase.co/functions/v1/unsubscribe-waitlist?email=${encodeURIComponent(email)}`} style={link}>Unsubscribe</a>
+            You received this email because you signed up for the lifeli.me waitlist.<br />
+            We dont wan't want to hold you and if you don't want you can <a href={`https://drljjepaolzzlirxhbit.supabase.co/functions/v1/unsubscribe-waitlist?email=${encodeURIComponent(email)}`} style={link}>unsubscribe</a>.
           </Text>
         </Section>
       </Container>
