@@ -578,10 +578,14 @@ const HeroSection = () => {
               </button>
               
               {/* Fade Overlay - Top */}
-              <div className="absolute top-0 left-0 right-0 h-20 pointer-events-none z-10 rounded-t-3xl bg-gradient-to-b from-white/10 via-white/10 to-transparent backdrop-blur-2xl" />
+              <div className="absolute top-0 left-0 right-0 h-12 pointer-events-none z-10 rounded-t-3xl"
+                style={{ background: 'linear-gradient(to bottom, rgba(90, 31, 216, 0.4), transparent)' }} 
+              />
               
               {/* Fade Overlay - Bottom */}
-              <div className="absolute bottom-0 left-0 right-0 h-20 pointer-events-none z-10 rounded-b-3xl bg-gradient-to-t from-white/10 via-white/10 to-transparent backdrop-blur-2xl" />
+              <div className="absolute bottom-0 left-0 right-0 h-12 pointer-events-none z-10 rounded-b-3xl"
+                style={{ background: 'linear-gradient(to top, rgba(90, 31, 216, 0.4), transparent)' }} 
+              />
               
               {/* Scrollable Content */}
               <div className="bg-white/10 backdrop-blur-2xl rounded-3xl p-8 sm:p-10 lg:p-14 shadow-2xl overflow-y-auto max-h-[90vh] scrollbar-hide"
