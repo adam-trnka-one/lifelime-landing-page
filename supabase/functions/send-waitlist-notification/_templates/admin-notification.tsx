@@ -20,11 +20,11 @@ export const generateAdminNotificationHTML = ({
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
       </head>
-      <body style="margin: 0; padding: 0; background-color: #f9fafb; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;">
+      <body style="margin: 0; padding: 0; background-color: #f9fafb; background-image: url('http://lifelime.trnka.one/bg_lifelime.png'); background-size: cover; background-position: center; background-repeat: no-repeat; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;">
         <div style="margin: 0 auto; padding: 40px 20px; max-width: 600px;">
           <div style="text-align: center; margin-bottom: 32px;">
             <img 
-              src="http://lifelime.trnka.one/logo_lifelime_l_white.svg" 
+              src="http://lifelime.trnka.one/logo_lifelime_l_white.png" 
               width="120" 
               height="40" 
               alt="Lifeli.me"
