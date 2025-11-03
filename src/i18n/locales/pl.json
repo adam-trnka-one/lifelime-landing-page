@@ -28,5 +28,16 @@
   "cookieDescription": "Zbieramy informacje o przeglądarce i przybliżoną lokalizację (kraj/region), aby ulepszyć naszą usługę. Te dane pomagają nam lepiej zrozumieć naszych użytkowników i są przechowywane bezpiecznie zgodnie z przepisami RODO.",
   "cookieAccept": "Zaakceptuj wszystko",
   "cookieReject": "Odrzuć nieistotne",
-  "cookieFooter": "Akceptując, zgadzasz się na przechowywanie plików cookie i zbieranie danych zgodnie z naszą Polityką prywatności."
+  "cookieFooter": "Akceptując, zgadzasz się na przechowywanie plików cookie i zbieranie danych zgodnie z naszą Polityką prywatności.",
+  "emailTitle": "Niesamowite, jesteś na liście! 🎉",
+  "emailGreeting": "Witaj,",
+  "emailP1": "Jestem Adam, założyciel <strong>lifeli.me</strong> i chcę osobiście podziękować za dołączenie do listy oczekujących.",
+  "emailP2": "Zacząłem budować lifeli.me, ponieważ chciałem miejsce do uchwycenia części życia, które naprawdę nas definiują - chwile, dźwięki, historie i lekcje, które zasługują na to, by trwać dla przyszłych pokoleń.",
+  "emailP3": "Wkrótce będziesz mógł stworzyć własną oś czasu, tydzień po tygodniu - dodając zdjęcia, filmy, głos, notatki i refleksje, które przekształcają się w twoje osobiste dziedzictwo - tak samo jak średniowieczni królowie i monarchowie.",
+  "emailP4": "Jesteś teraz częścią wczesnego kręgu kształtującego rozwój lifeli.me. Do czasu publicznego uruchomienia możesz śledzić nasze postępy i aktualizacje w mediach społecznościowych, takich jak",
+  "emailP5": "Jeśli chciałbyś podzielić się swoimi przemyśleniami, pomysłami lub po prostu porozmawiać - chętnie od ciebie usłyszę. Możesz skontaktować się ze mną bezpośrednio pod adresem",
+  "emailP5b": "i możemy nawet zaplanować rozmowę ;-)",
+  "emailSignature": "Z wdzięcznością,",
+  "emailFooter": "Otrzymałeś ten e-mail, ponieważ zapisałeś się na listę oczekujących lifeli.me.",
+  "emailUnsubscribe": "Nie chcemy cię zatrzymywać i jeśli nie chcesz, możesz"
 }

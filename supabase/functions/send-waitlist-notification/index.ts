@@ -18,6 +18,7 @@ interface WaitlistNotificationRequest {
   browserName?: string;
   osName?: string;
   locationCountry?: string;
+  language?: string;
 }
 
 const handler = async (req: Request): Promise<Response> => {
@@ -26,9 +27,9 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
-    const { email, browserName, osName, locationCountry }: WaitlistNotificationRequest = await req.json();
+    const { email, browserName, osName, locationCountry, language = 'en' }: WaitlistNotificationRequest = await req.json();
 
-    console.log("Sending waitlist notification for:", email);
+    console.log("Sending waitlist notification for:", email, "in language:", language);
 
     // Render admin email template
     const adminHtml = await renderAsync(
@@ -54,6 +55,7 @@ const handler = async (req: Request): Promise<Response> => {
     const userHtml = await renderAsync(
       React.createElement(WaitlistConfirmationEmail, {
         email,
+        language,
       })
     );
 

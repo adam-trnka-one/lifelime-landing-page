@@ -1,6 +1,7 @@
 import { useMutation } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
+import { useTranslation } from "react-i18next";
 
 interface WaitlistData {
   email: string;
@@ -46,6 +47,7 @@ const getBrowserInfo = () => {
 
 export const useWaitlistSubmit = () => {
   const { toast } = useToast();
+  const { i18n } = useTranslation();
 
   return useMutation({
     mutationFn: async (data: WaitlistData) => {
@@ -125,6 +127,7 @@ export const useWaitlistSubmit = () => {
           browserName,
           osName,
           locationCountry: locationData.location_country,
+          language: i18n.language,
         }
       }).catch(error => console.error('Failed to send notification:', error));
 

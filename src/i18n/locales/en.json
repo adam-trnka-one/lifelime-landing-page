@@ -28,5 +28,16 @@
   "cookieDescription": "We collect browser information and approximate location (country/region) to improve our service. This data helps us understand our users better and is stored securely in accordance with GDPR regulations.",
   "cookieAccept": "Accept All",
   "cookieReject": "Reject Non-Essential",
-  "cookieFooter": "By accepting, you agree to the storage of cookies and data collection as described in our Privacy Policy."
+  "cookieFooter": "By accepting, you agree to the storage of cookies and data collection as described in our Privacy Policy.",
+  "emailTitle": "Amazing, You're on the list! 🎉",
+  "emailGreeting": "Hello,",
+  "emailP1": "I'm Adam, founder of <strong>lifeli.me</strong> and I want to personaly thank you for joining the waitlist.",
+  "emailP2": "I started building lifeli.me because I wanted a place to capture the parts of life that truly define us - the moments, sounds, stories, and lessons that deserve to last for future generations.",
+  "emailP3": "Soon, you'll be able to craft your own timeline, week by week - adding photos, videos, voice, notes, and reflections that grow into your personal legacy - same as the medieval kings and monarchs.",
+  "emailP4": "You're now part of the early circle shaping how lifeli.me evolves. Until the public launch, you can follow our progress and updates on social like",
+  "emailP5": "If you'd like to share your thoughts, ideas, or just say hi - I'd love to hear from you. You can reach me directly at",
+  "emailP5b": "and we can even plan a call ;-)",
+  "emailSignature": "Gratefully,",
+  "emailFooter": "You received this email because you signed up for the lifeli.me waitlist.",
+  "emailUnsubscribe": "We dont wan't want to hold you and if you don't want you can"
 }

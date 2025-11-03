@@ -28,5 +28,16 @@
   "cookieDescription": "Wir sammeln Browser-Informationen und ungefähre Standortdaten (Land/Region), um unseren Service zu verbessern. Diese Daten helfen uns, unsere Nutzer besser zu verstehen und werden sicher gemäß DSGVO-Vorschriften gespeichert.",
   "cookieAccept": "Alle akzeptieren",
   "cookieReject": "Nicht-essentielle ablehnen",
-  "cookieFooter": "Durch Akzeptieren stimmen Sie der Speicherung von Cookies und Datenerhebung zu, wie in unserer Datenschutzerklärung beschrieben."
+  "cookieFooter": "Durch Akzeptieren stimmen Sie der Speicherung von Cookies und Datenerhebung zu, wie in unserer Datenschutzerklärung beschrieben.",
+  "emailTitle": "Fantastisch, Sie sind auf der Liste! 🎉",
+  "emailGreeting": "Hallo,",
+  "emailP1": "Ich bin Adam, Gründer von <strong>lifeli.me</strong> und ich möchte mich persönlich bei Ihnen für die Anmeldung zur Warteliste bedanken.",
+  "emailP2": "Ich habe angefangen, lifeli.me zu bauen, weil ich einen Ort wollte, um die Teile des Lebens festzuhalten, die uns wirklich definieren - die Momente, Klänge, Geschichten und Lektionen, die für zukünftige Generationen bewahrt werden sollten.",
+  "emailP3": "Bald können Sie Ihre eigene Zeitleiste erstellen, Woche für Woche - Fotos, Videos, Stimme, Notizen und Reflexionen hinzufügen, die zu Ihrem persönlichen Vermächtnis werden - genau wie die mittelalterlichen Könige und Monarchen.",
+  "emailP4": "Sie sind jetzt Teil des frühen Kreises, der die Entwicklung von lifeli.me prägt. Bis zum öffentlichen Start können Sie unseren Fortschritt und Updates in sozialen Medien verfolgen wie",
+  "emailP5": "Wenn Sie Ihre Gedanken, Ideen teilen oder einfach Hallo sagen möchten - ich würde mich freuen, von Ihnen zu hören. Sie können mich direkt erreichen unter",
+  "emailP5b": "und wir können sogar einen Anruf planen ;-)",
+  "emailSignature": "Mit Dankbarkeit,",
+  "emailFooter": "Sie haben diese E-Mail erhalten, weil Sie sich für die lifeli.me-Warteliste angemeldet haben.",
+  "emailUnsubscribe": "Wir wollen Sie nicht festhalten und wenn Sie nicht möchten, können Sie sich"
 }
