@@ -47,9 +47,9 @@ const EmailPreview = () => {
 
             <p className="text-base text-foreground">
               You're now part of the early circle shaping how lifeli.me evolves. Until the public launch, you can follow our progress and updates on social like{" "}
-              <a href="https://instagram.com/lifeli.me" className="text-primary hover:underline font-semibold">Instagram</a>,{" "}
-              <a href="https://facebook.com/lifeli.me" className="text-primary hover:underline font-semibold">Facebook</a> and{" "}
-              <a href="https://linkedin.com/company/lifelime/" className="text-primary hover:underline font-semibold">LinkedIn</a>.
+              <a href="https://instagram.com/lifeli.me" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold">Instagram</a>,{" "}
+              <a href="https://facebook.com/lifeli.me" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold">Facebook</a> and{" "}
+              <a href="https://linkedin.com/company/lifelime/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold">LinkedIn</a>.
             </p>
 
             <p className="text-base text-foreground">
@@ -70,7 +70,7 @@ const EmailPreview = () => {
                 Gratefully,<br />
                 <span className="font-semibold">Adam Trnka</span><br />
                 Founder, lifeli.me<br />
-                <a href="https://www.lifeli.me" className="text-primary hover:underline">www.lifeli.me</a>
+                <a href="https://www.lifeli.me" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">www.lifeli.me</a>
               </p>
             </div>
             <p className="text-xs text-muted-foreground/70 mt-4 text-center">

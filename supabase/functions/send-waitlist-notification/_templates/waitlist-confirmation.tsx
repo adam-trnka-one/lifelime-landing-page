@@ -54,9 +54,9 @@ export const WaitlistConfirmationEmail = ({
           
           <Text style={text}>
             You're now part of the early circle shaping how lifeli.me evolves. Until the public launch, you can follow our progress and updates on social like{' '}
-            <a href="https://instagram.com/lifeli.me" style={link}>Instagram</a>,{' '}
-            <a href="https://facebook.com/lifeli.me" style={link}>Facebook</a> and{' '}
-            <a href="https://linkedin.com/company/lifelime/" style={link}>LinkedIn</a>.
+            <a href="https://instagram.com/lifeli.me" target="_blank" style={link}>Instagram</a>,{' '}
+            <a href="https://facebook.com/lifeli.me" target="_blank" style={link}>Facebook</a> and{' '}
+            <a href="https://linkedin.com/company/lifelime/" target="_blank" style={link}>LinkedIn</a>.
           </Text>
           
           <Text style={text}>
@@ -82,7 +82,7 @@ export const WaitlistConfirmationEmail = ({
                   Gratefully,<br />
                   <strong>Adam Trnka</strong><br />
                   Founder, lifeli.me<br />
-                  <a href="https://www.lifeli.me" style={link}>www.lifeli.me</a>
+                  <a href="https://www.lifeli.me" target="_blank" style={link}>www.lifeli.me</a>
                 </Text>
               </td>
             </tr>
