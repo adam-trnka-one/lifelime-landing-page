@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Settings, Menu, Instagram, Facebook, Linkedin, Flower2, Shield } from "lucide-react";
+import { Settings, Instagram, Facebook, Linkedin, Flower2, Shield } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { z } from "zod";
@@ -64,47 +63,21 @@ const HeroSection = () => {
   return <div className="min-h-screen relative overflow-y-auto lg:overflow-hidden">
       {/* Navigation */}
       <nav className="sticky lg:fixed top-0 left-0 right-0 z-20 flex items-center justify-between p-4 md:p-6 lg:p-8 bg-white lg:bg-transparent">
-        {/* Mobile: Logo + Hamburger */}
-        <div className="flex items-center justify-between w-full lg:w-auto">
+        {/* Mobile: Logo + About + Language */}
+        <div className="flex items-center justify-between w-full lg:hidden">
           {/* Logo - visible on mobile */}
-          <img src={logo} alt="LifeLime Logo" className="h-8 w-auto lg:hidden" />
+          <img src={logo} alt="LifeLime Logo" className="h-8 w-auto" />
           
-          {/* Mobile Hamburger Menu */}
-          <Sheet>
-            <SheetTrigger className="lg:hidden text-primary p-2">
-              <Menu size={24} />
-            </SheetTrigger>
-            <SheetContent side="right" className="bg-white/30 backdrop-blur-xl border-white/30 flex flex-col" style={{
-            boxShadow: 'inset 0 1px 0 0 rgba(255, 255, 255, 0.5), 0 8px 32px 0 rgba(0, 0, 0, 0.1)'
-          }}>
-              {/* Top menu items */}
-              <div className="flex flex-col gap-4 mt-8 flex-1">
-                <a href="#about" onClick={e => {
-                e.preventDefault();
-                setShowAboutModal(true);
-              }} className="text-gray-900 hover:text-primary transition-colors font-semibold px-4 py-2">
-                  {t('about')}
-                </a>
-                
-                <a href="#privacy" onClick={e => {
-                e.preventDefault();
-                setShowPrivacyModal(true);
-              }} className="text-gray-900 hover:text-primary transition-colors font-semibold px-4 py-2">
-                  Privacy Policy
-                </a>
-                
-                <a href="#service" onClick={e => {
-                e.preventDefault();
-                setShowServiceModal(true);
-              }} className="text-gray-900 hover:text-primary transition-colors font-semibold px-4 py-2">
-                  For Those Who Serve
-                </a>
-                
-                {/* Language Selector */}
-                <LanguageSwitcher variant="dark" />
-              </div>
-            </SheetContent>
-          </Sheet>
+          {/* Mobile Menu Items */}
+          <div className="flex items-center gap-2">
+            <a href="#about" onClick={e => {
+              e.preventDefault();
+              setShowAboutModal(true);
+            }} className="text-primary hover:text-primary/80 transition-colors font-semibold px-3 py-2">
+              {t('about')}
+            </a>
+            <LanguageSwitcher variant="dark" />
+          </div>
         </div>
 
         {/* Desktop Navigation - hidden on mobile */}
