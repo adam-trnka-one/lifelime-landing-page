@@ -43,8 +43,10 @@ export type Database = {
           cookies_consent: boolean | null
           created_at: string
           email: string
+          first_name: string | null
           id: string
           language: string | null
+          last_name: string | null
           location_city: string | null
           location_country: string | null
           location_region: string | null
@@ -62,8 +64,10 @@ export type Database = {
           cookies_consent?: boolean | null
           created_at?: string
           email: string
+          first_name?: string | null
           id?: string
           language?: string | null
+          last_name?: string | null
           location_city?: string | null
           location_country?: string | null
           location_region?: string | null
@@ -81,8 +85,10 @@ export type Database = {
           cookies_consent?: boolean | null
           created_at?: string
           email?: string
+          first_name?: string | null
           id?: string
           language?: string | null
+          last_name?: string | null
           location_city?: string | null
           location_country?: string | null
           location_region?: string | null

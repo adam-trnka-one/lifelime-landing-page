@@ -94,15 +94,13 @@ export const useWaitlistSubmit = () => {
         }
       }
 
-      // Combine firstName and lastName for database storage
-      const fullName = data.lastName ? `${data.firstName} ${data.lastName}` : data.firstName;
-
-      // Insert into database
+      // Insert into database with separate first_name and last_name
       const { error } = await supabase
         .from("waitlist")
         .insert([
           {
-            name: fullName.trim(),
+            first_name: data.firstName.trim(),
+            last_name: data.lastName?.trim() || null,
             email: data.email.trim().toLowerCase(),
             browser_name: browserName,
             browser_version: browserVersion,
