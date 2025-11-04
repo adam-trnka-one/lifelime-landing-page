@@ -40,7 +40,7 @@ const PrivacyPolicyModal = ({ open, onOpenChange }: PrivacyPolicyModalProps) => 
         {/* Close Button */}
         <button
           onClick={handleClose}
-          className="absolute top-2 right-2 sm:top-4 sm:right-4 text-white/70 hover:text-white transition-colors z-10 p-2 touch-manipulation"
+          className="absolute top-2 right-2 sm:top-4 sm:right-4 text-gray-700 hover:text-gray-900 transition-colors z-10 p-2 touch-manipulation"
           aria-label="Close"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -51,31 +51,31 @@ const PrivacyPolicyModal = ({ open, onOpenChange }: PrivacyPolicyModalProps) => 
         
         {/* Scrollable Content */}
         <div 
-          className="bg-[#1a1a2e]/95 backdrop-blur-2xl rounded-3xl p-6 sm:p-8 lg:p-14 shadow-2xl overflow-y-auto max-h-[85vh] sm:max-h-[90vh] overscroll-contain touch-pan-y scrollbar-hide border border-white/10"
+          className="bg-white rounded-3xl p-6 sm:p-8 lg:p-14 shadow-2xl overflow-y-auto max-h-[85vh] sm:max-h-[90vh] overscroll-contain touch-pan-y scrollbar-hide"
           style={{ 
-            boxShadow: 'inset 0 1px 0 0 rgba(255, 255, 255, 0.1), 0 20px 60px -15px rgba(0, 0, 0, 0.3)',
+            boxShadow: '0 20px 60px -15px rgba(0, 0, 0, 0.3)',
             WebkitOverflowScrolling: 'touch'
           }}
         >
           {/* Header */}
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-white">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
             🔒 {t('privacyTitle')}
           </h2>
-          <p className="text-white/90 mb-8 text-base sm:text-lg leading-relaxed">
+          <p className="text-gray-700 mb-8 text-base sm:text-lg leading-relaxed">
             {t('privacyIntro')}
           </p>
 
-          <div className="space-y-8 text-white/90 leading-relaxed text-base sm:text-lg">
+          <div className="space-y-8 text-gray-700 leading-relaxed text-base sm:text-lg">
             {/* What We Collect */}
             <div>
-              <h3 className="text-2xl font-semibold mb-4 text-white">{t('privacyWhatWeCollectTitle')}</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900">{t('privacyWhatWeCollectTitle')}</h3>
               <p className="mb-4">{t('privacyWhatWeCollectIntro')}</p>
               <ul className="space-y-3 ml-4">
                 <li>
-                  <span className="font-semibold text-white">{t('privacyWhatWeCollectItem1Title')}</span> — {t('privacyWhatWeCollectItem1')}
+                  <span className="font-semibold text-gray-900">{t('privacyWhatWeCollectItem1Title')}</span> — {t('privacyWhatWeCollectItem1')}
                 </li>
                 <li>
-                  <span className="font-semibold text-white">{t('privacyWhatWeCollectItem2Title')}</span> — {t('privacyWhatWeCollectItem2')}
+                  <span className="font-semibold text-gray-900">{t('privacyWhatWeCollectItem2Title')}</span> — {t('privacyWhatWeCollectItem2')}
                 </li>
               </ul>
               <p className="mt-4">{t('privacyWhatWeCollectFooter')}</p>
@@ -83,14 +83,14 @@ const PrivacyPolicyModal = ({ open, onOpenChange }: PrivacyPolicyModalProps) => 
 
             {/* Where Your Data Lives */}
             <div>
-              <h3 className="text-2xl font-semibold mb-4 text-white">{t('privacyWhereDataTitle')}</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900">{t('privacyWhereDataTitle')}</h3>
               <p className="mb-4">{t('privacyWhereDataIntro')}</p>
               <ul className="space-y-2 ml-4">
                 <li>
-                  <span className="font-semibold text-white">{t('privacyWhereDataItem1Title')}</span> — {t('privacyWhereDataItem1')}
+                  <span className="font-semibold text-gray-900">{t('privacyWhereDataItem1Title')}</span> — {t('privacyWhereDataItem1')}
                 </li>
                 <li>
-                  <span className="font-semibold text-white">{t('privacyWhereDataItem2Title')}</span> — {t('privacyWhereDataItem2')}
+                  <span className="font-semibold text-gray-900">{t('privacyWhereDataItem2Title')}</span> — {t('privacyWhereDataItem2')}
                 </li>
               </ul>
               <p className="mt-4">{t('privacyWhereDataFooter')}</p>
@@ -98,7 +98,7 @@ const PrivacyPolicyModal = ({ open, onOpenChange }: PrivacyPolicyModalProps) => 
 
             {/* Your Rights */}
             <div>
-              <h3 className="text-2xl font-semibold mb-4 text-white">{t('privacyRightsTitle')}</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900">{t('privacyRightsTitle')}</h3>
               <p className="mb-4">{t('privacyRightsIntro')}</p>
               <ul className="space-y-2 ml-4">
                 <li>• {t('privacyRightsItem1')}</li>
@@ -109,7 +109,7 @@ const PrivacyPolicyModal = ({ open, onOpenChange }: PrivacyPolicyModalProps) => 
 
             {/* How We Protect It */}
             <div>
-              <h3 className="text-2xl font-semibold mb-4 text-white">{t('privacyProtectionTitle')}</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900">{t('privacyProtectionTitle')}</h3>
               <ul className="space-y-2 ml-4">
                 <li>• {t('privacyProtectionItem1')}</li>
                 <li>• {t('privacyProtectionItem2')}</li>
@@ -119,7 +119,7 @@ const PrivacyPolicyModal = ({ open, onOpenChange }: PrivacyPolicyModalProps) => 
 
             {/* Cookies & Analytics */}
             <div>
-              <h3 className="text-2xl font-semibold mb-4 text-white">{t('privacyCookiesTitle')}</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900">{t('privacyCookiesTitle')}</h3>
               <p className="mb-4">{t('privacyCookiesIntro')}</p>
               <p className="mb-3">{t('privacyCookiesWhenAccept')}</p>
               <ul className="space-y-2 ml-4">
@@ -131,22 +131,22 @@ const PrivacyPolicyModal = ({ open, onOpenChange }: PrivacyPolicyModalProps) => 
             </div>
 
             {/* In Short */}
-            <div className="bg-white/5 rounded-xl p-6 border border-white/10">
-              <h3 className="text-2xl font-semibold mb-4 text-white">{t('privacyInShortTitle')}</h3>
-              <p className="text-lg leading-relaxed text-white/90">
+            <div className="bg-primary/5 rounded-xl p-6 border border-primary/10">
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900">{t('privacyInShortTitle')}</h3>
+              <p className="text-lg leading-relaxed text-gray-700">
                 {t('privacyInShort')}
               </p>
             </div>
 
             {/* Contact */}
-            <div className="text-center pt-6 border-t border-white/20">
-              <p className="text-lg">
+            <div className="text-center pt-6 border-t border-gray-200">
+              <p className="text-lg text-gray-700">
                 {t('privacyContact')}{' '}
-                <a href="mailto:privacy@lifeli.me" className="font-semibold text-white hover:underline">
+                <a href="mailto:privacy@lifeli.me" className="font-semibold text-primary hover:underline">
                   privacy@lifeli.me
                 </a>{' '}
                 {t('privacyContactOr')}{' '}
-                <a href="mailto:adam@lifeli.me" className="font-semibold text-white hover:underline">
+                <a href="mailto:adam@lifeli.me" className="font-semibold text-primary hover:underline">
                   adam@lifeli.me
                 </a>
               </p>
