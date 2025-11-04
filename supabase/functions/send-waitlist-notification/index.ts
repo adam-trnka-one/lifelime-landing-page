@@ -31,6 +31,18 @@ const handler = async (req: Request): Promise<Response> => {
 
     console.log("Sending waitlist notification for:", firstName, lastName, email, "in language:", language);
 
+    // Translate email subject based on language
+    const subjectTranslations: Record<string, string> = {
+      en: `Welcome to lifeli.me waiting list ${firstName}`,
+      de: `Willkommen auf der lifeli.me Warteliste ${firstName}`,
+      es: `Bienvenido a la lista de espera de lifeli.me ${firstName}`,
+      fr: `Bienvenue sur la liste d'attente lifeli.me ${firstName}`,
+      cz: `Vítejte na čekací listině lifeli.me ${firstName}`,
+      pl: `Witamy na liście oczekujących lifeli.me ${firstName}`,
+    };
+    
+    const emailSubject = subjectTranslations[language] || subjectTranslations['en'];
+
     // Generate admin email HTML
     const adminHtml = generateAdminNotificationHTML({
       firstName,
@@ -59,7 +71,7 @@ const handler = async (req: Request): Promise<Response> => {
     const userEmailResponse = await resend.emails.send({
       from: "Adam from lifeli.me waitlist <waitlist@lifeli.me>",
       to: [email],
-      subject: `Welcome to lifeli.me waiting list ${firstName}`,
+      subject: emailSubject,
       html: userHtml,
     });
 
