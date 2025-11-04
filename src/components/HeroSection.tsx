@@ -548,9 +548,9 @@ const HeroSection = () => {
                     className="w-16 h-16 rounded-full object-cover flex-shrink-0"
                   />
                   <p className="font-semibold text-gray-900">
-                    {t('aboutSignature')}<br />
                     Adam Trnka<br />
-                    {t('aboutSignatureTitle')}
+                    Founder, lifeli.me<br />
+                    www.lifeli.me
                   </p>
                 </div>
               </div>
