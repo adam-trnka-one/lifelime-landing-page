@@ -471,7 +471,7 @@ const HeroSection = () => {
             
             {/* Tracking consent note */}
             <p className="text-white/70 text-sm text-center">
-              By clicking "Join the Waitlist", you agree that we can track your information in our lead database.
+              By joining, you agree to our data tracking.
             </p>
             
             <Button 
