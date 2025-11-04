@@ -342,7 +342,7 @@ const HeroSection = () => {
             
             {/* Tracking consent note */}
             <p className="text-white/70 text-sm text-center">
-              By joining, you agree to our data tracking.
+              {t('dataTrackingConsent')}
             </p>
             
             <Button type="submit" disabled={isPending} className="w-full bg-white text-primary hover:bg-white/90 text-lg sm:text-xl font-semibold shadow-2xl hover:shadow-white/20 transition-all duration-300" size="lg">
