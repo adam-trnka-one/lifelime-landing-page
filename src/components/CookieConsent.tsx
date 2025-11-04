@@ -54,20 +54,22 @@ const CookieConsent = () => {
   }
 
   return (
-    <div className="fixed bottom-4 left-4 md:max-w-sm z-50 animate-in slide-in-from-bottom-5">
+    <div className="fixed bottom-4 left-4 right-4 md:left-4 md:right-auto md:max-w-sm z-50 animate-in slide-in-from-bottom-5">
       <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl border border-gray-200 overflow-hidden">
         {/* Compact View */}
         {!isExpanded && (
-          <div className="p-4 flex items-center gap-3">
-            <Cookie className="text-primary flex-shrink-0" size={24} />
-            <p className="text-sm text-gray-700 flex-1">
-              {t('cookieCompact')}
-            </p>
+          <div className="p-4 flex flex-col sm:flex-row items-start sm:items-center gap-3">
+            <div className="flex items-center gap-3 w-full sm:w-auto">
+              <Cookie className="text-primary flex-shrink-0" size={24} />
+              <p className="text-sm text-gray-700 flex-1">
+                {t('cookieCompact')}
+              </p>
+            </div>
             <Button
               onClick={() => setIsExpanded(true)}
               variant="ghost"
               size="sm"
-              className="text-primary hover:text-white"
+              className="text-primary hover:text-white w-full sm:w-auto flex-shrink-0"
             >
               {t('cookieDetails')}
             </Button>
@@ -76,15 +78,15 @@ const CookieConsent = () => {
 
         {/* Expanded View */}
         {isExpanded && (
-          <div className="p-5">
+          <div className="p-4 sm:p-5">
             <div className="flex items-start justify-between mb-3">
-              <div className="flex items-center gap-2">
-                <Cookie className="text-primary" size={24} />
-                <h3 className="font-semibold text-gray-900">{t('cookieTitle')}</h3>
+              <div className="flex items-center gap-2 flex-1 min-w-0">
+                <Cookie className="text-primary flex-shrink-0" size={24} />
+                <h3 className="font-semibold text-gray-900 text-sm sm:text-base truncate">{t('cookieTitle')}</h3>
               </div>
               <button
                 onClick={() => setIsExpanded(false)}
-                className="text-gray-400 hover:text-gray-600"
+                className="text-gray-400 hover:text-gray-600 flex-shrink-0 ml-2"
               >
                 <X size={20} />
               </button>
