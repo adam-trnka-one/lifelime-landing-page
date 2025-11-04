@@ -494,7 +494,7 @@ const HeroSection = () => {
               {/* Close Button - Fixed, not scrolling */}
               <button
                 onClick={handleCloseAbout}
-                className="absolute top-2 right-2 sm:top-4 sm:right-4 text-white/70 hover:text-white transition-colors z-10 p-2 touch-manipulation"
+                className="absolute top-2 right-2 sm:top-4 sm:right-4 text-gray-700 hover:text-gray-900 transition-colors z-10 p-2 touch-manipulation"
                 aria-label="Close"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -504,13 +504,13 @@ const HeroSection = () => {
               </button>
               
               {/* Scrollable Content */}
-              <div className="bg-white/10 backdrop-blur-2xl rounded-3xl p-6 sm:p-8 lg:p-14 shadow-2xl overflow-y-auto max-h-[85vh] sm:max-h-[90vh] overscroll-contain touch-pan-y scrollbar-hide"
+              <div className="bg-white rounded-3xl p-6 sm:p-8 lg:p-14 shadow-2xl overflow-y-auto max-h-[85vh] sm:max-h-[90vh] overscroll-contain touch-pan-y scrollbar-hide"
                 style={{ 
-                  boxShadow: 'inset 0 1px 0 0 rgba(255, 255, 255, 0.1), 0 20px 60px -15px rgba(0, 0, 0, 0.3)',
+                  boxShadow: '0 20px 60px -15px rgba(0, 0, 0, 0.3)',
                   WebkitOverflowScrolling: 'touch'
                 }}>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-white">{t('aboutTitle')}</h2>
-              <p className="text-white/90 mb-6 text-base sm:text-lg italic">{t('aboutSubtitle')}</p>
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-gray-900">{t('aboutTitle')}</h2>
+              <p className="text-gray-700 mb-6 text-base sm:text-lg italic">{t('aboutSubtitle')}</p>
               
               {/* YouTube Video */}
               <div className="relative w-full aspect-video mb-8 rounded-xl overflow-hidden shadow-2xl">
@@ -523,14 +523,14 @@ const HeroSection = () => {
                 />
               </div>
 
-              <div className="space-y-5 text-white/90 leading-relaxed text-base sm:text-lg">
+              <div className="space-y-5 text-gray-700 leading-relaxed text-base sm:text-lg">
                 <p>{t('aboutP1')}</p>
                 
                 <p>{t('aboutP2')}</p>
                 
                 <p>{t('aboutP3')}</p>
                 
-                <p className="font-semibold text-white">{t('aboutP4')}<br />{t('aboutP4b')}</p>
+                <p className="font-semibold text-gray-900">{t('aboutP4')}<br />{t('aboutP4b')}</p>
                 
                 <p>{t('aboutP5')}</p>
                 
@@ -542,7 +542,7 @@ const HeroSection = () => {
                 
                 <p>{t('aboutP9')}</p>
                 
-                <p className="font-semibold text-white mt-6">{t('aboutSignature')}<br />{t('aboutSignatureTitle')}</p>
+                <p className="font-semibold text-gray-900 mt-6">{t('aboutSignature')}<br />{t('aboutSignatureTitle')}</p>
               </div>
             </div>
           </div>
