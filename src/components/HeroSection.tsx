@@ -63,7 +63,7 @@ const HeroSection = () => {
   };
   return <div className="min-h-screen relative overflow-y-auto lg:overflow-hidden">
       {/* Navigation */}
-      <nav className="sticky top-0 z-20 flex items-center justify-between p-4 md:p-6 lg:p-8 bg-white lg:bg-transparent">
+      <nav className="sticky lg:fixed top-0 left-0 right-0 z-20 flex items-center justify-between p-4 md:p-6 lg:p-8 bg-white lg:bg-transparent">
         {/* Mobile: Logo + Hamburger */}
         <div className="flex items-center justify-between w-full lg:w-auto">
           {/* Logo - visible on mobile */}
