@@ -1,1 +1,4 @@
 project_id = "drljjepaolzzlirxhbit"
+
+[functions.unsubscribe-waitlist]
+verify_jwt = false
