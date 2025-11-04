@@ -59,7 +59,7 @@ const PrivacyPolicyModal = ({ open, onOpenChange }: PrivacyPolicyModalProps) => 
         >
           {/* Header */}
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
-            🔒 {t('privacyTitle')}
+            {t('privacyTitle')}
           </h2>
           <p className="text-gray-700 mb-8 text-base sm:text-lg leading-relaxed">
             {t('privacyIntro')}
