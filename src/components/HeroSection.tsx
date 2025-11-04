@@ -357,7 +357,7 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative h-full lg:h-screen flex flex-col lg:flex-row items-start lg:items-center justify-start lg:justify-between gap-8 lg:gap-0 p-4 sm:p-6 md:p-12 lg:px-16 xl:px-24 lg:py-0 pb-24 overflow-y-auto lg:overflow-hidden">
         {/* Logo Section - Left - hidden on mobile */}
-        <div className="hidden lg:block max-w-xs sm:max-w-sm md:max-w-md w-full relative lg:ml-[10%] lg:-mt-[100px] scale-90">
+        <div className="hidden lg:block max-w-xs sm:max-w-sm md:max-w-md w-full relative lg:ml-[10%] lg:-mt-[5vh] scale-90">
           {/* Ground spot shadow */}
           <div 
             className="absolute -bottom-16 left-1/2 -translate-x-1/2 w-full h-16 rounded-full blur-3xl"
@@ -381,7 +381,7 @@ const HeroSection = () => {
         </div>
 
         {/* Waitlist Section - Right */}
-        <div className="max-w-md lg:max-w-xl w-full mx-auto lg:mx-0 lg:mr-[5%] lg:-mt-[100px] scale-90 lg:origin-right">
+        <div className="max-w-md lg:max-w-xl w-full mx-auto lg:mx-0 lg:mr-[5%] lg:-mt-[5vh] scale-90 lg:origin-right">
           <h2 className="text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 text-white drop-shadow-lg tracking-tight">{t('title')}</h2>
           <p className="text-white/90 mb-8 sm:mb-10 leading-relaxed text-lg sm:text-xl drop-shadow-md">
             {t('description')}
