@@ -4,7 +4,7 @@ import {
   SheetContent,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Menu, Instagram, Facebook, Linkedin, Flame } from "lucide-react";
+import { Menu, Instagram, Facebook, Linkedin, Flower2 } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { z } from "zod";
@@ -531,7 +531,7 @@ const HeroSection = () => {
         aria-label="For Those Who Serve"
         title="For Those Who Serve"
       >
-        <Flame className="w-5 h-5" />
+        <Flower2 className="w-5 h-5" />
       </button>
 
       {/* Social Links - Bottom Right */}
