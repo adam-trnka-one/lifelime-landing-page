@@ -15,6 +15,7 @@ import WaitlistSuccessModal from "@/components/WaitlistSuccessModal";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import PrivacyPolicyModal from "@/components/PrivacyPolicyModal";
 import ServiceMembersModal from "@/components/ServiceMembersModal";
+import AboutModal from "@/components/AboutModal";
 
 // Form validation schema
 const formSchema = z.object({
@@ -37,9 +38,6 @@ const HeroSection = () => {
   const { t } = useTranslation();
   const { toast } = useToast();
 
-  const [currentView, setCurrentView] = useState<'waitlist' | 'about'>('waitlist');
-  const [isClosing, setIsClosing] = useState(false);
-  const [showModal, setShowModal] = useState(false);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -49,25 +47,9 @@ const HeroSection = () => {
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [showPrivacyModal, setShowPrivacyModal] = useState(false);
   const [showServiceModal, setShowServiceModal] = useState(false);
+  const [showAboutModal, setShowAboutModal] = useState(false);
 
   const { mutate: submitWaitlist, isPending } = useWaitlistSubmit();
-
-  const handleCloseAbout = () => {
-    setIsClosing(true);
-    setTimeout(() => {
-      setCurrentView('waitlist');
-      setIsClosing(false);
-      setShowModal(false);
-    }, 300); // Match animation duration
-  };
-
-  // Trigger fade-in animation when About view opens
-  useEffect(() => {
-    if (currentView === 'about') {
-      // Small delay to ensure CSS transition triggers
-      setTimeout(() => setShowModal(true), 10);
-    }
-  }, [currentView]);
 
   return (
     <div className="h-screen relative overflow-hidden">
@@ -91,7 +73,7 @@ const HeroSection = () => {
               <div className="flex flex-col gap-4 mt-8">
                 <a 
                   href="#about" 
-                  onClick={(e) => { e.preventDefault(); setCurrentView('about'); }}
+                  onClick={(e) => { e.preventDefault(); setShowAboutModal(true); }}
                   className="text-gray-900 hover:text-primary transition-colors font-semibold px-4 py-2"
                 >
                   {t('about')}
@@ -108,7 +90,7 @@ const HeroSection = () => {
         <div className="hidden lg:flex items-center justify-end gap-2 w-full">
           <a 
             href="#about" 
-            onClick={(e) => { e.preventDefault(); setCurrentView('about'); }}
+            onClick={(e) => { e.preventDefault(); setShowAboutModal(true); }}
             className="text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 font-medium px-4 py-2 rounded-lg"
           >
             {t('about')}
@@ -487,83 +469,7 @@ const HeroSection = () => {
         </div>
 
         {/* About Modal */}
-        {currentView === 'about' && (
-          <div 
-            className={`fixed inset-0 flex items-center justify-center p-4 sm:p-6 lg:p-8 z-[60] bg-black/60 backdrop-blur-sm transition-all duration-300 ease-out ${showModal && !isClosing ? 'opacity-100' : 'opacity-0'}`}
-            onClick={handleCloseAbout}
-          >
-            <div 
-              className={`max-w-6xl w-full relative transition-all duration-300 ease-out ${showModal && !isClosing ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
-              onClick={(e) => e.stopPropagation()}
-            >
-              {/* Close Button - Fixed, not scrolling */}
-              <button
-                onClick={handleCloseAbout}
-                className="absolute top-2 right-2 sm:top-4 sm:right-4 text-gray-700 hover:text-gray-900 transition-colors z-10 p-2 touch-manipulation"
-                aria-label="Close"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="18" y1="6" x2="6" y2="18"></line>
-                  <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-              </button>
-              
-              {/* Scrollable Content */}
-              <div className="bg-white rounded-3xl p-6 sm:p-8 lg:p-14 shadow-2xl overflow-y-auto max-h-[85vh] sm:max-h-[90vh] overscroll-contain touch-pan-y scrollbar-hide"
-                style={{ 
-                  boxShadow: '0 20px 60px -15px rgba(0, 0, 0, 0.3)',
-                  WebkitOverflowScrolling: 'touch'
-                }}>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-gray-900">{t('aboutTitle')}</h2>
-              <p className="text-gray-700 mb-6 text-base sm:text-lg italic">{t('aboutSubtitle')}</p>
-              
-              {/* YouTube Video */}
-              <div className="relative w-full aspect-video mb-8 rounded-xl overflow-hidden shadow-2xl">
-                <iframe
-                  className="absolute inset-0 w-full h-full"
-                  src="https://www.youtube.com/embed/_HWRGKfSq3A"
-                  title="lifeli.me Story"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              </div>
-
-              <div className="space-y-5 text-gray-700 leading-relaxed text-base sm:text-lg">
-                <p>{t('aboutP1')}</p>
-                
-                <p>{t('aboutP2')}</p>
-                
-                <p>{t('aboutP3')}</p>
-                
-                <p className="font-semibold text-gray-900">{t('aboutP4')}<br />{t('aboutP4b')}</p>
-                
-                <p>{t('aboutP5')}</p>
-                
-                <p>{t('aboutP6')}</p>
-                
-                <p>{t('aboutP7')}</p>
-                
-                <p>{t('aboutP8')}</p>
-                
-                <p>{t('aboutP9')}</p>
-                
-                <div className="flex items-center gap-4 mt-8 pt-6 border-t border-gray-200">
-                  <img 
-                    src="/adam_lifelime.png"
-                    alt="Adam Trnka" 
-                    className="w-16 h-16 rounded-full object-cover flex-shrink-0"
-                  />
-                  <p className="text-gray-900">
-                    <span className="font-semibold">Adam Trnka</span><br />
-                    Founder, lifeli.me<br />
-                    www.lifeli.me
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          </div>
-        )}
+        <AboutModal open={showAboutModal} onOpenChange={setShowAboutModal} />
       </div>
 
       {/* Success Modal */}
