@@ -593,7 +593,7 @@ const HeroSection = () => {
       {/* Service Members Link - Bottom Left next to Privacy */}
       <button
         onClick={() => setShowServiceModal(true)}
-        className="fixed bottom-4 left-28 z-50 text-gray-400 hover:text-primary hover:bg-primary/10 transition-all duration-300 p-2 rounded-lg"
+        className="fixed bottom-4 left-24 z-50 text-gray-400 hover:text-primary hover:bg-primary/10 transition-all duration-300 p-2 rounded-lg"
         aria-label="For Those Who Serve"
         title="For Those Who Serve"
       >
