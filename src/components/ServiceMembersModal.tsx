@@ -70,8 +70,8 @@ const ServiceMembersModal = ({ open, onOpenChange }: ServiceMembersModalProps) =
                 alt="Adam Trnka"
                 className="w-16 h-16 rounded-full object-cover flex-shrink-0"
               />
-              <p className="font-semibold text-gray-900">
-                Adam Trnka<br />
+              <p className="text-gray-900">
+                <span className="font-semibold">Adam Trnka</span><br />
                 Founder, lifeli.me<br />
                 www.lifeli.me
               </p>
