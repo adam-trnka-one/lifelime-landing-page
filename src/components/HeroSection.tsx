@@ -87,13 +87,6 @@ const HeroSection = () => {
                 >
                   {t('about')}
                 </a>
-                <a 
-                  href="#about2" 
-                  onClick={(e) => { e.preventDefault(); setShowAbout2Modal(true); }}
-                  className="text-gray-900 hover:text-primary transition-colors font-semibold px-4 py-2"
-                >
-                  About 2
-                </a>
                 
                 {/* Language Selector in Mobile Menu */}
                 <LanguageSwitcher variant="dark" />
@@ -110,13 +103,6 @@ const HeroSection = () => {
             className="text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 font-medium px-4 py-2 rounded-lg"
           >
             {t('about')}
-          </a>
-          <a 
-            href="#about2" 
-            onClick={(e) => { e.preventDefault(); setShowAbout2Modal(true); }}
-            className="text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 font-medium px-4 py-2 rounded-lg"
-          >
-            About 2
           </a>
           
           {/* Language Selector */}
