@@ -52,7 +52,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     // Send confirmation to user
     const userEmailResponse = await resend.emails.send({
-      from: "Lifeli.me <newjoinwaitlist@lifeli.me>",
+      from: "Adam from lifeli.me waitlist <waitlist@lifeli.me>",
       to: [email],
       subject: "Welcome to the Lifeli.me Waitlist!",
       html: userHtml,
