@@ -4,7 +4,7 @@ import {
   SheetContent,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Settings, Menu, Instagram, Facebook, Linkedin, Flower2, Shield, Heart } from "lucide-react";
+import { Settings, Menu, Instagram, Facebook, Linkedin, Flower2, Shield } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { z } from "zod";
@@ -576,7 +576,7 @@ const HeroSection = () => {
               className="text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 p-2 rounded-lg"
               aria-label="For Those Who Serve"
             >
-              <Heart className="w-5 h-5" />
+              <img src={cornPoppy} alt="Service" className="w-5 h-5" />
             </button>
           </div>
 
