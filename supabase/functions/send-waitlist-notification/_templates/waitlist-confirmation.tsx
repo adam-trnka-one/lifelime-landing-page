@@ -17,7 +17,8 @@ const translations: Record<string, any> = {
     emailP5b: "and we can even plan a call ;-)",
     emailSignature: "Gratefully,",
     emailFooter: "You're receiving this because you joined our waitlist - thank you for that!",
-    emailUnsubscribe: "No pressure though - if you change your mind, you can"
+    emailUnsubscribe: "No pressure though - if you change your mind, you can",
+    unsubscribeLink: "unsubscribe anytime"
   },
   fr: {
     emailTitle: "Incroyable, vous êtes sur la liste ! 🎉",
@@ -30,7 +31,8 @@ const translations: Record<string, any> = {
     emailP5b: "et nous pouvons même planifier un appel ;-)",
     emailSignature: "Avec gratitude,",
     emailFooter: "Vous recevez ceci parce que vous avez rejoint notre liste d'attente - merci pour cela!",
-    emailUnsubscribe: "Aucune pression cependant - si vous changez d'avis, vous pouvez"
+    emailUnsubscribe: "Aucune pression cependant - si vous changez d'avis, vous pouvez",
+    unsubscribeLink: "vous désabonner à tout moment"
   },
   de: {
     emailTitle: "Fantastisch, Sie sind auf der Liste! 🎉",
@@ -43,7 +45,8 @@ const translations: Record<string, any> = {
     emailP5b: "und wir können sogar einen Anruf planen ;-)",
     emailSignature: "Mit Dankbarkeit,",
     emailFooter: "Sie erhalten dies, weil Sie unserer Warteliste beigetreten sind - vielen Dank dafür!",
-    emailUnsubscribe: "Kein Druck - wenn Sie Ihre Meinung ändern, können Sie sich jederzeit"
+    emailUnsubscribe: "Kein Druck - wenn Sie Ihre Meinung ändern, können Sie sich jederzeit",
+    unsubscribeLink: "jederzeit abmelden"
   },
   cz: {
     emailTitle: "Úžasné, jste na seznamu! 🎉",
@@ -56,7 +59,8 @@ const translations: Record<string, any> = {
     emailP5b: "a můžeme si dokonce naplánovat hovor ;-)",
     emailSignature: "S vděčností,",
     emailFooter: "Dostáváte toto, protože jste se připojili k naší čekací listině - děkujeme vám za to!",
-    emailUnsubscribe: "Žádný tlak - pokud si to rozmyslíte, můžete se kdykoli"
+    emailUnsubscribe: "Žádný tlak - pokud si to rozmyslíte, můžete se kdykoli",
+    unsubscribeLink: "kdykoli odhlásit"
   },
   es: {
     emailTitle: "¡Increíble, estás en la lista! 🎉",
@@ -69,7 +73,8 @@ const translations: Record<string, any> = {
     emailP5b: "¡y hasta podemos planear una llamada! ;-)",
     emailSignature: "Agradecidamente,",
     emailFooter: "Recibes esto porque te uniste a nuestra lista de espera - ¡gracias por eso!",
-    emailUnsubscribe: "Sin presión - si cambias de opinión, puedes"
+    emailUnsubscribe: "Sin presión - si cambias de opinión, puedes",
+    unsubscribeLink: "cancelar tu suscripción en cualquier momento"
   },
   pl: {
     emailTitle: "Niesamowite, jesteś na liście! 🎉",
@@ -82,7 +87,8 @@ const translations: Record<string, any> = {
     emailP5b: "i możemy nawet zaplanować rozmowę ;-)",
     emailSignature: "Z wdzięcznością,",
     emailFooter: "Otrzymujesz to, ponieważ dołączyłeś do naszej listy oczekujących - dziękujemy za to!",
-    emailUnsubscribe: "Bez presji - jeśli zmienisz zdanie, możesz"
+    emailUnsubscribe: "Bez presji - jeśli zmienisz zdanie, możesz",
+    unsubscribeLink: "zrezygnować w dowolnym momencie"
   }
 }
 
@@ -181,7 +187,7 @@ export const generateWaitlistConfirmationHTML = (
           
           <p style="color: #94a3b8; font-size: 12px; line-height: 1.5; margin: 16px 0 0; text-align: center;">
             ${t.emailFooter}<br />
-            ${t.emailUnsubscribe} <a href="https://drljjepaolzzlirxhbit.supabase.co/functions/v1/unsubscribe-waitlist?email=${encodeURIComponent(email)}" style="color: #9b87f5; text-decoration: none;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">unsubscribe anytime</a>.
+            ${t.emailUnsubscribe} <a href="https://drljjepaolzzlirxhbit.supabase.co/functions/v1/unsubscribe-waitlist?email=${encodeURIComponent(email)}" style="color: #9b87f5; text-decoration: none;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">${t.unsubscribeLink}</a>.
           </p>
         </div>
       </div>
