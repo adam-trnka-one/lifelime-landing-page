@@ -425,6 +425,22 @@ const HeroSection = () => {
         </div>
       </div>
 
+      {/* Desktop: Fixed settings links at bottom left */}
+      <div className="hidden lg:flex fixed bottom-4 left-4 z-50 gap-2">
+        <button onClick={() => {
+            const cookieConsent = document.querySelector('[aria-label="Edit cookie preferences"]') as HTMLElement;
+            if (cookieConsent) cookieConsent.click();
+          }} className="text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 p-2 rounded-lg" aria-label="Settings">
+          <Settings className="w-5 h-5" />
+        </button>
+        <button onClick={() => setShowPrivacyModal(true)} className="text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 p-2 rounded-lg" aria-label="Privacy Policy">
+          <Shield className="w-5 h-5" />
+        </button>
+        <button onClick={() => setShowServiceModal(true)} className="text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 p-2 rounded-lg" aria-label="For Those Who Serve">
+          <Flower2 className="w-5 h-5" />
+        </button>
+      </div>
+
       {/* Desktop: Fixed social links at bottom right */}
       <div className="hidden lg:flex fixed bottom-4 right-4 z-50 gap-2">
         <a href="https://www.instagram.com/lifeli.me" target="_blank" rel="noopener noreferrer" className="text-white/90 hover:text-primary hover:bg-primary/10 transition-all duration-300 p-2 rounded-lg" aria-label="Instagram">
