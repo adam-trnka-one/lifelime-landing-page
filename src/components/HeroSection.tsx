@@ -4,7 +4,7 @@ import {
   SheetContent,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Settings, Menu, Instagram, Facebook, Linkedin, Flower2 } from "lucide-react";
+import { Settings, Menu, Instagram, Facebook, Linkedin, Flower2, Shield, Heart } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { z } from "zod";
@@ -566,17 +566,17 @@ const HeroSection = () => {
             </button>
             <button
               onClick={() => setShowPrivacyModal(true)}
-              className="text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 px-3 py-2 rounded-lg text-sm font-medium"
+              className="text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 p-2 rounded-lg"
               aria-label="Privacy Policy"
             >
-              Privacy
+              <Shield className="w-5 h-5" />
             </button>
             <button
               onClick={() => setShowServiceModal(true)}
-              className="text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 px-3 py-2 rounded-lg text-sm font-medium"
+              className="text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 p-2 rounded-lg"
               aria-label="For Those Who Serve"
             >
-              Service
+              <Heart className="w-5 h-5" />
             </button>
           </div>
 
