@@ -34,7 +34,7 @@ const AboutModal = ({ open, onOpenChange }: AboutModalProps) => {
       onClick={handleClose}
     >
       <div 
-        className={`max-w-6xl w-full relative transition-all duration-300 ease-out ${showModal && !isClosing ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
+        className={`max-w-3xl w-full relative transition-all duration-300 ease-out ${showModal && !isClosing ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
@@ -57,7 +57,7 @@ const AboutModal = ({ open, onOpenChange }: AboutModalProps) => {
             WebkitOverflowScrolling: 'touch'
           }}
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-gray-900">{t('aboutTitle')}</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-gray-900">{t('aboutTitle')}</h2>
           <p className="text-gray-700 mb-6 text-base sm:text-lg italic">{t('aboutSubtitle')}</p>
           
           {/* YouTube Video */}
