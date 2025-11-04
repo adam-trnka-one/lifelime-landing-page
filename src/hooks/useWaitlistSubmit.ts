@@ -130,6 +130,7 @@ export const useWaitlistSubmit = () => {
       supabase.functions.invoke('send-waitlist-notification', {
         body: {
           firstName: data.firstName.trim(),
+          lastName: data.lastName?.trim(),
           email: data.email.trim().toLowerCase(),
           browserName,
           osName,

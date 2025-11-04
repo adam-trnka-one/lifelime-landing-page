@@ -13,6 +13,7 @@ const corsHeaders = {
 
 interface WaitlistNotificationRequest {
   firstName: string;
+  lastName?: string;
   email: string;
   browserName?: string;
   osName?: string;
@@ -26,13 +27,14 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
-    const { firstName, email, browserName, osName, locationCountry, language = 'en' }: WaitlistNotificationRequest = await req.json();
+    const { firstName, lastName, email, browserName, osName, locationCountry, language = 'en' }: WaitlistNotificationRequest = await req.json();
 
-    console.log("Sending waitlist notification for:", firstName, email, "in language:", language);
+    console.log("Sending waitlist notification for:", firstName, lastName, email, "in language:", language);
 
     // Generate admin email HTML
     const adminHtml = generateAdminNotificationHTML({
       firstName,
+      lastName,
       email,
       browserName,
       osName,

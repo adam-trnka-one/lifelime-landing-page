@@ -1,5 +1,6 @@
 interface AdminNotificationEmailProps {
   firstName: string
+  lastName?: string
   email: string
   browserName?: string
   osName?: string
@@ -8,6 +9,7 @@ interface AdminNotificationEmailProps {
 
 export const generateAdminNotificationHTML = ({
   firstName,
+  lastName,
   email,
   browserName,
   osName,
@@ -43,6 +45,13 @@ export const generateAdminNotificationHTML = ({
               <p style="color: #6b7280; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin: 0 0 4px;">First Name:</p>
               <p style="color: #111827; font-size: 16px; font-weight: 500; margin: 0;">${firstName}</p>
             </div>
+            
+            ${lastName ? `
+            <div style="margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #f3f4f6;">
+              <p style="color: #6b7280; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin: 0 0 4px;">Last Name:</p>
+              <p style="color: #111827; font-size: 16px; font-weight: 500; margin: 0;">${lastName}</p>
+            </div>
+            ` : ''}
             
             <div style="margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #f3f4f6;">
               <p style="color: #6b7280; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin: 0 0 4px;">Email:</p>
