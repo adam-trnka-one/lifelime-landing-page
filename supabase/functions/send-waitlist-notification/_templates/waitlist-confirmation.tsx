@@ -8,7 +8,7 @@ interface WaitlistConfirmationEmailProps {
 const translations: Record<string, any> = {
   en: {
     emailTitle: "Amazing, You're on the list! 🎉",
-    emailGreeting: "Hello,",
+    emailGreeting: "Hello",
     emailP1: "I'm Adam, founder of lifeli.me and I want to personaly thank you for joining the waitlist.",
     emailP2: "I started building lifeli.me because I wanted a place to capture the parts of life that truly define us - the moments, sounds, stories, and lessons that deserve to last for future generations.",
     emailP3: "Soon, you'll be able to craft your own timeline, week by week - adding photos, videos, voice, notes, and reflections that grow into your personal legacy - same as the medieval kings and monarchs.",
@@ -22,7 +22,7 @@ const translations: Record<string, any> = {
   },
   fr: {
     emailTitle: "Incroyable, vous êtes sur la liste ! 🎉",
-    emailGreeting: "Bonjour,",
+    emailGreeting: "Bonjour",
     emailP1: "Je suis Adam, fondateur de lifeli.me et je tiens à vous remercier personnellement d'avoir rejoint la liste d'attente.",
     emailP2: "J'ai commencé à construire lifeli.me parce que je voulais un endroit pour capturer les parties de la vie qui nous définissent vraiment - les moments, les sons, les histoires et les leçons qui méritent de durer pour les générations futures.",
     emailP3: "Bientôt, vous pourrez créer votre propre chronologie, semaine après semaine - en ajoutant des photos, des vidéos, de la voix, des notes et des réflexions qui se transforment en votre héritage personnel - tout comme les rois et monarques médiévaux.",
@@ -36,7 +36,7 @@ const translations: Record<string, any> = {
   },
   de: {
     emailTitle: "Fantastisch, Sie sind auf der Liste! 🎉",
-    emailGreeting: "Hallo,",
+    emailGreeting: "Hallo",
     emailP1: "Ich bin Adam, Gründer von lifeli.me und ich möchte mich persönlich bei Ihnen für die Anmeldung zur Warteliste bedanken.",
     emailP2: "Ich habe angefangen, lifeli.me zu bauen, weil ich einen Ort wollte, um die Teile des Lebens festzuhalten, die uns wirklich definieren - die Momente, Klänge, Geschichten und Lektionen, die für zukünftige Generationen bewahrt werden sollten.",
     emailP3: "Bald können Sie Ihre eigene Zeitleiste erstellen, Woche für Woche - Fotos, Videos, Stimme, Notizen und Reflexionen hinzufügen, die zu Ihrem persönlichen Vermächtnis werden - genau wie die mittelalterlichen Könige und Monarchen.",
@@ -50,7 +50,7 @@ const translations: Record<string, any> = {
   },
   cz: {
     emailTitle: "Úžasné, jste na seznamu! 🎉",
-    emailGreeting: "Dobrý den,",
+    emailGreeting: "Dobrý den",
     emailP1: "Jsem Adam, zakladatel lifeli.me a chci vám osobně poděkovat za připojení k čekací listině.",
     emailP2: "Začal jsem stavět lifeli.me, protože jsem chtěl místo pro zachycení částí života, které nás skutečně definují - okamžiky, zvuky, příběhy a lekce, které si zaslouží trvat pro budoucí generace.",
     emailP3: "Brzy si budete moci vytvořit vlastní časovou osu, týden po týdnu - přidávat fotky, videa, hlas, poznámky a úvahy, které se změní ve váš osobní odkaz - stejně jako středověcí králové a panovníci.",
@@ -64,7 +64,7 @@ const translations: Record<string, any> = {
   },
   es: {
     emailTitle: "¡Increíble, estás en la lista! 🎉",
-    emailGreeting: "Hola,",
+    emailGreeting: "Hola",
     emailP1: "Soy Adam, fundador de lifeli.me y quiero agradecerte personalmente por unirte a la lista de espera.",
     emailP2: "Comencé a construir lifeli.me porque quería un lugar para capturar las partes de la vida que realmente nos definen: los momentos, sonidos, historias y lecciones que merecen durar para las generaciones futuras.",
     emailP3: "Pronto podrás crear tu propia línea de tiempo, semana tras semana: agregando fotos, videos, voz, notas y reflexiones que se convierten en tu legado personal, igual que los reyes y monarcas medievales.",
@@ -78,7 +78,7 @@ const translations: Record<string, any> = {
   },
   pl: {
     emailTitle: "Niesamowite, jesteś na liście! 🎉",
-    emailGreeting: "Witaj,",
+    emailGreeting: "Witaj",
     emailP1: "Jestem Adam, założyciel lifeli.me i chcę osobiście podziękować za dołączenie do listy oczekujących.",
     emailP2: "Zacząłem budować lifeli.me, ponieważ chciałem miejsce do uchwycenia części życia, które naprawdę nas definiują - chwile, dźwięki, historie i lekcje, które zasługują na to, by trwać dla przyszłych pokoleń.",
     emailP3: "Wkrótce będziesz mógł stworzyć własną oś czasu, tydzień po tygodniu - dodając zdjęcia, filmy, głos, notatki i refleksje, które przekształcają się w twoje osobiste dziedzictwo - tak samo jak średniowieczni królowie i monarchowie.",
@@ -128,7 +128,7 @@ export const generateWaitlistConfirmationHTML = (
         <!-- Content Section -->
         <div style="padding: 48px 32px; background-color: #ffffff;">
           <p style="color: #0f172a; font-size: 16px; line-height: 1.6; margin: 0 0 24px;">
-            ${t.emailGreeting} ${firstName}
+            ${t.emailGreeting} ${firstName},
           </p>
 
           <p style="color: #0f172a; font-size: 16px; line-height: 1.6; margin: 0 0 24px;">
