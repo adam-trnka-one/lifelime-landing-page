@@ -488,8 +488,14 @@ const HeroSection = () => {
 
         {/* About Modal */}
         {currentView === 'about' && (
-          <div className={`fixed inset-0 flex items-center justify-center p-4 sm:p-6 lg:p-8 z-[60] bg-black/60 backdrop-blur-sm transition-all duration-300 ease-out ${showModal && !isClosing ? 'opacity-100' : 'opacity-0'}`}>
-            <div className={`max-w-6xl w-full relative transition-all duration-300 ease-out ${showModal && !isClosing ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
+          <div 
+            className={`fixed inset-0 flex items-center justify-center p-4 sm:p-6 lg:p-8 z-[60] bg-black/60 backdrop-blur-sm transition-all duration-300 ease-out ${showModal && !isClosing ? 'opacity-100' : 'opacity-0'}`}
+            onClick={handleCloseAbout}
+          >
+            <div 
+              className={`max-w-6xl w-full relative transition-all duration-300 ease-out ${showModal && !isClosing ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
+              onClick={(e) => e.stopPropagation()}
+            >
               {/* Close Button - Fixed, not scrolling */}
               <button
                 onClick={handleCloseAbout}
