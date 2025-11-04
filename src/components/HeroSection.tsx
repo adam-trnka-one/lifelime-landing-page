@@ -573,14 +573,20 @@ const HeroSection = () => {
         onOpenChange={setShowPrivacyModal}
       />
 
-      {/* Social Links + Privacy Policy - Bottom Right */}
+      {/* Privacy Policy Link - Bottom Left next to Cookie Consent */}
+      <button
+        onClick={() => setShowPrivacyModal(true)}
+        className="fixed bottom-4 left-14 z-50 text-gray-400 hover:text-primary hover:bg-primary/10 transition-all duration-300 p-2 rounded-lg"
+        aria-label="Privacy Policy"
+        title="Privacy Policy"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+      </button>
+
+      {/* Social Links - Bottom Right */}
       <div className="fixed bottom-6 right-6 z-40 flex gap-2">
-        <button
-          onClick={() => setShowPrivacyModal(true)}
-          className="text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 px-3 py-2 rounded-lg text-sm font-medium"
-        >
-          Privacy Policy
-        </button>
         <a 
           href="https://www.instagram.com/lifeli.me" 
           target="_blank" 
