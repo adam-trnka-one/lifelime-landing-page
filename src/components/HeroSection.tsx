@@ -549,22 +549,38 @@ const HeroSection = () => {
         onOpenChange={setShowServiceModal}
       />
 
-      {/* Footer - Mobile only, contains settings and social icons */}
+      {/* Footer - Mobile only, contains settings, privacy, service, and social icons */}
       <div className="lg:hidden absolute bottom-0 left-0 right-0 z-40 bg-gradient-to-t from-black/20 to-transparent backdrop-blur-sm">
         <div className="flex items-center justify-between p-4">
-          {/* Settings Icon */}
-          <button
-            onClick={() => {
-              const cookieConsent = document.querySelector('[aria-label="Edit cookie preferences"]') as HTMLElement;
-              if (cookieConsent) cookieConsent.click();
-            }}
-            className="text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 p-2 rounded-lg"
-            aria-label="Settings"
-          >
-            <Settings className="w-5 h-5" />
-          </button>
+          {/* Left side: Settings, Privacy, Service */}
+          <div className="flex gap-2">
+            <button
+              onClick={() => {
+                const cookieConsent = document.querySelector('[aria-label="Edit cookie preferences"]') as HTMLElement;
+                if (cookieConsent) cookieConsent.click();
+              }}
+              className="text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 p-2 rounded-lg"
+              aria-label="Settings"
+            >
+              <Settings className="w-5 h-5" />
+            </button>
+            <button
+              onClick={() => setShowPrivacyModal(true)}
+              className="text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 px-3 py-2 rounded-lg text-sm font-medium"
+              aria-label="Privacy Policy"
+            >
+              Privacy
+            </button>
+            <button
+              onClick={() => setShowServiceModal(true)}
+              className="text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 px-3 py-2 rounded-lg text-sm font-medium"
+              aria-label="For Those Who Serve"
+            >
+              Service
+            </button>
+          </div>
 
-          {/* Social Links */}
+          {/* Right side: Social Links */}
           <div className="flex gap-2">
             <a 
               href="https://www.instagram.com/lifeli.me" 
