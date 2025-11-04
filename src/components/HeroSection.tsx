@@ -430,13 +430,13 @@ const HeroSection = () => {
         <button onClick={() => {
             const cookieConsent = document.querySelector('[aria-label="Edit cookie preferences"]') as HTMLElement;
             if (cookieConsent) cookieConsent.click();
-          }} className="text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 p-2 rounded-lg" aria-label="Settings">
+          }} className="text-gray-400 hover:text-primary hover:bg-primary/10 transition-all duration-300 p-2 rounded-lg" aria-label="Settings">
           <Settings className="w-5 h-5" />
         </button>
-        <button onClick={() => setShowPrivacyModal(true)} className="text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 p-2 rounded-lg" aria-label="Privacy Policy">
+        <button onClick={() => setShowPrivacyModal(true)} className="text-gray-400 hover:text-primary hover:bg-primary/10 transition-all duration-300 p-2 rounded-lg" aria-label="Privacy Policy">
           <Shield className="w-5 h-5" />
         </button>
-        <button onClick={() => setShowServiceModal(true)} className="text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 p-2 rounded-lg" aria-label="For Those Who Serve">
+        <button onClick={() => setShowServiceModal(true)} className="text-gray-400 hover:text-primary hover:bg-primary/10 transition-all duration-300 p-2 rounded-lg" aria-label="For Those Who Serve">
           <Flower2 className="w-5 h-5" />
         </button>
       </div>
