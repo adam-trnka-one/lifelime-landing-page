@@ -46,127 +46,24 @@ serve(async (req: Request): Promise<Response> => {
 
     console.log("Successfully unsubscribed:", email);
 
-    // Return a user-friendly HTML page
-    return new Response(
-      `<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unsubscribed - lifeli.me</title>
-    <style>
-      body {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-        background: linear-gradient(135deg, #f3f0ff 0%, #e5deff 100%);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 100vh;
-        margin: 0;
-        padding: 20px;
-      }
-      .container {
-        background: white;
-        border-radius: 16px;
-        padding: 40px;
-        max-width: 500px;
-        box-shadow: 0 10px 30px -10px rgba(155, 135, 245, 0.3);
-        text-align: center;
-      }
-      h1 {
-        color: #9b87f5;
-        margin-bottom: 16px;
-      }
-      p {
-        color: #666;
-        line-height: 1.6;
-        margin-bottom: 24px;
-      }
-      a {
-        color: #9b87f5;
-        text-decoration: none;
-      }
-      a:hover {
-        text-decoration: underline;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <h1>Successfully Unsubscribed</h1>
-      <p>You have been removed from the lifeli.me waitlist.</p>
-      <p>We're sorry to see you go. If you change your mind, you can always sign up again at <a href="https://www.lifeli.me">www.lifeli.me</a></p>
-    </div>
-  </body>
-</html>`,
-      {
-        status: 200,
-        headers: { 
-          "Content-Type": "text/html; charset=utf-8",
-          ...corsHeaders
-        },
-      }
-    );
+    // Redirect to homepage with success message
+    return new Response(null, {
+      status: 302,
+      headers: {
+        "Location": "/?unsubscribed=true",
+        ...corsHeaders
+      },
+    });
   } catch (error: any) {
     console.error("Error in unsubscribe-waitlist function:", error);
     
-    return new Response(
-      `<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Error - lifeli.me</title>
-    <style>
-      body {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-        background: linear-gradient(135deg, #f3f0ff 0%, #e5deff 100%);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 100vh;
-        margin: 0;
-        padding: 20px;
-      }
-      .container {
-        background: white;
-        border-radius: 16px;
-        padding: 40px;
-        max-width: 500px;
-        box-shadow: 0 10px 30px -10px rgba(155, 135, 245, 0.3);
-        text-align: center;
-      }
-      h1 {
-        color: #ef4444;
-        margin-bottom: 16px;
-      }
-      p {
-        color: #666;
-        line-height: 1.6;
-      }
-      a {
-        color: #9b87f5;
-        text-decoration: none;
-      }
-      a:hover {
-        text-decoration: underline;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <h1>Error</h1>
-      <p>There was an error processing your unsubscribe request. Please try again later or contact us at <a href="mailto:adam@lifeli.me">adam@lifeli.me</a></p>
-    </div>
-  </body>
-</html>`,
-      {
-        status: 500,
-        headers: { 
-          "Content-Type": "text/html; charset=utf-8",
-          ...corsHeaders
-        },
-      }
-    );
+    // Redirect to homepage with error message
+    return new Response(null, {
+      status: 302,
+      headers: {
+        "Location": "/?unsubscribe_error=true",
+        ...corsHeaders
+      },
+    });
   }
 });
