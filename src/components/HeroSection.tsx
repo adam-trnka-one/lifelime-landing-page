@@ -483,10 +483,10 @@ const HeroSection = () => {
             </Button>
           </form>
         </div>
-
-        {/* About Modal */}
-        <AboutModal open={showAboutModal} onOpenChange={setShowAboutModal} />
       </div>
+
+      {/* About Modal */}
+      <AboutModal open={showAboutModal} onOpenChange={setShowAboutModal} />
 
       {/* Success Modal */}
       <WaitlistSuccessModal 
