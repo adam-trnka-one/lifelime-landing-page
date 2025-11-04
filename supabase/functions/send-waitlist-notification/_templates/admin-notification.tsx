@@ -1,4 +1,5 @@
 interface AdminNotificationEmailProps {
+  name: string
   email: string
   browserName?: string
   osName?: string
@@ -6,6 +7,7 @@ interface AdminNotificationEmailProps {
 }
 
 export const generateAdminNotificationHTML = ({
+  name,
   email,
   browserName,
   osName,
@@ -36,6 +38,11 @@ export const generateAdminNotificationHTML = ({
             <h1 style="color: #111827; font-size: 24px; font-weight: 700; margin: 0 0 24px; text-align: center;">
               New Waitlist Signup! 🎉
             </h1>
+            
+            <div style="margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #f3f4f6;">
+              <p style="color: #6b7280; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin: 0 0 4px;">Name:</p>
+              <p style="color: #111827; font-size: 16px; font-weight: 500; margin: 0;">${name}</p>
+            </div>
             
             <div style="margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #f3f4f6;">
               <p style="color: #6b7280; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin: 0 0 4px;">Email:</p>

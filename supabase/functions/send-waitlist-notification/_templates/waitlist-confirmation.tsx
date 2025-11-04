@@ -1,4 +1,5 @@
 interface WaitlistConfirmationEmailProps {
+  name: string
   email: string
   language?: string
 }
@@ -86,6 +87,7 @@ const translations: Record<string, any> = {
 }
 
 export const generateWaitlistConfirmationHTML = (
+  name: string,
   email: string,
   language: string = 'en'
 ): string => {
@@ -120,7 +122,7 @@ export const generateWaitlistConfirmationHTML = (
         <!-- Content Section -->
         <div style="padding: 48px 32px; background-color: #ffffff;">
           <p style="color: #0f172a; font-size: 16px; line-height: 1.6; margin: 0 0 24px;">
-            ${t.emailGreeting}
+            ${t.emailGreeting} ${name}
           </p>
 
           <p style="color: #0f172a; font-size: 16px; line-height: 1.6; margin: 0 0 24px;">

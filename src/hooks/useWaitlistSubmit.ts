@@ -4,6 +4,7 @@ import { useToast } from "@/hooks/use-toast";
 import { useTranslation } from "react-i18next";
 
 interface WaitlistData {
+  name: string;
   email: string;
 }
 
@@ -97,6 +98,7 @@ export const useWaitlistSubmit = () => {
         .from("waitlist")
         .insert([
           {
+            name: data.name.trim(),
             email: data.email.trim().toLowerCase(),
             browser_name: browserName,
             browser_version: browserVersion,
@@ -123,6 +125,7 @@ export const useWaitlistSubmit = () => {
       // Send notification email (don't await - background task)
       supabase.functions.invoke('send-waitlist-notification', {
         body: {
+          name: data.name.trim(),
           email: data.email.trim().toLowerCase(),
           browserName,
           osName,

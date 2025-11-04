@@ -48,6 +48,7 @@ export type Database = {
           location_city: string | null
           location_country: string | null
           location_region: string | null
+          name: string | null
           os_name: string | null
           screen_height: number | null
           screen_width: number | null
@@ -66,6 +67,7 @@ export type Database = {
           location_city?: string | null
           location_country?: string | null
           location_region?: string | null
+          name?: string | null
           os_name?: string | null
           screen_height?: number | null
           screen_width?: number | null
@@ -84,6 +86,7 @@ export type Database = {
           location_city?: string | null
           location_country?: string | null
           location_region?: string | null
+          name?: string | null
           os_name?: string | null
           screen_height?: number | null
           screen_width?: number | null

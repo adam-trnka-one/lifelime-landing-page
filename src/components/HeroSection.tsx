@@ -14,8 +14,12 @@ import { useToast } from "@/hooks/use-toast";
 import WaitlistSuccessModal from "@/components/WaitlistSuccessModal";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 
-// Email validation schema
-const emailSchema = z.object({
+// Form validation schema
+const formSchema = z.object({
+  name: z.string()
+    .trim()
+    .nonempty({ message: "Name cannot be empty" })
+    .max(100, { message: "Name must be less than 100 characters" }),
   email: z.string()
     .trim()
     .nonempty({ message: "Email cannot be empty" })
@@ -30,7 +34,9 @@ const HeroSection = () => {
   const [currentView, setCurrentView] = useState<'waitlist' | 'about'>('waitlist');
   const [isClosing, setIsClosing] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [nameError, setNameError] = useState("");
   const [emailError, setEmailError] = useState("");
   const [showSuccessModal, setShowSuccessModal] = useState(false);
 
@@ -331,31 +337,42 @@ const HeroSection = () => {
           </p>
           <form className="space-y-5 sm:space-y-6" onSubmit={(e) => {
             e.preventDefault();
-            console.log("Form submitted, email value:", email);
             
-            // Validate email
-            const validation = emailSchema.safeParse({ email });
-            console.log("Validation result:", validation);
+            // Validate form
+            const validation = formSchema.safeParse({ name, email });
             
             if (!validation.success) {
-              const errorMessage = validation.error.errors[0].message;
-              console.log("Validation error:", errorMessage);
-              setEmailError(errorMessage);
-              toast({
-                title: "Invalid email",
-                description: errorMessage,
-                variant: "destructive",
-              });
+              const errors = validation.error.errors;
+              const nameErr = errors.find(e => e.path[0] === 'name');
+              const emailErr = errors.find(e => e.path[0] === 'email');
+              
+              if (nameErr) {
+                setNameError(nameErr.message);
+                toast({
+                  title: "Invalid name",
+                  description: nameErr.message,
+                  variant: "destructive",
+                });
+              }
+              
+              if (emailErr) {
+                setEmailError(emailErr.message);
+                toast({
+                  title: "Invalid email",
+                  description: emailErr.message,
+                  variant: "destructive",
+                });
+              }
               return;
             }
             
+            setNameError("");
             setEmailError("");
-            console.log("Submitting to database...");
             
             // Submit to database
-            submitWaitlist({ email }, {
+            submitWaitlist({ name, email }, {
               onSuccess: () => {
-                console.log("Submission successful!");
+                setName("");
                 setEmail("");
                 setShowSuccessModal(true);
               },
@@ -364,25 +381,45 @@ const HeroSection = () => {
               }
             });
           }}>
-            <div className="space-y-2">
-              <input
-                type="email"
-                placeholder={t('emailPlaceholder')}
-                value={email}
-                onChange={(e) => {
-                  console.log("Email input changed:", e.target.value);
-                  setEmail(e.target.value);
-                  setEmailError("");
-                }}
-                className="w-full px-5 sm:px-6 py-4 sm:py-5 text-base sm:text-lg rounded-xl bg-white/95 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-white shadow-xl backdrop-blur-sm border border-white/20"
-                disabled={isPending}
-                autoComplete="email"
-              />
-              {emailError && (
-                <p className="text-red-100 bg-red-500/20 text-sm px-3 py-2 rounded-lg backdrop-blur-sm font-medium">
-                  {emailError}
-                </p>
-              )}
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+              <div className="flex-1 space-y-2">
+                <input
+                  type="text"
+                  placeholder={t('namePlaceholder') || 'Your name'}
+                  value={name}
+                  onChange={(e) => {
+                    setName(e.target.value);
+                    setNameError("");
+                  }}
+                  className="w-full px-5 sm:px-6 py-4 sm:py-5 text-base sm:text-lg rounded-xl bg-white/95 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-white shadow-xl backdrop-blur-sm border border-white/20"
+                  disabled={isPending}
+                  autoComplete="name"
+                />
+                {nameError && (
+                  <p className="text-red-100 bg-red-500/20 text-sm px-3 py-2 rounded-lg backdrop-blur-sm font-medium">
+                    {nameError}
+                  </p>
+                )}
+              </div>
+              <div className="flex-1 space-y-2">
+                <input
+                  type="email"
+                  placeholder={t('emailPlaceholder')}
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                    setEmailError("");
+                  }}
+                  className="w-full px-5 sm:px-6 py-4 sm:py-5 text-base sm:text-lg rounded-xl bg-white/95 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-white shadow-xl backdrop-blur-sm border border-white/20"
+                  disabled={isPending}
+                  autoComplete="email"
+                />
+                {emailError && (
+                  <p className="text-red-100 bg-red-500/20 text-sm px-3 py-2 rounded-lg backdrop-blur-sm font-medium">
+                    {emailError}
+                  </p>
+                )}
+              </div>
             </div>
             <Button 
               type="submit"
