@@ -542,7 +542,18 @@ const HeroSection = () => {
                 
                 <p>{t('aboutP9')}</p>
                 
-                <p className="font-semibold text-gray-900 mt-6">{t('aboutSignature')}<br />{t('aboutSignatureTitle')}</p>
+                <div className="flex items-center gap-4 mt-6">
+                  <img 
+                    src="https://images.lifeli.me/adam_lifelime.png"
+                    alt="Adam Trnka" 
+                    className="w-16 h-16 rounded-full object-cover flex-shrink-0"
+                  />
+                  <p className="font-semibold text-gray-900">
+                    {t('aboutSignature')}<br />
+                    Adam Trnka<br />
+                    {t('aboutSignatureTitle')}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
