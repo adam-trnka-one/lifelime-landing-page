@@ -309,7 +309,7 @@ const HeroSection = () => {
               {/* First row: First name and Last name */}
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <div className="flex-1 space-y-2">
-                  <input type="text" placeholder="Firstname" value={firstName} onChange={e => {
+                  <input type="text" placeholder="First name" value={firstName} onChange={e => {
                   setFirstName(e.target.value);
                   setFirstNameError("");
                 }} className="w-full px-5 sm:px-6 py-4 sm:py-5 text-base sm:text-lg rounded-xl bg-white/95 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-white shadow-xl backdrop-blur-sm border border-white/20" disabled={isPending} autoComplete="given-name" required />
@@ -318,7 +318,7 @@ const HeroSection = () => {
                     </p>}
                 </div>
                 <div className="flex-1 space-y-2">
-                  <input type="text" placeholder="Lastname" value={lastName} onChange={e => {
+                  <input type="text" placeholder="Last name" value={lastName} onChange={e => {
                   setLastName(e.target.value);
                   setLastNameError("");
                 }} className="w-full px-5 sm:px-6 py-4 sm:py-5 text-base sm:text-lg rounded-xl bg-white/95 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-white shadow-xl backdrop-blur-sm border border-white/20" disabled={isPending} autoComplete="family-name" />
