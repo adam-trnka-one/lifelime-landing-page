@@ -465,7 +465,7 @@ const HeroSection = () => {
       />
 
       {/* Social Links - Bottom Right */}
-      <div className="fixed bottom-6 right-6 z-50 flex gap-2">
+      <div className="fixed bottom-6 right-6 z-40 flex gap-2">
         <a 
           href="https://www.instagram.com/lifeli.me" 
           target="_blank" 

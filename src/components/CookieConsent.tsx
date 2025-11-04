@@ -41,7 +41,7 @@ const CookieConsent = () => {
     return (
       <button
         onClick={handleEditPreferences}
-        className="fixed bottom-4 left-4 z-40 text-primary hover:text-primary/80 hover:bg-primary/10 transition-all duration-300 p-2 rounded-lg"
+        className="fixed bottom-4 left-4 z-50 text-primary hover:text-primary/80 hover:bg-primary/10 transition-all duration-300 p-2 rounded-lg"
         aria-label="Edit cookie preferences"
       >
         <Settings className="w-5 h-5 hover:rotate-90 transition-all duration-300" />
@@ -54,7 +54,7 @@ const CookieConsent = () => {
   }
 
   return (
-    <div className="fixed bottom-4 left-4 md:max-w-sm z-40 animate-in slide-in-from-bottom-5">
+    <div className="fixed bottom-4 left-4 md:max-w-sm z-50 animate-in slide-in-from-bottom-5">
       <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl border border-gray-200 overflow-hidden">
         {/* Compact View */}
         {!isExpanded && (
