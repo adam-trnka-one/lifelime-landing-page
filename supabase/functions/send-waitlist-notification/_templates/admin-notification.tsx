@@ -5,6 +5,7 @@ interface AdminNotificationEmailProps {
   browserName?: string
   osName?: string
   locationCountry?: string
+  language?: string
 }
 
 export const generateAdminNotificationHTML = ({
@@ -14,6 +15,7 @@ export const generateAdminNotificationHTML = ({
   browserName,
   osName,
   locationCountry,
+  language,
 }: AdminNotificationEmailProps): string => {
   const timestamp = new Date().toLocaleString();
   
@@ -76,6 +78,13 @@ export const generateAdminNotificationHTML = ({
             <div style="margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #f3f4f6;">
               <p style="color: #6b7280; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin: 0 0 4px;">Location:</p>
               <p style="color: #111827; font-size: 16px; font-weight: 500; margin: 0;">${locationCountry}</p>
+            </div>
+            ` : ''}
+            
+            ${language ? `
+            <div style="margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #f3f4f6;">
+              <p style="color: #6b7280; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin: 0 0 4px;">Website Language:</p>
+              <p style="color: #111827; font-size: 16px; font-weight: 500; margin: 0;">${language}</p>
             </div>
             ` : ''}
             

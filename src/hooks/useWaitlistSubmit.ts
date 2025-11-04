@@ -65,7 +65,7 @@ export const useWaitlistSubmit = () => {
       const screenHeight = window.screen.height;
 
       // Get language and timezone (always collected - essential data)
-      const language = navigator.language;
+      const websiteLanguage = i18n.language;
       const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
       // Get user agent (always collected - essential data)
@@ -109,7 +109,7 @@ export const useWaitlistSubmit = () => {
             os_name: osName,
             screen_width: screenWidth,
             screen_height: screenHeight,
-            language: language,
+            language: websiteLanguage,
             timezone: timezone,
             user_agent: userAgent,
             cookies_consent: hasConsent,
@@ -135,7 +135,7 @@ export const useWaitlistSubmit = () => {
           browserName,
           osName,
           locationCountry: locationData.location_country,
-          language: i18n.language,
+          language: websiteLanguage,
         }
       }).catch(error => console.error('Failed to send notification:', error));
 

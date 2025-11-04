@@ -39,6 +39,7 @@ const handler = async (req: Request): Promise<Response> => {
       browserName,
       osName,
       locationCountry,
+      language,
     });
 
     // Send notification to admin
