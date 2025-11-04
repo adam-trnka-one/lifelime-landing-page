@@ -34,7 +34,7 @@ const PrivacyPolicyModal = ({ open, onOpenChange }: PrivacyPolicyModalProps) => 
       onClick={handleClose}
     >
       <div 
-        className={`max-w-6xl w-full relative transition-all duration-300 ease-out ${showModal && !isClosing ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
+        className={`max-w-3xl w-full relative transition-all duration-300 ease-out ${showModal && !isClosing ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
@@ -58,14 +58,14 @@ const PrivacyPolicyModal = ({ open, onOpenChange }: PrivacyPolicyModalProps) => 
           }}
         >
           {/* Header */}
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-gray-900">
             {t('privacyTitle')}
           </h2>
           <p className="text-gray-700 mb-8 text-base sm:text-lg leading-relaxed">
             {t('privacyIntro')}
           </p>
 
-          <div className="space-y-8 text-gray-700 leading-relaxed text-base sm:text-lg">
+          <div className="space-y-5 text-gray-700 leading-relaxed text-base sm:text-lg">
             {/* What We Collect */}
             <div>
               <h3 className="text-2xl font-semibold mb-4 text-gray-900">{t('privacyWhatWeCollectTitle')}</h3>
@@ -139,14 +139,14 @@ const PrivacyPolicyModal = ({ open, onOpenChange }: PrivacyPolicyModalProps) => 
             </div>
 
             {/* Contact */}
-            <div className="text-center pt-6 border-t border-gray-200">
-              <p className="text-lg text-gray-700">
+            <div className="mt-8 pt-6 border-t border-gray-200">
+              <p className="text-gray-700">
                 {t('privacyContact')}{' '}
-                <a href="mailto:privacy@lifeli.me" className="font-semibold text-primary hover:underline">
+                <a href="mailto:privacy@lifeli.me" className="font-semibold text-gray-900 hover:underline">
                   privacy@lifeli.me
                 </a>{' '}
                 {t('privacyContactOr')}{' '}
-                <a href="mailto:adam@lifeli.me" className="font-semibold text-primary hover:underline">
+                <a href="mailto:adam@lifeli.me" className="font-semibold text-gray-900 hover:underline">
                   adam@lifeli.me
                 </a>
               </p>
