@@ -513,57 +513,63 @@ const HeroSection = () => {
         onOpenChange={setShowAbout2Modal}
       />
 
-      {/* Privacy Policy Link - Bottom Left next to Cookie Consent */}
-      <button
-        onClick={() => setShowPrivacyModal(true)}
-        className="fixed bottom-4 left-14 z-50 text-gray-400 hover:text-primary hover:bg-primary/10 transition-all duration-300 p-2 rounded-lg"
-        aria-label="Privacy Policy"
-        title="Privacy Policy"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-        </svg>
-      </button>
+      {/* Footer - Responsive positioning */}
+      <div className="absolute bottom-0 left-0 right-0 z-40 p-4 md:p-6">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          {/* Left side - Privacy & Service */}
+          <div className="flex items-center gap-2 justify-center md:justify-start">
+            <button
+              onClick={() => setShowPrivacyModal(true)}
+              className="text-gray-400 hover:text-primary hover:bg-primary/10 transition-all duration-300 p-2 rounded-lg"
+              aria-label="Privacy Policy"
+              title="Privacy Policy"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </button>
+            
+            <button
+              onClick={() => setShowServiceModal(true)}
+              className="text-gray-400 hover:text-primary hover:bg-primary/10 transition-all duration-300 p-2 rounded-lg"
+              aria-label="For Those Who Serve"
+              title="For Those Who Serve"
+            >
+              <Flower2 className="w-5 h-5" />
+            </button>
+          </div>
 
-      {/* Service Members Link - Bottom Left next to Privacy */}
-      <button
-        onClick={() => setShowServiceModal(true)}
-        className="fixed bottom-4 left-24 z-50 text-gray-400 hover:text-primary hover:bg-primary/10 transition-all duration-300 p-2 rounded-lg"
-        aria-label="For Those Who Serve"
-        title="For Those Who Serve"
-      >
-        <Flower2 className="w-5 h-5" />
-      </button>
-
-      {/* Social Links - Bottom Right */}
-      <div className="fixed bottom-6 right-6 z-40 flex gap-2">
-        <a 
-          href="https://www.instagram.com/lifeli.me" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 p-2 rounded-lg"
-          aria-label="Instagram"
-        >
-          <Instagram className="w-5 h-5" />
-        </a>
-        <a 
-          href="https://facebook.com/mylifelime/" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 p-2 rounded-lg"
-          aria-label="Facebook"
-        >
-          <Facebook className="w-5 h-5" />
-        </a>
-        <a 
-          href="https://linkedin.com/company/lifelime/" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 p-2 rounded-lg"
-          aria-label="LinkedIn"
-        >
-          <Linkedin className="w-5 h-5" />
-        </a>
+          {/* Right side - Social Links */}
+          <div className="flex gap-2 justify-center md:justify-end">
+            <a 
+              href="https://www.instagram.com/lifeli.me" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 p-2 rounded-lg"
+              aria-label="Instagram"
+            >
+              <Instagram className="w-5 h-5" />
+            </a>
+            <a 
+              href="https://facebook.com/mylifelime/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 p-2 rounded-lg"
+              aria-label="Facebook"
+            >
+              <Facebook className="w-5 h-5" />
+            </a>
+            <a 
+              href="https://linkedin.com/company/lifelime/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 p-2 rounded-lg"
+              aria-label="LinkedIn"
+            >
+              <Linkedin className="w-5 h-5" />
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   );
