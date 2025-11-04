@@ -355,7 +355,7 @@ const HeroSection = () => {
 
 
       {/* Content */}
-      <div className="relative h-full flex flex-col lg:flex-row items-start lg:items-center justify-start lg:justify-between gap-8 lg:gap-0 p-4 sm:p-6 md:p-12 lg:p-16 xl:p-24 pb-24 lg:pb-16 xl:pb-24 overflow-y-auto lg:overflow-y-hidden">
+      <div className="relative h-full lg:min-h-screen flex flex-col lg:flex-row items-start lg:items-center justify-start lg:justify-between gap-8 lg:gap-0 p-4 sm:p-6 md:p-12 lg:px-16 xl:px-24 lg:py-0 pb-24 overflow-y-auto lg:overflow-y-hidden">
         {/* Logo Section - Left - hidden on mobile */}
         <div className="hidden lg:block max-w-xs sm:max-w-sm md:max-w-md w-full relative lg:ml-[10%] scale-90">
           {/* Ground spot shadow */}
