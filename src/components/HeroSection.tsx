@@ -340,7 +340,7 @@ const HeroSection = () => {
           <img 
             src={cornPoppy} 
             alt="Corn Poppy" 
-            className="absolute top-[0%] left-[25%] w-[20%] h-auto z-20" 
+            className="absolute -top-[3%] left-[25%] w-[20%] h-auto z-20" 
           />
         </div>
 
