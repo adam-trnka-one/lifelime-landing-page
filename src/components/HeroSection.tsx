@@ -443,13 +443,13 @@ const HeroSection = () => {
 
       {/* Desktop: Fixed social links at bottom right */}
       <div className="hidden lg:flex fixed bottom-4 right-4 z-50 gap-2">
-        <a href="https://www.instagram.com/lifeli.me" target="_blank" rel="noopener noreferrer" className="text-white/90 hover:text-primary hover:bg-primary/10 transition-all duration-300 p-2 rounded-lg" aria-label="Instagram">
+        <a href="https://www.instagram.com/lifeli.me" target="_blank" rel="noopener noreferrer" className="text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 p-2 rounded-lg" aria-label="Instagram">
           <Instagram className="w-5 h-5" />
         </a>
-        <a href="https://facebook.com/mylifelime/" target="_blank" rel="noopener noreferrer" className="text-white/90 hover:text-primary hover:bg-primary/10 transition-all duration-300 p-2 rounded-lg" aria-label="Facebook">
+        <a href="https://facebook.com/mylifelime/" target="_blank" rel="noopener noreferrer" className="text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 p-2 rounded-lg" aria-label="Facebook">
           <Facebook className="w-5 h-5" />
         </a>
-        <a href="https://linkedin.com/company/lifelime/" target="_blank" rel="noopener noreferrer" className="text-white/90 hover:text-primary hover:bg-primary/10 transition-all duration-300 p-2 rounded-lg" aria-label="LinkedIn">
+        <a href="https://linkedin.com/company/lifelime/" target="_blank" rel="noopener noreferrer" className="text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 p-2 rounded-lg" aria-label="LinkedIn">
           <Linkedin className="w-5 h-5" />
         </a>
       </div>
