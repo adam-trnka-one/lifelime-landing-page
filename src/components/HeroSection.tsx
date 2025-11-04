@@ -78,8 +78,9 @@ const HeroSection = () => {
             <SheetTrigger className="lg:hidden text-primary p-2">
               <Menu size={24} />
             </SheetTrigger>
-            <SheetContent side="right" className="bg-white/30 backdrop-blur-xl border-white/30" style={{ boxShadow: 'inset 0 1px 0 0 rgba(255, 255, 255, 0.5), 0 8px 32px 0 rgba(0, 0, 0, 0.1)' }}>
-              <div className="flex flex-col gap-4 mt-8">
+            <SheetContent side="right" className="bg-white/30 backdrop-blur-xl border-white/30 flex flex-col" style={{ boxShadow: 'inset 0 1px 0 0 rgba(255, 255, 255, 0.5), 0 8px 32px 0 rgba(0, 0, 0, 0.1)' }}>
+              {/* Top menu items */}
+              <div className="flex flex-col gap-4 mt-8 flex-1">
                 <a 
                   href="#about" 
                   onClick={(e) => { e.preventDefault(); setShowAboutModal(true); }}
@@ -104,39 +105,39 @@ const HeroSection = () => {
                   For Those Who Serve
                 </a>
                 
-                {/* Social Links in Mobile Menu */}
-                <div className="flex gap-2 px-4 py-2">
-                  <a 
-                    href="https://www.instagram.com/lifeli.me" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-gray-900 hover:text-primary transition-all duration-300 p-2"
-                    aria-label="Instagram"
-                  >
-                    <Instagram className="w-5 h-5" />
-                  </a>
-                  <a 
-                    href="https://facebook.com/mylifelime/" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-gray-900 hover:text-primary transition-all duration-300 p-2"
-                    aria-label="Facebook"
-                  >
-                    <Facebook className="w-5 h-5" />
-                  </a>
-                  <a 
-                    href="https://linkedin.com/company/lifelime/" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-gray-900 hover:text-primary transition-all duration-300 p-2"
-                    aria-label="LinkedIn"
-                  >
-                    <Linkedin className="w-5 h-5" />
-                  </a>
-                </div>
-                
-                {/* Language Selector in Mobile Menu */}
+                {/* Language Selector */}
                 <LanguageSwitcher variant="dark" />
+              </div>
+              
+              {/* Social Links at bottom */}
+              <div className="flex gap-2 justify-center px-4 py-6 border-t border-gray-900/10">
+                <a 
+                  href="https://www.instagram.com/lifeli.me" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-900 hover:text-primary transition-all duration-300 p-2"
+                  aria-label="Instagram"
+                >
+                  <Instagram className="w-5 h-5" />
+                </a>
+                <a 
+                  href="https://facebook.com/mylifelime/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-900 hover:text-primary transition-all duration-300 p-2"
+                  aria-label="Facebook"
+                >
+                  <Facebook className="w-5 h-5" />
+                </a>
+                <a 
+                  href="https://linkedin.com/company/lifelime/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-900 hover:text-primary transition-all duration-300 p-2"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin className="w-5 h-5" />
+                </a>
               </div>
             </SheetContent>
           </Sheet>
