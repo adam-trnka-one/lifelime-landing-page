@@ -388,11 +388,8 @@ const HeroSection = () => {
             setLastNameError("");
             setEmailError("");
             
-            // Combine firstName and lastName into name for backend
-            const name = lastName ? `${firstName} ${lastName}` : firstName;
-            
             // Submit to database
-            submitWaitlist({ name, email }, {
+            submitWaitlist({ firstName, lastName, email }, {
               onSuccess: () => {
                 setFirstName("");
                 setLastName("");

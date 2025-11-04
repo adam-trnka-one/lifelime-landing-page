@@ -12,7 +12,7 @@ const corsHeaders = {
 };
 
 interface WaitlistNotificationRequest {
-  name: string;
+  firstName: string;
   email: string;
   browserName?: string;
   osName?: string;
@@ -26,13 +26,13 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
-    const { name, email, browserName, osName, locationCountry, language = 'en' }: WaitlistNotificationRequest = await req.json();
+    const { firstName, email, browserName, osName, locationCountry, language = 'en' }: WaitlistNotificationRequest = await req.json();
 
-    console.log("Sending waitlist notification for:", name, email, "in language:", language);
+    console.log("Sending waitlist notification for:", firstName, email, "in language:", language);
 
     // Generate admin email HTML
     const adminHtml = generateAdminNotificationHTML({
-      name,
+      firstName,
       email,
       browserName,
       osName,
@@ -50,13 +50,13 @@ const handler = async (req: Request): Promise<Response> => {
     console.log("Admin notification sent:", adminEmailResponse);
 
     // Generate user confirmation email HTML
-    const userHtml = generateWaitlistConfirmationHTML(name, email, language);
+    const userHtml = generateWaitlistConfirmationHTML(firstName, email, language);
 
     // Send confirmation to user
     const userEmailResponse = await resend.emails.send({
       from: "Adam from lifeli.me waitlist <waitlist@lifeli.me>",
       to: [email],
-      subject: `Welcome to lifeli.me waiting list ${name}`,
+      subject: `Welcome to lifeli.me waiting list ${firstName}`,
       html: userHtml,
     });
 
