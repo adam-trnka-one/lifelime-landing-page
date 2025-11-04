@@ -3,7 +3,6 @@ import { useSearchParams } from "react-router-dom";
 import { toast } from "@/hooks/use-toast";
 import HeroSection from "@/components/HeroSection";
 import CookieConsent from "@/components/CookieConsent";
-import Footer from "@/components/Footer";
 
 const Index = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -34,7 +33,6 @@ const Index = () => {
   return (
     <>
       <HeroSection />
-      <Footer />
       <CookieConsent />
     </>
   );

@@ -13,6 +13,7 @@ import { useWaitlistSubmit } from "@/hooks/useWaitlistSubmit";
 import { useToast } from "@/hooks/use-toast";
 import WaitlistSuccessModal from "@/components/WaitlistSuccessModal";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
+import PrivacyPolicyModal from "@/components/PrivacyPolicyModal";
 
 // Form validation schema
 const formSchema = z.object({
@@ -45,6 +46,7 @@ const HeroSection = () => {
   const [lastNameError, setLastNameError] = useState("");
   const [emailError, setEmailError] = useState("");
   const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const [showPrivacyModal, setShowPrivacyModal] = useState(false);
 
   const { mutate: submitWaitlist, isPending } = useWaitlistSubmit();
 
@@ -554,8 +556,20 @@ const HeroSection = () => {
         onOpenChange={setShowSuccessModal}
       />
 
-      {/* Social Links - Bottom Right */}
+      {/* Privacy Policy Modal */}
+      <PrivacyPolicyModal 
+        open={showPrivacyModal}
+        onOpenChange={setShowPrivacyModal}
+      />
+
+      {/* Social Links + Privacy Policy - Bottom Right */}
       <div className="fixed bottom-6 right-6 z-40 flex gap-2">
+        <button
+          onClick={() => setShowPrivacyModal(true)}
+          className="text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 px-3 py-2 rounded-lg text-sm font-medium"
+        >
+          Privacy Policy
+        </button>
         <a 
           href="https://www.instagram.com/lifeli.me" 
           target="_blank" 
