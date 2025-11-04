@@ -54,6 +54,12 @@ const HeroSection = () => {
 
   const { mutate: submitWaitlist, isPending } = useWaitlistSubmit();
 
+  // Check if today is Veterans Day (November 11th)
+  const isVeteransDay = () => {
+    const today = new Date();
+    return today.getMonth() === 10 && today.getDate() === 11; // Month is 0-indexed, so 10 = November
+  };
+
   return (
     <div className="h-screen relative overflow-hidden">
       {/* Navigation */}
@@ -336,12 +342,14 @@ const HeroSection = () => {
             alt="LifeLime Logo" 
             className="w-full h-auto relative z-10" 
           />
-          {/* Corn poppy positioned at top of logo */}
-          <img 
-            src={cornPoppy} 
-            alt="Corn Poppy" 
-            className="absolute -top-[6%] left-[25%] w-[20%] h-auto z-20" 
-          />
+          {/* Corn poppy positioned at top of logo - only shown on Veterans Day (November 11th) */}
+          {isVeteransDay() && (
+            <img 
+              src={cornPoppy} 
+              alt="Corn Poppy" 
+              className="absolute -top-[6%] left-[25%] w-[20%] h-auto z-20" 
+            />
+          )}
         </div>
 
         {/* Waitlist Section - Right */}
