@@ -51,20 +51,19 @@ const AboutModal = ({ open, onOpenChange }: AboutModalProps) => {
         
         {/* Scrollable Content */}
         <div 
-          className="bg-white rounded-3xl p-6 sm:p-8 lg:p-14 shadow-2xl overflow-y-auto max-h-[85vh] sm:max-h-[90vh] overscroll-contain scrollbar-hide"
+          className="bg-white rounded-3xl p-6 sm:p-8 lg:p-14 shadow-2xl overflow-y-auto max-h-[85vh] sm:max-h-[90vh] overscroll-contain touch-pan-y scrollbar-hide"
           style={{ 
             boxShadow: '0 20px 60px -15px rgba(0, 0, 0, 0.3)',
-            WebkitOverflowScrolling: 'touch',
-            touchAction: 'pan-y'
+            WebkitOverflowScrolling: 'touch'
           }}
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-gray-900">{t('aboutTitle')}</h2>
           <p className="text-gray-700 mb-6 text-base sm:text-lg italic">{t('aboutSubtitle')}</p>
           
           {/* YouTube Video */}
-          <div className="relative w-full aspect-video mb-8 rounded-xl overflow-hidden shadow-2xl touch-auto">
+          <div className="relative w-full aspect-video mb-8 rounded-xl overflow-hidden shadow-2xl">
             <iframe
-              className="absolute inset-0 w-full h-full pointer-events-auto"
+              className="absolute inset-0 w-full h-full"
               src="https://www.youtube.com/embed/_HWRGKfSq3A"
               title="lifeli.me Story"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

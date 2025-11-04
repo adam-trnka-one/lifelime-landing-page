@@ -51,11 +51,10 @@ const About2Modal = ({ open, onOpenChange }: About2ModalProps) => {
         
         {/* Scrollable Content */}
         <div 
-          className="bg-white rounded-3xl p-6 sm:p-8 lg:p-14 shadow-2xl overflow-y-auto max-h-[85vh] sm:max-h-[90vh] overscroll-contain scrollbar-hide"
+          className="bg-white rounded-3xl p-6 sm:p-8 lg:p-14 shadow-2xl overflow-y-auto max-h-[85vh] sm:max-h-[90vh] overscroll-contain touch-pan-y scrollbar-hide"
           style={{ 
             boxShadow: '0 20px 60px -15px rgba(0, 0, 0, 0.3)',
-            WebkitOverflowScrolling: 'touch',
-            touchAction: 'pan-y'
+            WebkitOverflowScrolling: 'touch'
           }}
         >
           {/* Header */}
