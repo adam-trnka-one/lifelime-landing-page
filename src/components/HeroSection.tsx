@@ -16,6 +16,7 @@ import LanguageSwitcher from "@/components/LanguageSwitcher";
 import PrivacyPolicyModal from "@/components/PrivacyPolicyModal";
 import ServiceMembersModal from "@/components/ServiceMembersModal";
 import AboutModal from "@/components/AboutModal";
+import About2Modal from "@/components/About2Modal";
 
 // Form validation schema
 const formSchema = z.object({
@@ -48,6 +49,7 @@ const HeroSection = () => {
   const [showPrivacyModal, setShowPrivacyModal] = useState(false);
   const [showServiceModal, setShowServiceModal] = useState(false);
   const [showAboutModal, setShowAboutModal] = useState(false);
+  const [showAbout2Modal, setShowAbout2Modal] = useState(false);
 
   const { mutate: submitWaitlist, isPending } = useWaitlistSubmit();
 
@@ -78,6 +80,13 @@ const HeroSection = () => {
                 >
                   {t('about')}
                 </a>
+                <a 
+                  href="#about2" 
+                  onClick={(e) => { e.preventDefault(); setShowAbout2Modal(true); }}
+                  className="text-gray-900 hover:text-primary transition-colors font-semibold px-4 py-2"
+                >
+                  About 2
+                </a>
                 
                 {/* Language Selector in Mobile Menu */}
                 <LanguageSwitcher variant="dark" />
@@ -94,6 +103,13 @@ const HeroSection = () => {
             className="text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 font-medium px-4 py-2 rounded-lg"
           >
             {t('about')}
+          </a>
+          <a 
+            href="#about2" 
+            onClick={(e) => { e.preventDefault(); setShowAbout2Modal(true); }}
+            className="text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 font-medium px-4 py-2 rounded-lg"
+          >
+            About 2
           </a>
           
           {/* Language Selector */}
@@ -488,6 +504,12 @@ const HeroSection = () => {
       <ServiceMembersModal 
         open={showServiceModal}
         onOpenChange={setShowServiceModal}
+      />
+
+      {/* About 2 Modal */}
+      <About2Modal 
+        open={showAbout2Modal}
+        onOpenChange={setShowAbout2Modal}
       />
 
       {/* Privacy Policy Link - Bottom Left next to Cookie Consent */}
