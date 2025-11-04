@@ -9,6 +9,7 @@ import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { z } from "zod";
 import logo from "@/assets/logo_lifelime_l.svg";
+import cornPoppy from "@/assets/corn_poppy.png";
 import { useWaitlistSubmit } from "@/hooks/useWaitlistSubmit";
 import { useToast } from "@/hooks/use-toast";
 import WaitlistSuccessModal from "@/components/WaitlistSuccessModal";
@@ -334,6 +335,12 @@ const HeroSection = () => {
             src={logo} 
             alt="LifeLime Logo" 
             className="w-full h-auto relative z-10" 
+          />
+          {/* Corn poppy positioned at top of logo */}
+          <img 
+            src={cornPoppy} 
+            alt="Corn Poppy" 
+            className="absolute top-[8%] left-[15%] w-[20%] h-auto z-20" 
           />
         </div>
 
