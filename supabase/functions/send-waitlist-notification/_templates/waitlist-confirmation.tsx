@@ -102,7 +102,7 @@ export const generateWaitlistConfirmationHTML = (
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
-  <body style="margin: 0; padding: 0; background-color: #f3f0ff; background-image: url('http://lifelime.trnka.one/bg_lifelime.png'); background-size: cover; background-position: center; background-repeat: no-repeat; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;">
+  <body style="margin: 0; padding: 0; background-color: #f3f0ff; background-image: url('https://images.lifeli.me/bg_lifelime.png'); background-size: cover; background-position: center; background-repeat: no-repeat; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;">
     <div style="max-width: 672px; margin: 100px auto; padding: 80px 20px;">
       <!-- Email Container -->
       <div style="background-color: rgba(255, 255, 255, 0.95); backdrop-filter: blur(8px); border-radius: 16px; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); overflow: hidden;">
@@ -110,7 +110,7 @@ export const generateWaitlistConfirmationHTML = (
         <!-- Header Section -->
         <div style="background: linear-gradient(to right, #9b87f5, #9333ea, rgba(155, 135, 245, 0.8)); padding: 48px 32px; text-align: center;">
           <img 
-            src="http://lifelime.trnka.one/logo_lifelime_l_white.png" 
+            src="https://images.lifeli.me/logo_lifelime_l_white.png"
             alt="Lifeli.me" 
             style="height: 48px; margin: 0 auto 24px; display: block;"
           />
@@ -155,7 +155,7 @@ export const generateWaitlistConfirmationHTML = (
                   <tr>
                     <td style="padding-right: 16px; vertical-align: top;">
                       <img 
-                        src="http://lifelime.trnka.one/adam_lifelime.png" 
+                        src="https://images.lifeli.me/adam_lifelime.png"
                         alt="Adam Trnka" 
                         style="width: 64px; height: 64px; border-radius: 50%; object-fit: cover; display: block;"
                       />
