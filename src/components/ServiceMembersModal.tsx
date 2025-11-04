@@ -63,6 +63,19 @@ const ServiceMembersModal = ({ open, onOpenChange }: ServiceMembersModalProps) =
             <p className="italic text-gray-600">{t('serviceP6')}</p>
             
             <p className="font-semibold text-gray-900">{t('serviceClosing')}</p>
+            
+            <div className="flex items-center gap-4 mt-8 pt-6 border-t border-gray-200">
+              <img 
+                src="/adam_lifelime.png" 
+                alt="Adam Trnka"
+                className="w-16 h-16 rounded-full object-cover flex-shrink-0"
+              />
+              <p className="font-semibold text-gray-900">
+                Adam Trnka<br />
+                Founder, lifeli.me<br />
+                www.lifeli.me
+              </p>
+            </div>
           </div>
         </div>
       </div>
