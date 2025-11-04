@@ -24,7 +24,7 @@ export const generateAdminNotificationHTML = ({
         <div style="margin: 0 auto; padding: 40px 20px; max-width: 600px;">
           <div style="text-align: center; margin-bottom: 32px;">
             <img 
-              src="http://lifelime.trnka.one/logo_lifelime_l.png" 
+              src="http://lifelime.trnka.one/logo_lifelime_l_white.png" 
               width="60" 
               height="60" 
               alt="Lifeli.me"
