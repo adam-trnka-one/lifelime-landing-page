@@ -46,22 +46,28 @@ serve(async (req: Request): Promise<Response> => {
 
     console.log("Successfully unsubscribed:", email);
 
+    // Get the app URL from environment or use the origin from the request
+    const appUrl = Deno.env.get("APP_URL") || "https://www.lifeli.me";
+    
     // Redirect to homepage with success message
     return new Response(null, {
       status: 302,
       headers: {
-        "Location": "/?unsubscribed=true",
+        "Location": `${appUrl}?unsubscribed=true`,
         ...corsHeaders
       },
     });
   } catch (error: any) {
     console.error("Error in unsubscribe-waitlist function:", error);
     
+    // Get the app URL from environment or use the origin from the request
+    const appUrl = Deno.env.get("APP_URL") || "https://www.lifeli.me";
+    
     // Redirect to homepage with error message
     return new Response(null, {
       status: 302,
       headers: {
-        "Location": "/?unsubscribe_error=true",
+        "Location": `${appUrl}?unsubscribe_error=true`,
         ...corsHeaders
       },
     });
