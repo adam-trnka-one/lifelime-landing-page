@@ -1,11 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
-import { ScrollArea } from "@/components/ui/scroll-area";
+import { useEffect, useState } from 'react';
 
 interface PrivacyPolicyModalProps {
   open: boolean;
@@ -14,112 +8,153 @@ interface PrivacyPolicyModalProps {
 
 const PrivacyPolicyModal = ({ open, onOpenChange }: PrivacyPolicyModalProps) => {
   const { t } = useTranslation();
+  const [showModal, setShowModal] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
+
+  const handleClose = () => {
+    setIsClosing(true);
+    setTimeout(() => {
+      onOpenChange(false);
+      setIsClosing(false);
+      setShowModal(false);
+    }, 300);
+  };
+
+  useEffect(() => {
+    if (open) {
+      setTimeout(() => setShowModal(true), 10);
+    }
+  }, [open]);
+
+  if (!open) return null;
 
   return (
-    <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-4xl max-h-[85vh]">
-        <DialogHeader>
-          <DialogTitle className="text-3xl font-bold">
-            🔒 {t('privacyTitle')}
-          </DialogTitle>
-        </DialogHeader>
+    <div 
+      className={`fixed inset-0 flex items-center justify-center p-4 sm:p-6 lg:p-8 z-[60] bg-black/60 backdrop-blur-sm transition-all duration-300 ease-out ${showModal && !isClosing ? 'opacity-100' : 'opacity-0'}`}
+      onClick={handleClose}
+    >
+      <div 
+        className={`max-w-6xl w-full relative transition-all duration-300 ease-out ${showModal && !isClosing ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
+        onClick={(e) => e.stopPropagation()}
+      >
+        {/* Close Button */}
+        <button
+          onClick={handleClose}
+          className="absolute top-2 right-2 sm:top-4 sm:right-4 text-white/70 hover:text-white transition-colors z-10 p-2 touch-manipulation"
+          aria-label="Close"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
         
-        <ScrollArea className="h-full pr-4">
-          <div className="space-y-8">
-            {/* Intro */}
-            <p className="text-lg leading-relaxed text-muted-foreground">
-              {t('privacyIntro')}
-            </p>
+        {/* Scrollable Content */}
+        <div 
+          className="bg-white/10 backdrop-blur-2xl rounded-3xl p-6 sm:p-8 lg:p-14 shadow-2xl overflow-y-auto max-h-[85vh] sm:max-h-[90vh] overscroll-contain touch-pan-y scrollbar-hide"
+          style={{ 
+            boxShadow: 'inset 0 1px 0 0 rgba(255, 255, 255, 0.1), 0 20px 60px -15px rgba(0, 0, 0, 0.3)',
+            WebkitOverflowScrolling: 'touch'
+          }}
+        >
+          {/* Header */}
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 text-white">
+            🔒 {t('privacyTitle')}
+          </h2>
+          <p className="text-white/90 mb-8 text-base sm:text-lg leading-relaxed">
+            {t('privacyIntro')}
+          </p>
 
+          <div className="space-y-8 text-white/90 leading-relaxed text-base sm:text-lg">
             {/* What We Collect */}
             <div>
-              <h3 className="text-2xl font-semibold mb-4">{t('privacyWhatWeCollectTitle')}</h3>
-              <p className="text-muted-foreground mb-4">{t('privacyWhatWeCollectIntro')}</p>
+              <h3 className="text-2xl font-semibold mb-4 text-white">{t('privacyWhatWeCollectTitle')}</h3>
+              <p className="mb-4">{t('privacyWhatWeCollectIntro')}</p>
               <ul className="space-y-3 ml-4">
-                <li className="text-muted-foreground">
-                  <span className="font-semibold text-foreground">{t('privacyWhatWeCollectItem1Title')}</span> — {t('privacyWhatWeCollectItem1')}
+                <li>
+                  <span className="font-semibold text-white">{t('privacyWhatWeCollectItem1Title')}</span> — {t('privacyWhatWeCollectItem1')}
                 </li>
-                <li className="text-muted-foreground">
-                  <span className="font-semibold text-foreground">{t('privacyWhatWeCollectItem2Title')}</span> — {t('privacyWhatWeCollectItem2')}
+                <li>
+                  <span className="font-semibold text-white">{t('privacyWhatWeCollectItem2Title')}</span> — {t('privacyWhatWeCollectItem2')}
                 </li>
               </ul>
-              <p className="text-muted-foreground mt-4">{t('privacyWhatWeCollectFooter')}</p>
+              <p className="mt-4">{t('privacyWhatWeCollectFooter')}</p>
             </div>
 
             {/* Where Your Data Lives */}
             <div>
-              <h3 className="text-2xl font-semibold mb-4">{t('privacyWhereDataTitle')}</h3>
-              <p className="text-muted-foreground mb-4">{t('privacyWhereDataIntro')}</p>
+              <h3 className="text-2xl font-semibold mb-4 text-white">{t('privacyWhereDataTitle')}</h3>
+              <p className="mb-4">{t('privacyWhereDataIntro')}</p>
               <ul className="space-y-2 ml-4">
-                <li className="text-muted-foreground">
-                  <span className="font-semibold text-foreground">{t('privacyWhereDataItem1Title')}</span> — {t('privacyWhereDataItem1')}
+                <li>
+                  <span className="font-semibold text-white">{t('privacyWhereDataItem1Title')}</span> — {t('privacyWhereDataItem1')}
                 </li>
-                <li className="text-muted-foreground">
-                  <span className="font-semibold text-foreground">{t('privacyWhereDataItem2Title')}</span> — {t('privacyWhereDataItem2')}
+                <li>
+                  <span className="font-semibold text-white">{t('privacyWhereDataItem2Title')}</span> — {t('privacyWhereDataItem2')}
                 </li>
               </ul>
-              <p className="text-muted-foreground mt-4">{t('privacyWhereDataFooter')}</p>
+              <p className="mt-4">{t('privacyWhereDataFooter')}</p>
             </div>
 
             {/* Your Rights */}
             <div>
-              <h3 className="text-2xl font-semibold mb-4">{t('privacyRightsTitle')}</h3>
-              <p className="text-muted-foreground mb-4">{t('privacyRightsIntro')}</p>
+              <h3 className="text-2xl font-semibold mb-4 text-white">{t('privacyRightsTitle')}</h3>
+              <p className="mb-4">{t('privacyRightsIntro')}</p>
               <ul className="space-y-2 ml-4">
-                <li className="text-muted-foreground">• {t('privacyRightsItem1')}</li>
-                <li className="text-muted-foreground">• {t('privacyRightsItem2')}</li>
-                <li className="text-muted-foreground">• {t('privacyRightsItem3')}</li>
+                <li>• {t('privacyRightsItem1')}</li>
+                <li>• {t('privacyRightsItem2')}</li>
+                <li>• {t('privacyRightsItem3')}</li>
               </ul>
             </div>
 
             {/* How We Protect It */}
             <div>
-              <h3 className="text-2xl font-semibold mb-4">{t('privacyProtectionTitle')}</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-white">{t('privacyProtectionTitle')}</h3>
               <ul className="space-y-2 ml-4">
-                <li className="text-muted-foreground">• {t('privacyProtectionItem1')}</li>
-                <li className="text-muted-foreground">• {t('privacyProtectionItem2')}</li>
-                <li className="text-muted-foreground">• {t('privacyProtectionItem3')}</li>
+                <li>• {t('privacyProtectionItem1')}</li>
+                <li>• {t('privacyProtectionItem2')}</li>
+                <li>• {t('privacyProtectionItem3')}</li>
               </ul>
             </div>
 
             {/* Cookies & Analytics */}
             <div>
-              <h3 className="text-2xl font-semibold mb-4">{t('privacyCookiesTitle')}</h3>
-              <p className="text-muted-foreground mb-4">{t('privacyCookiesIntro')}</p>
-              <p className="text-muted-foreground mb-3">{t('privacyCookiesWhenAccept')}</p>
+              <h3 className="text-2xl font-semibold mb-4 text-white">{t('privacyCookiesTitle')}</h3>
+              <p className="mb-4">{t('privacyCookiesIntro')}</p>
+              <p className="mb-3">{t('privacyCookiesWhenAccept')}</p>
               <ul className="space-y-2 ml-4">
-                <li className="text-muted-foreground">• {t('privacyCookiesItem1')}</li>
-                <li className="text-muted-foreground">• {t('privacyCookiesItem2')}</li>
-                <li className="text-muted-foreground">• {t('privacyCookiesItem3')}</li>
+                <li>• {t('privacyCookiesItem1')}</li>
+                <li>• {t('privacyCookiesItem2')}</li>
+                <li>• {t('privacyCookiesItem3')}</li>
               </ul>
-              <p className="text-muted-foreground mt-4">{t('privacyCookiesFooter')}</p>
+              <p className="mt-4">{t('privacyCookiesFooter')}</p>
             </div>
 
             {/* In Short */}
-            <div className="bg-muted/50 rounded-xl p-6 border">
-              <h3 className="text-2xl font-semibold mb-4">{t('privacyInShortTitle')}</h3>
-              <p className="text-lg leading-relaxed">
+            <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+              <h3 className="text-2xl font-semibold mb-4 text-white">{t('privacyInShortTitle')}</h3>
+              <p className="text-lg leading-relaxed text-white/90">
                 {t('privacyInShort')}
               </p>
             </div>
 
             {/* Contact */}
-            <div className="text-center pt-6 border-t">
-              <p className="text-lg text-muted-foreground">
+            <div className="text-center pt-6 border-t border-white/20">
+              <p className="text-lg">
                 {t('privacyContact')}{' '}
-                <a href="mailto:privacy@lifeli.me" className="font-semibold text-primary hover:underline">
+                <a href="mailto:privacy@lifeli.me" className="font-semibold text-white hover:underline">
                   privacy@lifeli.me
                 </a>{' '}
                 {t('privacyContactOr')}{' '}
-                <a href="mailto:adam@lifeli.me" className="font-semibold text-primary hover:underline">
+                <a href="mailto:adam@lifeli.me" className="font-semibold text-white hover:underline">
                   adam@lifeli.me
                 </a>
               </p>
             </div>
           </div>
-        </ScrollArea>
-      </DialogContent>
-    </Dialog>
+        </div>
+      </div>
+    </div>
   );
 };
 
