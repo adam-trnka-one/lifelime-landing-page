@@ -4,7 +4,7 @@ import {
   SheetContent,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Menu, Instagram, Facebook, Linkedin, Flower2 } from "lucide-react";
+import { Settings, Menu, Instagram, Facebook, Linkedin, Flower2 } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { z } from "zod";
@@ -549,19 +549,61 @@ const HeroSection = () => {
         onOpenChange={setShowServiceModal}
       />
 
-      {/* About 2 Modal */}
-      <About2Modal 
-        open={showAbout2Modal}
-        onOpenChange={setShowAbout2Modal}
-      />
+      {/* Footer - Mobile only, contains settings and social icons */}
+      <div className="lg:hidden absolute bottom-0 left-0 right-0 z-40 bg-gradient-to-t from-black/20 to-transparent backdrop-blur-sm">
+        <div className="flex items-center justify-between p-4">
+          {/* Settings Icon */}
+          <button
+            onClick={() => {
+              const cookieConsent = document.querySelector('[aria-label="Edit cookie preferences"]') as HTMLElement;
+              if (cookieConsent) cookieConsent.click();
+            }}
+            className="text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 p-2 rounded-lg"
+            aria-label="Settings"
+          >
+            <Settings className="w-5 h-5" />
+          </button>
 
-      {/* Social Links - Bottom Right - same level as settings icon */}
-      <div className="fixed bottom-4 right-4 z-50 flex gap-2">
+          {/* Social Links */}
+          <div className="flex gap-2">
+            <a 
+              href="https://www.instagram.com/lifeli.me" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 p-2 rounded-lg"
+              aria-label="Instagram"
+            >
+              <Instagram className="w-5 h-5" />
+            </a>
+            <a 
+              href="https://facebook.com/mylifelime/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 p-2 rounded-lg"
+              aria-label="Facebook"
+            >
+              <Facebook className="w-5 h-5" />
+            </a>
+            <a 
+              href="https://linkedin.com/company/lifelime/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-white/90 hover:text-white hover:bg-white/10 transition-all duration-300 p-2 rounded-lg"
+              aria-label="LinkedIn"
+            >
+              <Linkedin className="w-5 h-5" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Desktop: Fixed social links at bottom right */}
+      <div className="hidden lg:flex fixed bottom-4 right-4 z-50 gap-2">
         <a 
           href="https://www.instagram.com/lifeli.me" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="text-white/90 hover:text-white md:hover:text-primary hover:bg-white/10 md:hover:bg-primary/10 transition-all duration-300 p-2 rounded-lg"
+          className="text-white/90 hover:text-primary hover:bg-primary/10 transition-all duration-300 p-2 rounded-lg"
           aria-label="Instagram"
         >
           <Instagram className="w-5 h-5" />
@@ -570,7 +612,7 @@ const HeroSection = () => {
           href="https://facebook.com/mylifelime/" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="text-white/90 hover:text-white md:hover:text-primary hover:bg-white/10 md:hover:bg-primary/10 transition-all duration-300 p-2 rounded-lg"
+          className="text-white/90 hover:text-primary hover:bg-primary/10 transition-all duration-300 p-2 rounded-lg"
           aria-label="Facebook"
         >
           <Facebook className="w-5 h-5" />
@@ -579,7 +621,7 @@ const HeroSection = () => {
           href="https://linkedin.com/company/lifelime/" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="text-white/90 hover:text-white md:hover:text-primary hover:bg-white/10 md:hover:bg-primary/10 transition-all duration-300 p-2 rounded-lg"
+          className="text-white/90 hover:text-primary hover:bg-primary/10 transition-all duration-300 p-2 rounded-lg"
           aria-label="LinkedIn"
         >
           <Linkedin className="w-5 h-5" />
