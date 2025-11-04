@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import cornPoppy from "@/assets/corn_poppy.png";
 
 interface ServiceMembersModalProps {
   open: boolean;
@@ -47,7 +48,14 @@ const ServiceMembersModal = ({ open, onOpenChange }: ServiceMembersModalProps) =
             boxShadow: '0 20px 60px -15px rgba(0, 0, 0, 0.3)',
             WebkitOverflowScrolling: 'touch'
           }}>
-          <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-gray-900 text-center">{t('serviceTitle')}</h2>
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">{t('serviceTitle')}</h2>
+            <img 
+              src={cornPoppy} 
+              alt="Corn Poppy" 
+              className="w-8 h-8 sm:w-10 sm:h-10" 
+            />
+          </div>
           
           <div className="space-y-5 text-gray-700 leading-relaxed text-base sm:text-lg">
             <p>{t('serviceP1')}</p>
