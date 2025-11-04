@@ -1,0 +1,73 @@
+import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+
+interface ServiceMembersModalProps {
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
+}
+
+const ServiceMembersModal = ({ open, onOpenChange }: ServiceMembersModalProps) => {
+  const { t } = useTranslation();
+  const [showModal, setShowModal] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
+
+  const handleClose = () => {
+    setIsClosing(true);
+    setTimeout(() => {
+      onOpenChange(false);
+      setIsClosing(false);
+      setShowModal(false);
+    }, 300);
+  };
+
+  useEffect(() => {
+    if (open) {
+      setTimeout(() => setShowModal(true), 10);
+    }
+  }, [open]);
+
+  if (!open) return null;
+
+  return (
+    <div className={`fixed inset-0 flex items-center justify-center p-4 sm:p-6 lg:p-8 z-[70] bg-black/60 backdrop-blur-sm transition-all duration-300 ease-out ${showModal && !isClosing ? 'opacity-100' : 'opacity-0'}`}>
+      <div className={`max-w-3xl w-full relative transition-all duration-300 ease-out ${showModal && !isClosing ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
+        <button
+          onClick={handleClose}
+          className="absolute top-2 right-2 sm:top-4 sm:right-4 text-gray-700 hover:text-gray-900 transition-colors z-10 p-2 touch-manipulation"
+          aria-label="Close"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+        
+        <div className="bg-white rounded-3xl p-6 sm:p-8 lg:p-14 shadow-2xl overflow-y-auto max-h-[85vh] sm:max-h-[90vh] overscroll-contain touch-pan-y scrollbar-hide"
+          style={{ 
+            boxShadow: '0 20px 60px -15px rgba(0, 0, 0, 0.3)',
+            WebkitOverflowScrolling: 'touch'
+          }}>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-gray-900 text-center">{t('serviceTitle')}</h2>
+          
+          <div className="space-y-5 text-gray-700 leading-relaxed text-base sm:text-lg">
+            <p>{t('serviceP1')}</p>
+            
+            <p>{t('serviceP2')}</p>
+            
+            <p>{t('serviceP3')}</p>
+            
+            <p className="font-semibold text-gray-900">{t('serviceP4')}</p>
+            
+            <p>{t('serviceP5')}</p>
+            
+            <p className="italic text-gray-600">{t('serviceP6')}</p>
+            
+            <p className="font-semibold text-gray-900">{t('serviceClosing')}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ServiceMembersModal;

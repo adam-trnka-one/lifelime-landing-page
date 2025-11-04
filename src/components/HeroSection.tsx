@@ -14,6 +14,7 @@ import { useToast } from "@/hooks/use-toast";
 import WaitlistSuccessModal from "@/components/WaitlistSuccessModal";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import PrivacyPolicyModal from "@/components/PrivacyPolicyModal";
+import ServiceMembersModal from "@/components/ServiceMembersModal";
 
 // Form validation schema
 const formSchema = z.object({
@@ -47,6 +48,7 @@ const HeroSection = () => {
   const [emailError, setEmailError] = useState("");
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [showPrivacyModal, setShowPrivacyModal] = useState(false);
+  const [showServiceModal, setShowServiceModal] = useState(false);
 
   const { mutate: submitWaitlist, isPending } = useWaitlistSubmit();
 
@@ -570,6 +572,12 @@ const HeroSection = () => {
         onOpenChange={setShowPrivacyModal}
       />
 
+      {/* Service Members Modal */}
+      <ServiceMembersModal 
+        open={showServiceModal}
+        onOpenChange={setShowServiceModal}
+      />
+
       {/* Privacy Policy Link - Bottom Left next to Cookie Consent */}
       <button
         onClick={() => setShowPrivacyModal(true)}
@@ -579,6 +587,20 @@ const HeroSection = () => {
       >
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+      </button>
+
+      {/* Service Members Link - Bottom Left next to Privacy */}
+      <button
+        onClick={() => setShowServiceModal(true)}
+        className="fixed bottom-4 left-28 z-50 text-gray-400 hover:text-primary hover:bg-primary/10 transition-all duration-300 p-2 rounded-lg"
+        aria-label="For Those Who Serve"
+        title="For Those Who Serve"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+          <path d="M2 17l10 5 10-5"/>
+          <path d="M2 12l10 5 10-5"/>
         </svg>
       </button>
 
