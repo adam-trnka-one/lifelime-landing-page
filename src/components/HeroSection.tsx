@@ -337,7 +337,7 @@ const HeroSection = () => {
 
         {/* Waitlist Section - Right */}
         <div className="max-w-md lg:max-w-xl w-full mx-auto lg:mx-0 lg:-mt-[10vh] lg:mr-[5%] scale-90 lg:origin-right">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 sm:mb-8 text-white drop-shadow-lg">{t('title')}</h2>
+          <h2 className="text-4xl font-bold mb-6 sm:mb-8 text-white drop-shadow-lg">{t('title')}</h2>
           <p className="text-white/90 mb-8 sm:mb-10 leading-relaxed text-lg sm:text-xl drop-shadow-md">
             {t('description')}
           </p>
