@@ -16,10 +16,14 @@ import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 // Form validation schema
 const formSchema = z.object({
-  name: z.string()
+  firstName: z.string()
     .trim()
-    .nonempty({ message: "Name cannot be empty" })
-    .max(100, { message: "Name must be less than 100 characters" }),
+    .nonempty({ message: "First name cannot be empty" })
+    .max(100, { message: "First name must be less than 100 characters" }),
+  lastName: z.string()
+    .trim()
+    .max(100, { message: "Last name must be less than 100 characters" })
+    .optional(),
   email: z.string()
     .trim()
     .nonempty({ message: "Email cannot be empty" })
@@ -34,9 +38,11 @@ const HeroSection = () => {
   const [currentView, setCurrentView] = useState<'waitlist' | 'about'>('waitlist');
   const [isClosing, setIsClosing] = useState(false);
   const [showModal, setShowModal] = useState(false);
-  const [name, setName] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
-  const [nameError, setNameError] = useState("");
+  const [firstNameError, setFirstNameError] = useState("");
+  const [lastNameError, setLastNameError] = useState("");
   const [emailError, setEmailError] = useState("");
   const [showSuccessModal, setShowSuccessModal] = useState(false);
 
@@ -339,18 +345,28 @@ const HeroSection = () => {
             e.preventDefault();
             
             // Validate form
-            const validation = formSchema.safeParse({ name, email });
+            const validation = formSchema.safeParse({ firstName, lastName, email });
             
             if (!validation.success) {
               const errors = validation.error.errors;
-              const nameErr = errors.find(e => e.path[0] === 'name');
+              const firstNameErr = errors.find(e => e.path[0] === 'firstName');
+              const lastNameErr = errors.find(e => e.path[0] === 'lastName');
               const emailErr = errors.find(e => e.path[0] === 'email');
               
-              if (nameErr) {
-                setNameError(nameErr.message);
+              if (firstNameErr) {
+                setFirstNameError(firstNameErr.message);
                 toast({
-                  title: "Invalid name",
-                  description: nameErr.message,
+                  title: "Invalid first name",
+                  description: firstNameErr.message,
+                  variant: "destructive",
+                });
+              }
+              
+              if (lastNameErr) {
+                setLastNameError(lastNameErr.message);
+                toast({
+                  title: "Invalid last name",
+                  description: lastNameErr.message,
                   variant: "destructive",
                 });
               }
@@ -366,13 +382,18 @@ const HeroSection = () => {
               return;
             }
             
-            setNameError("");
+            setFirstNameError("");
+            setLastNameError("");
             setEmailError("");
+            
+            // Combine firstName and lastName into name for backend
+            const name = lastName ? `${firstName} ${lastName}` : firstName;
             
             // Submit to database
             submitWaitlist({ name, email }, {
               onSuccess: () => {
-                setName("");
+                setFirstName("");
+                setLastName("");
                 setEmail("");
                 setShowSuccessModal(true);
               },
@@ -381,30 +402,55 @@ const HeroSection = () => {
               }
             });
           }}>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-              <div className="flex-1 space-y-2">
-                <input
-                  type="text"
-                  placeholder={t('namePlaceholder') || 'Your name'}
-                  value={name}
-                  onChange={(e) => {
-                    setName(e.target.value);
-                    setNameError("");
-                  }}
-                  className="w-full px-5 sm:px-6 py-4 sm:py-5 text-base sm:text-lg rounded-xl bg-white/95 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-white shadow-xl backdrop-blur-sm border border-white/20"
-                  disabled={isPending}
-                  autoComplete="name"
-                />
-                {nameError && (
-                  <p className="text-red-100 bg-red-500/20 text-sm px-3 py-2 rounded-lg backdrop-blur-sm font-medium">
-                    {nameError}
-                  </p>
-                )}
+            <div className="space-y-3">
+              {/* First row: First name and Last name */}
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                <div className="flex-1 space-y-2">
+                  <input
+                    type="text"
+                    placeholder="Firstname"
+                    value={firstName}
+                    onChange={(e) => {
+                      setFirstName(e.target.value);
+                      setFirstNameError("");
+                    }}
+                    className="w-full px-5 sm:px-6 py-4 sm:py-5 text-base sm:text-lg rounded-xl bg-white/95 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-white shadow-xl backdrop-blur-sm border border-white/20"
+                    disabled={isPending}
+                    autoComplete="given-name"
+                    required
+                  />
+                  {firstNameError && (
+                    <p className="text-red-100 bg-red-500/20 text-sm px-3 py-2 rounded-lg backdrop-blur-sm font-medium">
+                      {firstNameError}
+                    </p>
+                  )}
+                </div>
+                <div className="flex-1 space-y-2">
+                  <input
+                    type="text"
+                    placeholder="Lastname"
+                    value={lastName}
+                    onChange={(e) => {
+                      setLastName(e.target.value);
+                      setLastNameError("");
+                    }}
+                    className="w-full px-5 sm:px-6 py-4 sm:py-5 text-base sm:text-lg rounded-xl bg-white/95 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-white shadow-xl backdrop-blur-sm border border-white/20"
+                    disabled={isPending}
+                    autoComplete="family-name"
+                  />
+                  {lastNameError && (
+                    <p className="text-red-100 bg-red-500/20 text-sm px-3 py-2 rounded-lg backdrop-blur-sm font-medium">
+                      {lastNameError}
+                    </p>
+                  )}
+                </div>
               </div>
-              <div className="flex-1 space-y-2">
+              
+              {/* Second row: Email */}
+              <div className="space-y-2">
                 <input
                   type="email"
-                  placeholder={t('emailPlaceholder')}
+                  placeholder="Your email"
                   value={email}
                   onChange={(e) => {
                     setEmail(e.target.value);
@@ -413,6 +459,7 @@ const HeroSection = () => {
                   className="w-full px-5 sm:px-6 py-4 sm:py-5 text-base sm:text-lg rounded-xl bg-white/95 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-white shadow-xl backdrop-blur-sm border border-white/20"
                   disabled={isPending}
                   autoComplete="email"
+                  required
                 />
                 {emailError && (
                   <p className="text-red-100 bg-red-500/20 text-sm px-3 py-2 rounded-lg backdrop-blur-sm font-medium">
@@ -421,6 +468,12 @@ const HeroSection = () => {
                 )}
               </div>
             </div>
+            
+            {/* Tracking consent note */}
+            <p className="text-white/70 text-sm text-center">
+              By clicking "Join the Waitlist", you agree that we can track your information in our lead database.
+            </p>
+            
             <Button 
               type="submit"
               disabled={isPending}
