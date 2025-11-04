@@ -51,7 +51,7 @@ const PrivacyPolicyModal = ({ open, onOpenChange }: PrivacyPolicyModalProps) => 
         
         {/* Scrollable Content */}
         <div 
-          className="bg-white/10 backdrop-blur-2xl rounded-3xl p-6 sm:p-8 lg:p-14 shadow-2xl overflow-y-auto max-h-[85vh] sm:max-h-[90vh] overscroll-contain touch-pan-y scrollbar-hide"
+          className="bg-[#1a1a2e]/95 backdrop-blur-2xl rounded-3xl p-6 sm:p-8 lg:p-14 shadow-2xl overflow-y-auto max-h-[85vh] sm:max-h-[90vh] overscroll-contain touch-pan-y scrollbar-hide border border-white/10"
           style={{ 
             boxShadow: 'inset 0 1px 0 0 rgba(255, 255, 255, 0.1), 0 20px 60px -15px rgba(0, 0, 0, 0.3)',
             WebkitOverflowScrolling: 'touch'
