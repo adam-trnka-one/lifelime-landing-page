@@ -541,14 +541,14 @@ const HeroSection = () => {
                 
                 <p>{t('aboutP9')}</p>
                 
-                <div className="flex items-center gap-4 mt-6">
+                <div className="flex items-center gap-4 mt-8 pt-6 border-t border-gray-200">
                   <img 
-                    src="https://images.lifeli.me/adam_lifelime.png"
+                    src="/adam_lifelime.png"
                     alt="Adam Trnka" 
                     className="w-16 h-16 rounded-full object-cover flex-shrink-0"
                   />
-                  <p className="font-semibold text-gray-900">
-                    Adam Trnka<br />
+                  <p className="text-gray-900">
+                    <span className="font-semibold">Adam Trnka</span><br />
                     Founder, lifeli.me<br />
                     www.lifeli.me
                   </p>
