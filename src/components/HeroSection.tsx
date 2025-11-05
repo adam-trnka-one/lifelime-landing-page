@@ -13,6 +13,7 @@ import PrivacyPolicyModal from "@/components/PrivacyPolicyModal";
 import ServiceMembersModal from "@/components/ServiceMembersModal";
 import AboutModal from "@/components/AboutModal";
 import About2Modal from "@/components/About2Modal";
+import { FloatingLabelInput } from "@/components/ui/floating-label-input";
 
 // Form validation schema
 const formSchema = z.object({
@@ -309,19 +310,34 @@ const HeroSection = () => {
               {/* First row: First name and Last name */}
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <div className="flex-1 space-y-2">
-                  <input type="text" placeholder={t('firstNamePlaceholder')} value={firstName} onChange={e => {
-                  setFirstName(e.target.value);
-                  setFirstNameError("");
-                }} className="w-full px-5 sm:px-6 py-4 sm:py-5 text-base sm:text-lg rounded-xl bg-white/95 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-white shadow-xl backdrop-blur-sm border border-white/20" disabled={isPending} autoComplete="given-name" required />
+                  <FloatingLabelInput
+                    type="text"
+                    label={t('firstNamePlaceholder')}
+                    value={firstName}
+                    onChange={e => {
+                      setFirstName(e.target.value);
+                      setFirstNameError("");
+                    }}
+                    disabled={isPending}
+                    autoComplete="given-name"
+                    required
+                  />
                   {firstNameError && <p className="text-red-100 bg-red-500/20 text-sm px-3 py-2 rounded-lg backdrop-blur-sm font-medium">
                       {firstNameError}
                     </p>}
                 </div>
                 <div className="flex-1 space-y-2">
-                  <input type="text" placeholder={t('lastNamePlaceholder')} value={lastName} onChange={e => {
-                  setLastName(e.target.value);
-                  setLastNameError("");
-                }} className="w-full px-5 sm:px-6 py-4 sm:py-5 text-base sm:text-lg rounded-xl bg-white/95 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-white shadow-xl backdrop-blur-sm border border-white/20" disabled={isPending} autoComplete="family-name" />
+                  <FloatingLabelInput
+                    type="text"
+                    label={t('lastNamePlaceholder')}
+                    value={lastName}
+                    onChange={e => {
+                      setLastName(e.target.value);
+                      setLastNameError("");
+                    }}
+                    disabled={isPending}
+                    autoComplete="family-name"
+                  />
                   {lastNameError && <p className="text-red-100 bg-red-500/20 text-sm px-3 py-2 rounded-lg backdrop-blur-sm font-medium">
                       {lastNameError}
                     </p>}
@@ -330,10 +346,18 @@ const HeroSection = () => {
               
               {/* Second row: Email */}
               <div className="space-y-2">
-                <input type="email" placeholder={t('emailPlaceholder')} value={email} onChange={e => {
-                setEmail(e.target.value);
-                setEmailError("");
-              }} className="w-full px-5 sm:px-6 py-4 sm:py-5 text-base sm:text-lg rounded-xl bg-white/95 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-white shadow-xl backdrop-blur-sm border border-white/20" disabled={isPending} autoComplete="email" required />
+                <FloatingLabelInput
+                  type="email"
+                  label={t('emailPlaceholder')}
+                  value={email}
+                  onChange={e => {
+                    setEmail(e.target.value);
+                    setEmailError("");
+                  }}
+                  disabled={isPending}
+                  autoComplete="email"
+                  required
+                />
                 {emailError && <p className="text-red-100 bg-red-500/20 text-sm px-3 py-2 rounded-lg backdrop-blur-sm font-medium">
                     {emailError}
                   </p>}
