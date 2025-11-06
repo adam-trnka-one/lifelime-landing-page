@@ -116,9 +116,9 @@ export const generateWaitlistConfirmationHTML = (
         <!-- Header Section -->
         <div style="background: linear-gradient(to right, #9b87f5, #9333ea, rgba(155, 135, 245, 0.8)); padding: 48px 32px; text-align: center;">
           <img 
-            src="https://images.lifeli.me/logo_lifelime_l_white.png"
-            alt="Lifeli.me" 
-            style="height: 48px; margin: 0 auto 24px; display: block;"
+            src="https://images.lifeli.me/adam_lifelime.png"
+            alt="Adam Trnka" 
+            style="width: 80px; height: 80px; margin: 0 auto 24px; display: block; border-radius: 50%; object-fit: cover;"
           />
           <h1 style="color: #ffffff; font-size: 36px; font-weight: 700; margin: 0; line-height: 1.2;">
             ${t.emailTitle}
