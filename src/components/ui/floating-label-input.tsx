@@ -31,7 +31,7 @@ const FloatingLabelInput = React.forwardRef<HTMLInputElement, FloatingLabelInput
           id={id}
           ref={ref}
           className={cn(
-            "w-full px-5 sm:px-6 py-4 sm:py-5 text-base sm:text-lg rounded-xl bg-white/95 text-gray-900 placeholder:text-transparent focus:outline-none focus:ring-2 focus:ring-white shadow-xl backdrop-blur-sm border border-white/20 transition-all",
+            "w-full px-5 sm:px-6 py-4 sm:py-5 text-base sm:text-lg rounded-xl bg-white text-gray-900 placeholder:text-transparent focus:outline-none focus:ring-2 focus:ring-white shadow-xl border border-gray-200 transition-all",
             className
           )}
           onFocus={handleFocus}
