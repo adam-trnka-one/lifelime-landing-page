@@ -49,7 +49,7 @@ const FloatingLabelInput = React.forwardRef<HTMLInputElement, FloatingLabelInput
           )}
         >
           {label}
-          {props.required && <span className="text-primary ml-1">*</span>}
+          {props.required && <span className="required-asterisk ml-1">*</span>}
         </label>
       </div>
     );
