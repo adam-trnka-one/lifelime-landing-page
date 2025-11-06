@@ -170,8 +170,8 @@ export const generateWaitlistConfirmationHTML = (
                       <p style="color: #64748b; font-size: 14px; line-height: 1.5; margin: 0; text-align: left;">
                         ${t.emailSignature}<br />
                         <strong style="color: #0f172a;">Adam Trnka</strong><br />
-                        Founder, lifeli.me<br />
-                        <a href="https://www.lifeli.me" target="_blank" style="color: #9b87f5; text-decoration: none;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">www.lifeli.me</a>
+                        Founder<br />
+                        <a href="mailto:adam@lifeli.me" style="color: #9b87f5; text-decoration: none;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">adam@lifeli.me</a>
                       </p>
                     </td>
                   </tr>
