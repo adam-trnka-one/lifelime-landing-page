@@ -98,8 +98,8 @@ const AboutModal = ({ open, onOpenChange }: AboutModalProps) => {
               />
               <p className="text-gray-900">
                 <span className="font-semibold">Adam Trnka</span><br />
-                Founder, lifeli.me<br />
-                www.lifeli.me
+                Founder<br />
+                adam@lifeli.me
               </p>
             </div>
           </div>
