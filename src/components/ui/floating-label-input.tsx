@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 
 export interface FloatingLabelInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label: string;
+  required?: boolean;
 }
 
 const FloatingLabelInput = React.forwardRef<HTMLInputElement, FloatingLabelInputProps>(
@@ -48,6 +49,7 @@ const FloatingLabelInput = React.forwardRef<HTMLInputElement, FloatingLabelInput
           )}
         >
           {label}
+          {props.required && <span className="text-red-500 ml-1">*</span>}
         </label>
       </div>
     );
