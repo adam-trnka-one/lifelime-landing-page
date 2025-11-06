@@ -25,7 +25,7 @@
   "successTitle": "Jesteś na liście!",
   "successDescription": "Dziękujemy za dołączenie do naszej listy oczekujących. Powiadomimy Cię, gdy tylko wystartujemy.",
   "successButton": "Rozumiem!",
-  "dataTrackingConsent": "Dołączając, zgadzasz się na nasze śledzenie danych.",
+  "dataTrackingConsent": "Dołączając, zgadzasz się na nasze śledzenie danych. Używamy twojego imienia do personalizacji powitań w e-mailach.",
   "cookieCompact": "Używamy plików cookie, aby poprawić twoje doświadczenie",
   "cookieDetails": "Szczegóły",
   "cookieTitle": "Zgoda na pliki cookie",
