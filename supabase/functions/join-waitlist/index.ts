@@ -84,14 +84,15 @@ const handler = async (req: Request): Promise<Response> => {
     const supabaseServiceRoleKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
     const supabase = createClient(supabaseUrl, supabaseServiceRoleKey);
 
-    // 2. Location detection (Server-side)
+    // 2. Location detection (Server-side) - Privacy-first using headers
     let locationData = {
-      location_country: null,
-      location_region: null,
-      location_city: null,
+      location_country: req.headers.get("x-country-name") || req.headers.get("cf-ipcountry"),
+      location_region: req.headers.get("x-region-name"),
+      location_city: req.headers.get("x-city-name") || req.headers.get("cf-ipcity"),
     };
 
-    if (hasConsent) {
+    // Fallback to ipapi.co only if headers are missing and user gave consent
+    if (hasConsent && (!locationData.location_country || !locationData.location_city)) {
       const clientIp = req.headers.get("x-forwarded-for")?.split(",")[0].trim();
       if (clientIp) {
         try {
@@ -99,13 +100,13 @@ const handler = async (req: Request): Promise<Response> => {
           if (response.ok) {
             const ipData = await response.json();
             locationData = {
-              location_country: ipData.country_name,
-              location_region: ipData.region,
-              location_city: ipData.city,
+              location_country: locationData.location_country || ipData.country_name,
+              location_region: locationData.location_region || ipData.region,
+              location_city: locationData.location_city || ipData.city,
             };
           }
         } catch (error) {
-          console.error("Error detecting location:", error);
+          console.error("Error detecting location via fallback:", error);
         }
       }
     }

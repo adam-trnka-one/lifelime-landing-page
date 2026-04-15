@@ -383,9 +383,10 @@ const HeroSection = () => {
 
             <div className="flex justify-center">
               <Turnstile
-                sitekey="1x00000000000000000000AA" // Testing sitekey
+                sitekey={import.meta.env.VITE_TURNSTILE_SITEKEY || "1x00000000000000000000AA"}
                 onVerify={(token) => setTurnstileToken(token)}
                 theme="light"
+                appearance="interaction-only"
               />
             </div>
             
