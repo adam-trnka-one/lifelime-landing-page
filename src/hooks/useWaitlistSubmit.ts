@@ -7,6 +7,7 @@ interface WaitlistData {
   firstName: string;
   lastName?: string;
   email: string;
+  turnstileToken: string;
 }
 
 // Helper function to parse user agent
@@ -57,87 +58,46 @@ export const useWaitlistSubmit = () => {
       const cookieConsent = localStorage.getItem("cookie_consent");
       const hasConsent = cookieConsent === "accepted";
 
-      // Get browser information (always collected - essential data)
+      // Get browser information
       const { browserName, browserVersion, osName } = getBrowserInfo();
 
-      // Get screen information (always collected - essential data)
+      // Get screen information
       const screenWidth = window.screen.width;
       const screenHeight = window.screen.height;
 
-      // Get language and timezone (always collected - essential data)
+      // Get language and timezone
       const websiteLanguage = i18n.language;
       const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
-      // Get user agent (always collected - essential data)
+      // Get user agent
       const userAgent = navigator.userAgent;
 
-      // Get approximate location ONLY if user consented (non-essential data)
-      let locationData = {
-        location_country: null as string | null,
-        location_region: null as string | null,
-        location_city: null as string | null,
-      };
-
-      if (hasConsent) {
-        try {
-          const response = await fetch('https://ipapi.co/json/');
-          if (response.ok) {
-            const ipData = await response.json();
-            locationData = {
-              location_country: ipData.country_name || null,
-              location_region: ipData.region || null,
-              location_city: ipData.city || null,
-            };
-          }
-        } catch (error) {
-          console.log('Location detection unavailable, continuing without location');
-        }
-      }
-
-      // Insert into database with separate first_name and last_name
-      const { error } = await supabase
-        .from("waitlist")
-        .insert([
-          {
-            first_name: data.firstName.trim(),
-            last_name: data.lastName?.trim() || null,
-            email: data.email.trim().toLowerCase(),
-            browser_name: browserName,
-            browser_version: browserVersion,
-            os_name: osName,
-            screen_width: screenWidth,
-            screen_height: screenHeight,
-            language: websiteLanguage,
-            timezone: timezone,
-            user_agent: userAgent,
-            cookies_consent: hasConsent,
-            consent_timestamp: hasConsent ? new Date().toISOString() : null,
-            ...locationData,
-          },
-        ]);
-
-      if (error) {
-        // Check if it's a duplicate email error
-        if (error.code === '23505') {
-          throw new Error('This email is already registered for the waitlist');
-        }
-        throw error;
-      }
-
-      // Send notification email (don't await - background task)
-      supabase.functions.invoke('send-waitlist-notification', {
+      // Invoke the centralized join-waitlist function
+      const { data: responseData, error } = await supabase.functions.invoke('join-waitlist', {
         body: {
           firstName: data.firstName.trim(),
           lastName: data.lastName?.trim(),
           email: data.email.trim().toLowerCase(),
+          turnstileToken: data.turnstileToken,
           browserName,
+          browserVersion,
           osName,
-          locationCountry: locationData.location_country,
+          screenWidth,
+          screenHeight,
           language: websiteLanguage,
+          timezone,
+          userAgent,
+          hasConsent,
         }
-      }).catch(error => console.error('Failed to send notification:', error));
+      });
 
-      return true;
+      if (error) {
+        // Handle Edge Function error
+        const body = await error.context?.json();
+        throw new Error(body?.error || error.message || 'Failed to join waitlist');
+      }
+
+      return responseData;
     },
     onSuccess: () => {
       // Remove toast notification since we're showing modal
