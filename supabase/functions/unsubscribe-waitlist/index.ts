@@ -1,27 +1,36 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.38.4";
 
-const corsHeaders = {
-  "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
+const getCorsHeaders = (origin: string | null) => {
+  const ALLOWED_ORIGIN = Deno.env.get("ALLOWED_ORIGIN") || "*";
+  const finalOrigin = ALLOWED_ORIGIN === "*" ? "*" : (origin === ALLOWED_ORIGIN ? origin : ALLOWED_ORIGIN);
+
+  return {
+    "Access-Control-Allow-Origin": finalOrigin,
+    "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
+  };
 };
 
 serve(async (req: Request): Promise<Response> => {
+  const origin = req.headers.get("origin");
+  const headers = getCorsHeaders(origin);
+
   // Handle CORS preflight requests
   if (req.method === "OPTIONS") {
-    return new Response(null, { headers: corsHeaders });
+    return new Response(null, { headers });
   }
 
   try {
     const url = new URL(req.url);
     const email = url.searchParams.get("email");
+    const token = url.searchParams.get("token");
 
-    if (!email) {
+    if (!email || !token) {
       return new Response(
-        JSON.stringify({ error: "Email parameter is required" }),
+        JSON.stringify({ error: "Email and token parameters are required" }),
         {
           status: 400,
-          headers: { ...corsHeaders, "Content-Type": "application/json" },
+          headers: { ...headers, "Content-Type": "application/json" },
         }
       );
     }
@@ -31,17 +40,23 @@ serve(async (req: Request): Promise<Response> => {
     
     const supabase = createClient(supabaseUrl, supabaseServiceRoleKey);
 
-    console.log("Attempting to unsubscribe email:", email);
+    console.log("Attempting to unsubscribe email:", email, "with token:", token);
 
-    // Delete the waitlist entry
-    const { error } = await supabase
+    // Delete the waitlist entry only if both email and token match
+    const { error, count } = await supabase
       .from("waitlist")
-      .delete()
-      .eq("email", email);
+      .delete({ count: 'exact' })
+      .eq("email", email)
+      .eq("unsubscribe_token", token);
 
     if (error) {
       console.error("Error unsubscribing:", error);
       throw error;
+    }
+
+    if (count === 0) {
+      console.error("No record found with that email and token combination");
+      throw new Error("Invalid unsubscribe link");
     }
 
     console.log("Successfully unsubscribed:", email);
@@ -54,7 +69,7 @@ serve(async (req: Request): Promise<Response> => {
       status: 302,
       headers: {
         "Location": `${appUrl}?unsubscribed=true`,
-        ...corsHeaders
+        ...headers
       },
     });
   } catch (error: any) {
@@ -68,7 +83,7 @@ serve(async (req: Request): Promise<Response> => {
       status: 302,
       headers: {
         "Location": `${appUrl}?unsubscribe_error=true`,
-        ...corsHeaders
+        ...headers
       },
     });
   }

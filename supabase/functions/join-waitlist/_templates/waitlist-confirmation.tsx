@@ -92,6 +92,15 @@ const translations: Record<string, any> = {
   }
 }
 
+const escapeHtml = (unsafe: string) => {
+  return unsafe
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+};
+
 export const generateWaitlistConfirmationHTML = (
   firstName: string,
   email: string,
@@ -101,7 +110,10 @@ export const generateWaitlistConfirmationHTML = (
   // Normalize language code (en-US -> en, etc.)
   const normalizedLang = language.split('-')[0].toLowerCase()
   const t = translations[normalizedLang] || translations.en
-  
+
+  const safeFirstName = escapeHtml(firstName);
+  const supabaseUrl = Deno.env.get("SUPABASE_URL") || "https://drljjepaolzzlirxhbit.supabase.co";
+
   return `
 <!DOCTYPE html>
 <html>
@@ -113,12 +125,12 @@ export const generateWaitlistConfirmationHTML = (
     <div style="max-width: 672px; margin: 100px auto; padding: 80px 20px;">
       <!-- Email Container -->
       <div style="background-color: rgba(255, 255, 255, 0.95); backdrop-filter: blur(8px); border-radius: 16px; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); overflow: hidden;">
-        
+
         <!-- Header Section -->
         <div style="background: linear-gradient(to right, #9b87f5, #9333ea, rgba(155, 135, 245, 0.8)); padding: 48px 32px; text-align: center;">
-          <img 
+          <img
             src="https://images.lifeli.me/adam_lifelime.png"
-            alt="Adam Trnka" 
+            alt="Adam Trnka"
             style="width: 80px; height: 80px; margin: 0 auto 24px; display: block; border-radius: 50%; object-fit: cover;"
           />
           <h1 style="color: #ffffff; font-size: 36px; font-weight: 700; margin: 0; line-height: 1.2;">
@@ -129,7 +141,7 @@ export const generateWaitlistConfirmationHTML = (
         <!-- Content Section -->
         <div style="padding: 48px 32px; background-color: #ffffff;">
           <p style="color: #0f172a; font-size: 16px; line-height: 1.6; margin: 0 0 24px;">
-            ${t.emailGreeting} ${firstName},
+            ${t.emailGreeting} ${safeFirstName},
           </p>
 
           <p style="color: #0f172a; font-size: 16px; line-height: 1.6; margin: 0 0 24px;">
@@ -161,9 +173,9 @@ export const generateWaitlistConfirmationHTML = (
                 <table style="border-collapse: collapse;">
                   <tr>
                     <td style="padding-right: 16px; vertical-align: top;">
-                      <img 
+                      <img
                         src="https://images.lifeli.me/adam_lifelime.png"
-                        alt="Adam Trnka" 
+                        alt="Adam Trnka"
                         style="width: 64px; height: 64px; border-radius: 50%; object-fit: cover; display: block;"
                       />
                     </td>
@@ -185,10 +197,10 @@ export const generateWaitlistConfirmationHTML = (
               </td>
             </tr>
           </table>
-          
+
           <p style="color: #94a3b8; font-size: 12px; line-height: 1.5; margin: 16px 0 0; text-align: center;">
             ${t.emailFooter}<br />
-            ${t.emailUnsubscribe} <a href="https://drljjepaolzzlirxhbit.supabase.co/functions/v1/unsubscribe-waitlist?email=${encodeURIComponent(email)}${unsubscribeToken ? `&token=${unsubscribeToken}` : ''}" style="color: #9b87f5; text-decoration: none;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">${t.unsubscribeLink}</a>.
+            ${t.emailUnsubscribe} <a href="${supabaseUrl}/functions/v1/unsubscribe-waitlist?email=${encodeURIComponent(email)}${unsubscribeToken ? `&token=${unsubscribeToken}` : ''}" style="color: #9b87f5; text-decoration: none;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">${t.unsubscribeLink}</a>.
           </p>
         </div>
       </div>

@@ -14,6 +14,7 @@ import ServiceMembersModal from "@/components/ServiceMembersModal";
 import AboutModal from "@/components/AboutModal";
 import About2Modal from "@/components/About2Modal";
 import { FloatingLabelInput } from "@/components/ui/floating-label-input";
+import Turnstile from "react-turnstile";
 
 // Form validation schema
 const formSchema = z.object({
@@ -46,6 +47,7 @@ const HeroSection = () => {
   const [firstNameError, setFirstNameError] = useState("");
   const [lastNameError, setLastNameError] = useState("");
   const [emailError, setEmailError] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [showPrivacyModal, setShowPrivacyModal] = useState(false);
   const [showServiceModal, setShowServiceModal] = useState(false);
@@ -289,11 +291,21 @@ const HeroSection = () => {
           setLastNameError("");
           setEmailError("");
 
+          if (!turnstileToken) {
+            toast({
+              title: "Security check required",
+              description: "Please complete the CAPTCHA to join the waitlist.",
+              variant: "destructive"
+            });
+            return;
+          }
+
           // Submit to database
           submitWaitlist({
             firstName,
             lastName,
-            email
+            email,
+            turnstileToken
           }, {
             onSuccess: () => {
               setFirstName("");
@@ -368,8 +380,16 @@ const HeroSection = () => {
             <p className="text-white/70 text-sm text-center">
               {t('dataTrackingConsent')}
             </p>
+
+            <div className="flex justify-center">
+              <Turnstile
+                sitekey="1x00000000000000000000AA" // Testing sitekey
+                onVerify={(token) => setTurnstileToken(token)}
+                theme="light"
+              />
+            </div>
             
-            <Button type="submit" disabled={isPending} className="w-full bg-white text-primary hover:bg-white/90 text-lg sm:text-xl font-semibold shadow-2xl hover:shadow-white/20 transition-all duration-300" size="lg">
+            <Button type="submit" disabled={isPending || !turnstileToken} className="w-full bg-white text-primary hover:bg-white/90 text-lg sm:text-xl font-semibold shadow-2xl hover:shadow-white/20 transition-all duration-300" size="lg">
               {isPending ? "Joining..." : t('joinButton')}
             </Button>
           </form>

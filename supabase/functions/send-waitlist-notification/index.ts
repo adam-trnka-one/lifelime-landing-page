@@ -1,5 +1,6 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { Resend } from "https://esm.sh/resend@4.0.0";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.38.4";
 import generateWaitlistConfirmationHTML from './_templates/waitlist-confirmation.tsx';
 import generateAdminNotificationHTML from './_templates/admin-notification.tsx';
 
@@ -15,10 +16,12 @@ interface WaitlistNotificationRequest {
   firstName: string;
   lastName?: string;
   email: string;
+  unsubscribeToken?: string;
   browserName?: string;
   osName?: string;
   locationCountry?: string;
   language?: string;
+  hasConsent?: boolean;
 }
 
 const handler = async (req: Request): Promise<Response> => {
@@ -27,9 +30,51 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
-    const { firstName, lastName, email, browserName, osName, locationCountry, language = 'en' }: WaitlistNotificationRequest = await req.json();
+    const {
+      firstName,
+      lastName,
+      email,
+      unsubscribeToken,
+      browserName,
+      osName,
+      locationCountry: providedLocation,
+      language = 'en',
+      hasConsent
+    }: WaitlistNotificationRequest = await req.json();
 
     console.log("Sending waitlist notification for:", firstName, lastName, email, "in language:", language);
+
+    let locationCountry = providedLocation;
+
+    // Server-side location detection if consent is given and location not provided
+    if (hasConsent && !locationCountry) {
+      const clientIp = req.headers.get("x-forwarded-for")?.split(",")[0].trim();
+      if (clientIp) {
+        try {
+          const response = await fetch(`https://ipapi.co/${clientIp}/json/`);
+          if (response.ok) {
+            const ipData = await response.json();
+            locationCountry = ipData.country_name;
+
+            // Update the database record with the detected location
+            const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
+            const supabaseServiceRoleKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
+            const supabase = createClient(supabaseUrl, supabaseServiceRoleKey);
+
+            await supabase
+              .from("waitlist")
+              .update({
+                location_country: ipData.country_name,
+                location_region: ipData.region,
+                location_city: ipData.city
+              })
+              .eq("email", email);
+          }
+        } catch (error) {
+          console.error("Error detecting location server-side:", error);
+        }
+      }
+    }
 
     // Translate email subject based on language
     const subjectTranslations: Record<string, string> = {
@@ -65,7 +110,7 @@ const handler = async (req: Request): Promise<Response> => {
     console.log("Admin notification sent:", adminEmailResponse);
 
     // Generate user confirmation email HTML
-    const userHtml = generateWaitlistConfirmationHTML(firstName, email, language);
+    const userHtml = generateWaitlistConfirmationHTML(firstName, email, language, unsubscribeToken);
 
     // Send confirmation to user
     const userEmailResponse = await resend.emails.send({
