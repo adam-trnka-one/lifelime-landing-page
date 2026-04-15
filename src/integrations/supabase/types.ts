@@ -54,6 +54,7 @@ export type Database = {
           screen_height: number | null
           screen_width: number | null
           timezone: string | null
+          unsubscribe_token: string | null
           user_agent: string | null
         }
         Insert: {
@@ -74,6 +75,7 @@ export type Database = {
           screen_height?: number | null
           screen_width?: number | null
           timezone?: string | null
+          unsubscribe_token?: string | null
           user_agent?: string | null
         }
         Update: {
@@ -94,6 +96,7 @@ export type Database = {
           screen_height?: number | null
           screen_width?: number | null
           timezone?: string | null
+          unsubscribe_token?: string | null
           user_agent?: string | null
         }
         Relationships: []
